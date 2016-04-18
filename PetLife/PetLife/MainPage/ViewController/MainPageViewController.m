@@ -13,25 +13,30 @@
 #import "ScrollModel.h"
 #import <UIImageView+WebCache.h>
 #import <SDCycleScrollView.h>
+//#import "MyCell.h"
+#import "MyTableCell.h"
+#import "CellModel.h"
+#import "ItemModel.h"
 
-@interface MainPageViewController ()<SDCycleScrollViewDelegate>
+#import "FootView.h"
+
+#define reuseID @"cell"
+
+@interface MainPageViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong)NSMutableArray *scrollArray;
 
-// 页面scrollView
-@property (nonatomic,strong)UIScrollView *pageScroll;
+@property (nonatomic,strong)NSArray *arr;
 
-//@property (nonatomic,strong)UIScrollView *scrollView;
-//
-//@property (nonatomic,strong)UIPageControl *pageControl;
-//
-//@property (nonatomic,strong)NSTimer *timer;
+// tableView
+@property (nonatomic,strong)UITableView *tableV;
 
-// 网络图片数组
-@property (nonatomic,strong)NSMutableArray *imgArr;
+@property (nonatomic,strong)SDCycleScrollView *cycleScroll;
 
-// 滚动图标题数组
-@property (nonatomic,strong)NSMutableArray *titArr;
+@property (nonatomic,strong)NSMutableArray *cellArr;
+
+@property (nonatomic,strong)NSMutableArray *itemArr;
+
 
 @end
 
@@ -59,6 +64,27 @@
     return _titArr;
 }
 
+- (NSArray *)arr{
+    if (!_arr) {
+        _arr = [NSMutableArray array];
+    }
+    return _arr;
+}
+
+- (NSMutableArray *)cellArr{
+    if (!_cellArr) {
+        _cellArr = [NSMutableArray array];
+    }
+    return _cellArr;
+}
+
+- (NSMutableArray *)itemArr{
+    if (!_itemArr) {
+        _itemArr = [NSMutableArray array];
+    }
+    return _itemArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -70,14 +96,9 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_editor_align_right"] style:(UIBarButtonItemStyleDone) target:self action:@selector(CDitemAction:)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    self.pageScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - NavigationBarHeight)];
-    self.pageScroll.contentSize = CGSizeMake(0, 1000);
-    
-    [self.view addSubview:self.pageScroll];
-    
+
     [self requestData];
-    
+
     
     
 }
@@ -108,9 +129,9 @@
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:&error];
         if (!error) {
             // 解析数据
-            NSArray *arr = [dic objectForKey:@"data"];
+            self.arr = [dic objectForKey:@"data"];
             // arr 里面的第0个字典 就是scrollView的数据
-            NSDictionary *scrollDic = arr[0];
+            NSDictionary *scrollDic = self.arr[0];
             NSArray *scArr = [scrollDic objectForKey:@"data"];
             for (NSDictionary *scDic in scArr) {
                 NSLog(@"创建model了");
@@ -121,9 +142,29 @@
                 [self.titArr addObject:model.text];
             }
             
+            // arr里面的第2到第8个字典 是collecetionView的数据
+            for (NSDictionary *tableDic in self.arr) {
+                if ([[NSString stringWithFormat:@"%@",[tableDic objectForKey:@"is_more"]] isEqualToString:@"1"] && ((NSArray *)[tableDic objectForKey:@"data"]).count > 0) {
+                    CellModel *cellModel = [[CellModel alloc] init];
+                    [cellModel setValuesForKeysWithDictionary:tableDic];
+                    [self.cellArr addObject:cellModel];
+                    
+                    // item
+                    NSArray *itemArr = [tableDic objectForKey:@"data"];
+                    for (NSDictionary *itemDic in itemArr) {
+                        ItemModel *itemModel = [[ItemModel alloc] init];
+                        [itemModel setValuesForKeysWithDictionary:itemDic];
+                        [self.itemArr addObject:itemModel];
+                    }
+                }
+            }
+            
             // 创建scrollView
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self createScrollView];
+//                [self createScrollView];
+                [self.tableV reloadData];
+                // 创建下面的模块
+                [self createCollect];
             });
             
             
@@ -139,74 +180,22 @@
 
 
 - (void)createScrollView{
-    /*
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ImgHeight)];
-    self.scrollView.contentSize = CGSizeMake(ScreenWidth * self.scrollArray.count, 0);
-    self.scrollView.backgroundColor = [UIColor redColor];
-    self.scrollView.pagingEnabled = YES;
     
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.bounces = NO;
+    self.cycleScroll = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ImgHeight) delegate:self placeholderImage:nil];
+    self.cycleScroll.imageURLStringsGroup = self.imgArr;
     
-    self.scrollView.delegate = self;
+    self.cycleScroll.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     
-    for (int i = 0; i < self.scrollArray.count; i++) {
-        // 创建图片
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth * i, 0, ScreenWidth, ImgHeight)];
-        imgView.backgroundColor = [UIColor blueColor];
-        ScrollModel *scModel = self.scrollArray[i];
-        NSLog(@"img = %@",scModel.img);
-        [imgView sd_setImageWithURL:[NSURL URLWithString:scModel.img] placeholderImage:nil];
-        
-        // !!!:给每个ImgView添加手势
-//        imgView.userInteractionEnabled = YES;
-        
-        [self.scrollView addSubview:imgView];
-        NSLog(@"加了滚动的图片了");
-        
-        // 创建label
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(8, ImgHeight - 28, ScreenWidth - 100, 20)];
-//        lab.backgroundColor = [UIColor blueColor];
-        lab.text = scModel.text;
-        lab.textColor = [UIColor whiteColor];
-        lab.font = [UIFont systemFontOfSize:13];
-        [imgView addSubview:lab];
-    }
+    self.cycleScroll.titlesGroup = self.titArr;
+    
+    self.cycleScroll.autoScrollTimeInterval = 3.5;
+    
+    self.cycleScroll.delegate = self;
+    
+    self.cycleScroll.pageControlDotSize = CGSizeMake(20, 20);
     
     
-    // 创建pageControl
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(ScreenWidth - 100, NavigationBarHeight + ImgHeight - 28, 90, 20)];
-    self.pageControl.numberOfPages = self.scrollArray.count;
-    
-    
-    
-    
-    [self.pageScroll addSubview:self.scrollView];
-    [self.pageScroll addSubview:self.pageControl];
-    
-    // 设置nstimer
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(playScroll) userInfo:nil repeats:YES];
-    
-    NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-    [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
-    */
-    
-    
-    SDCycleScrollView *cycleScroll = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ImgHeight) delegate:self placeholderImage:nil];
-    cycleScroll.imageURLStringsGroup = self.imgArr;
-    
-    cycleScroll.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    
-    cycleScroll.titlesGroup = self.titArr;
-    
-    cycleScroll.autoScrollTimeInterval = 3.5;
-    
-    cycleScroll.delegate = self;
-    
-    cycleScroll.pageControlDotSize = CGSizeMake(20, 20);
-    
-    
-    [self.pageScroll addSubview:cycleScroll];
+    [self.view addSubview:self.cycleScroll];
     
 }
 
@@ -215,33 +204,89 @@
     
 }
 
-
-/*
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.pageControl.currentPage = (self.scrollView.contentOffset.x) / ScreenWidth;
+- (void)createCollect{
+    
+    self.tableV = [[UITableView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 48)];
+    
+    self.tableV.allowsSelection = NO;
+    
+    self.tableV.bounces = NO;
+    
+    [self createScrollView];
+    
+    self.tableV.tableHeaderView = self.cycleScroll;
+    
+//    FootView *footView = [[FootView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 96)];
+    FootView *footView = [[[NSBundle mainBundle] loadNibNamed:@"FootView" owner:nil options:nil] lastObject];
+    footView.frame = CGRectMake(0, 0, ScreenWidth, 70);
+    footView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    
+    self.tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.tableV.tableFooterView = footView;
+    
+    [self.tableV registerClass:[MyTableCell class] forCellReuseIdentifier:reuseID];
+    
+    self.tableV.delegate = self;
+    self.tableV.dataSource = self;
+    
+    [self.view addSubview:self.tableV];
+    
 }
 
-// NSTimer执行的方法
-- (void)playScroll{
-    CGFloat offSet = self.scrollView.contentOffset.x;
-    offSet += self.scrollView.frame.size.width;
-    [self.scrollView setContentOffset:CGPointMake(offSet, 0) animated:YES];
-    if (offSet == self.scrollArray.count * self.scrollView.frame.size.width) {
-        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-    }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"%ld",self.arr.count);
+    return self.cellArr.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 15;
 }
 
 
-// 拖拽的时候让NSTimer停止
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    [self.timer setFireDate:[NSDate distantFuture]];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MyTableCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
+    CellModel *cellModel = self.cellArr[indexPath.row];
+    cell.titleLabel.text = cellModel.title;
+    
+    
+    
+    ItemModel *itemModel1 = self.itemArr[indexPath.row * 4];
+    [cell.myImg1.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel1.img] placeholderImage:nil];
+    cell.myImg1.itemLabel.text = itemModel1.text;
+    
+    ItemModel *itemModel2 = self.itemArr[indexPath.row * 4 + 1];
+    [cell.myImg2.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel2.img] placeholderImage:nil];
+    cell.myImg2.itemLabel.text = itemModel2.text;
+    
+    ItemModel *itemModel3 = self.itemArr[indexPath.row * 4 + 2];
+    [cell.myImg3.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel3.img] placeholderImage:nil];
+    cell.myImg3.itemLabel.text = itemModel3.text;
+    
+    ItemModel *itemModel4 = self.itemArr[indexPath.row * 4 + 3];
+    [cell.myImg4.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel4.img] placeholderImage:nil];
+    cell.myImg4.itemLabel.text = itemModel4.text;
+    
+    
+    
+    return cell;
 }
 
-// 拖拽完成让NSTimer开始
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.timer setFireDate:[NSDate date]];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return collectHeight - 8;
 }
-*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

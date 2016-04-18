@@ -14,6 +14,7 @@
 		C203257B1CC21C9D00CB7934 /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257A1CC21C9D00CB7934 /* KnowlageViewController.m */; };
 		C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257E1CC221A000CB7934 /* NetRequestManager.m */; };
 		C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325841CC2393C00CB7934 /* ScrollModel.m */; };
+		C23004511CC52A5000C947D5 /* FootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23004501CC52A5000C947D5 /* FootView.xib */; };
 		C259D39F1CC091B40045CA99 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D38A1CC091B40045CA99 /* ConsultingViewController.m */; };
 		C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3911CC091B40045CA99 /* MainPageViewController.m */; };
 		C259D3A11CC091B40045CA99 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3971CC091B40045CA99 /* MySelfViewController.m */; };
@@ -21,6 +22,13 @@
 		C259D3A61CC092540045CA99 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3A51CC092540045CA99 /* HomePageViewController.m */; };
 		C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3A81CC096660045CA99 /* DownMenuTableViewController.m */; };
 		C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3AB1CC0997D0045CA99 /* DownMenuView.m */; };
+		C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7771CC4FD5B0028C40E /* MyTableCell.m */; };
+		C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7781CC4FD5B0028C40E /* MyTableCell.xib */; };
+		C276E77D1CC502030028C40E /* MyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E77C1CC502030028C40E /* MyImage.m */; };
+		C276E7801CC508350028C40E /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E77F1CC508350028C40E /* CellModel.m */; };
+		C276E7831CC508430028C40E /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7821CC508430028C40E /* ItemModel.m */; };
+		C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7841CC50FEB0028C40E /* MyImage.xib */; };
+		C276E7881CC5264A0028C40E /* FootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7871CC5264A0028C40E /* FootView.m */; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
 		C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A61CBFDD740064377C /* AppDelegate.m */; };
 		C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A91CBFDD740064377C /* ViewController.m */; };
@@ -46,6 +54,7 @@
 		C20325811CC2281200CB7934 /* ConstantsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
 		C20325831CC2393C00CB7934 /* ScrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollModel.h; sourceTree = "<group>"; };
 		C20325841CC2393C00CB7934 /* ScrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollModel.m; sourceTree = "<group>"; };
+		C23004501CC52A5000C947D5 /* FootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootView.xib; sourceTree = "<group>"; };
 		C259D3891CC091B40045CA99 /* ConsultingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultingViewController.h; sourceTree = "<group>"; };
 		C259D38A1CC091B40045CA99 /* ConsultingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultingViewController.m; sourceTree = "<group>"; };
 		C259D3901CC091B40045CA99 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
@@ -61,6 +70,18 @@
 		C259D3AA1CC0997D0045CA99 /* DownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownMenuView.h; sourceTree = "<group>"; };
 		C259D3AB1CC0997D0045CA99 /* DownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownMenuView.m; sourceTree = "<group>"; };
 		C259D3BA1CC0CCF20045CA99 /* PCHHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PCHHeader.pch; path = ../PCHHeader.pch; sourceTree = "<group>"; };
+		C276E7761CC4FD5B0028C40E /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
+		C276E7771CC4FD5B0028C40E /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
+		C276E7781CC4FD5B0028C40E /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableCell.xib; sourceTree = "<group>"; };
+		C276E77B1CC502030028C40E /* MyImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImage.h; sourceTree = "<group>"; };
+		C276E77C1CC502030028C40E /* MyImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImage.m; sourceTree = "<group>"; };
+		C276E77E1CC508350028C40E /* CellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
+		C276E77F1CC508350028C40E /* CellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
+		C276E7811CC508430028C40E /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
+		C276E7821CC508430028C40E /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemModel.m; sourceTree = "<group>"; };
+		C276E7841CC50FEB0028C40E /* MyImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyImage.xib; sourceTree = "<group>"; };
+		C276E7861CC5264A0028C40E /* FootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootView.h; sourceTree = "<group>"; };
+		C276E7871CC5264A0028C40E /* FootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootView.m; sourceTree = "<group>"; };
 		C2FE049F1CBFDD740064377C /* PetLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FE04A31CBFDD740064377C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2FE04A51CBFDD740064377C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -231,6 +252,10 @@
 			children = (
 				C20325831CC2393C00CB7934 /* ScrollModel.h */,
 				C20325841CC2393C00CB7934 /* ScrollModel.m */,
+				C276E77E1CC508350028C40E /* CellModel.h */,
+				C276E77F1CC508350028C40E /* CellModel.m */,
+				C276E7811CC508430028C40E /* ItemModel.h */,
+				C276E7821CC508430028C40E /* ItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +263,15 @@
 		C259D38E1CC091B40045CA99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C276E7761CC4FD5B0028C40E /* MyTableCell.h */,
+				C276E7771CC4FD5B0028C40E /* MyTableCell.m */,
+				C276E7781CC4FD5B0028C40E /* MyTableCell.xib */,
+				C276E77B1CC502030028C40E /* MyImage.h */,
+				C276E77C1CC502030028C40E /* MyImage.m */,
+				C276E7841CC50FEB0028C40E /* MyImage.xib */,
+				C276E7861CC5264A0028C40E /* FootView.h */,
+				C276E7871CC5264A0028C40E /* FootView.m */,
+				C23004501CC52A5000C947D5 /* FootView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,9 +479,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C23004511CC52A5000C947D5 /* FootView.xib in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
+				C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
+				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,17 +547,22 @@
 				C259D3A61CC092540045CA99 /* HomePageViewController.m in Sources */,
 				C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
+				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
 				C259D3A11CC091B40045CA99 /* MySelfViewController.m in Sources */,
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
 				C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */,
+				C276E7801CC508350028C40E /* CellModel.m in Sources */,
 				C20325741CC21A8900CB7934 /* BaseModel.m in Sources */,
 				C202DFDA1CC0EAA5007083CD /* UIBarButtonItem+Extension.m in Sources */,
+				C276E7831CC508430028C40E /* ItemModel.m in Sources */,
 				C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
 				C259D3A21CC091B40045CA99 /* SearchViewController.m in Sources */,
 				C203257B1CC21C9D00CB7934 /* KnowlageViewController.m in Sources */,
+				C276E77D1CC502030028C40E /* MyImage.m in Sources */,
+				C276E7881CC5264A0028C40E /* FootView.m in Sources */,
 				C259D39F1CC091B40045CA99 /* ConsultingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tP4-hZ-T1h" customClass="MyImage">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-mm-7lt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="105"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="105" id="YsJ-xB-Pr4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ts-AH-tgD">
+                    <rect key="frame" x="0.0" y="580" width="600" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="jf9-l3-fbW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0Ts-AH-tgD" secondAttribute="bottom" id="5E4-HJ-BEG"/>
+                <constraint firstAttribute="trailing" secondItem="Cmg-mm-7lt" secondAttribute="trailing" id="BhC-RN-pdF"/>
+                <constraint firstItem="Cmg-mm-7lt" firstAttribute="top" secondItem="tP4-hZ-T1h" secondAttribute="top" id="eUU-at-buW"/>
+                <constraint firstAttribute="trailing" secondItem="0Ts-AH-tgD" secondAttribute="trailing" id="hpk-jB-Zmy"/>
+                <constraint firstItem="0Ts-AH-tgD" firstAttribute="leading" secondItem="tP4-hZ-T1h" secondAttribute="leading" id="otn-kq-rPd"/>
+                <constraint firstItem="Cmg-mm-7lt" firstAttribute="leading" secondItem="tP4-hZ-T1h" secondAttribute="leading" id="xnD-OD-A4k"/>
+            </constraints>
+            <connections>
+                <outlet property="itemImg" destination="Cmg-mm-7lt" id="2lw-dz-rli"/>
+                <outlet property="itemLabel" destination="0Ts-AH-tgD" id="DGV-PW-tvE"/>
+            </connections>
+            <point key="canvasLocation" x="668" y="420"/>
+        </view>
+    </objects>
+</document>

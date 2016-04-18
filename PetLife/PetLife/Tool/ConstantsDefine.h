@@ -20,4 +20,7 @@
 // 滚动图片高度
 #define ImgHeight 150
 
+// collect高度
+#define collectHeight 302
+
 #endif /* ConstantsDefine_h */
