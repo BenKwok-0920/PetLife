@@ -26,6 +26,8 @@
 		C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C256623D1CC5C81D00E6C156 /* MySelfViewController.m */; };
 		C256624E1CC5C81D00E6C156 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662431CC5C81D00E6C156 /* SearchViewController.m */; };
 		C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C25662511CC5C8E500E6C156 /* PetLife.txt */; };
+		C25662561CC5DE7C00E6C156 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662541CC5DE7C00E6C156 /* AboutViewController.m */; };
+		C25662571CC5DE7C00E6C156 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25662551CC5DE7C00E6C156 /* AboutViewController.xib */; };
 		C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3911CC091B40045CA99 /* MainPageViewController.m */; };
 		C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3A81CC096660045CA99 /* DownMenuTableViewController.m */; };
 		C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3AB1CC0997D0045CA99 /* DownMenuView.m */; };
@@ -80,6 +82,9 @@
 		C25662421CC5C81D00E6C156 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		C25662431CC5C81D00E6C156 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		C25662511CC5C8E500E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
+		C25662531CC5DE7C00E6C156 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C25662541CC5DE7C00E6C156 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C25662551CC5DE7C00E6C156 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		C259D3901CC091B40045CA99 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		C259D3911CC091B40045CA99 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		C259D3A71CC096660045CA99 /* DownMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownMenuTableViewController.h; sourceTree = "<group>"; };
@@ -301,6 +306,9 @@
 				C25662361CC5C81D00E6C156 /* StatementViewController.h */,
 				C25662371CC5C81D00E6C156 /* StatementViewController.m */,
 				C25662381CC5C81D00E6C156 /* StatementViewController.xib */,
+				C25662531CC5DE7C00E6C156 /* AboutViewController.h */,
+				C25662541CC5DE7C00E6C156 /* AboutViewController.m */,
+				C25662551CC5DE7C00E6C156 /* AboutViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +547,7 @@
 				C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
+				C25662571CC5DE7C00E6C156 /* AboutViewController.xib in Resources */,
 				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +618,7 @@
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
+				C25662561CC5DE7C00E6C156 /* AboutViewController.m in Sources */,
 				C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */,
 				C25662471CC5C81D00E6C156 /* FeedBackViewController.m in Sources */,
 				C256624A1CC5C81D00E6C156 /* StatementViewController.m in Sources */,

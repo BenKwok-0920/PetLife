@@ -10,6 +10,8 @@
 #import "MySelfTableViewCell.h"
 #import "FeedBackViewController.h"
 #import "StatementViewController.h"
+#import "AboutViewController.h"
+
 
 #define KVwidth self.view.frame.size.width
 #define KVheight self.view.frame.size.height
@@ -45,10 +47,8 @@
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
     self.imageTitle.image = [UIImage imageNamed:@"touxiang_128"];
     
-    
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
-
     self.tableMySelf.delegate = self;
     self.tableMySelf.dataSource = self;
     
@@ -101,14 +101,13 @@
             [self dianji];
             break;
         case 1:
-//      FeedBackViewController *feedBack = [[FeedBackViewController alloc]init];
         [self.navigationController pushViewController:[[FeedBackViewController alloc]init] animated:YES];
             break;
         case 2:
          [self.navigationController pushViewController:[[StatementViewController alloc]init] animated:YES];
             break;
         case 3:
-            NSLog(@"点击的第4个");
+            [self.navigationController pushViewController:[[AboutViewController alloc]init] animated:YES];
             break;
         default:
             break;
