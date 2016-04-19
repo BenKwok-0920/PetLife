@@ -25,9 +25,7 @@
     [self.window makeKeyWindow];
     
     
-    
-    
-    
+    [NSThread sleepForTimeInterval:3.0];//设置启动页面时间
     
     return YES;
 }

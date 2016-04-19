@@ -35,17 +35,17 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    //  self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:0.603];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
     //view
     self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
     
-    _titleView.backgroundColor = [UIColor colorWithRed:1.000 green:0.400 blue:1.000 alpha:0.879];
-    
+//    _titleView.backgroundColor = [UIColor colorWithRed:1.000 green:0.502 blue:0.000 alpha:0.600];
+//    
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
-    self.imageTitle.image = [UIImage imageNamed:@"touxiang_128"];
+    self.imageTitle.image = [UIImage imageNamed:@"petlif"];
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];

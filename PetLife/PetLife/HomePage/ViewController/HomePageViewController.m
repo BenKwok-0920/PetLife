@@ -26,32 +26,39 @@
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
     mainPageVC.tabBarItem.title = @"首页";
-    mainPageVC.tabBarItem.image = [UIImage imageNamed:@"shouye_16"];
+    mainPageVC.tabBarItem.image = [[UIImage imageNamed:@"zhuye2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+   [mainPageVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
     
     //咨询
     ConsultingViewController *consultingVC = [[ConsultingViewController alloc]init];
     UINavigationController *ZXnav= [[UINavigationController alloc]initWithRootViewController:consultingVC];
     consultingVC.tabBarItem.title = @"咨询";
-    consultingVC.tabBarItem.image = [UIImage imageNamed:@"zixun_16"];
+    consultingVC.tabBarItem.image = [[UIImage imageNamed:@"zixun2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [consultingVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
     
     //搜索
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     UINavigationController *SSnav = [[UINavigationController alloc]initWithRootViewController:searchVC];
     searchVC.tabBarItem.title = @"搜索";
-    searchVC.tabBarItem.image = [UIImage imageNamed:@"sousuo_16"];
+    searchVC.tabBarItem.image = [[UIImage imageNamed:@"sousuo2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [searchVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
     
     //我的
     MySelfViewController *mySelfVC = [[MySelfViewController alloc]init];
     UINavigationController *WDnav = [[UINavigationController alloc]initWithRootViewController:mySelfVC];
     mySelfVC.tabBarItem.title = @"我的";
-    mySelfVC.tabBarItem.image = [UIImage imageNamed:@"wode_16"];
+    mySelfVC.tabBarItem.image = [[UIImage imageNamed:@"wode_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [mySelfVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     
     //知识
     KnowlageViewController *knowlageVC = [[KnowlageViewController alloc] init];
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
     ZSnav.tabBarItem.title = @"知识";
-    ZSnav.tabBarItem.image = [UIImage imageNamed:@"zhishi_16"];
-    
+    ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [ZSnav.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     
     self.viewControllers = @[SYnav,ZSnav,SSnav,ZXnav,WDnav];
     

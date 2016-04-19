@@ -90,17 +90,12 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"首页";
-    self.navigationController.navigationBar.barTintColor = [UIColor cyanColor];
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"caidan_16"] style:(UIBarButtonItemStyleDone) target:self action:@selector(CDitemAction:)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-
     [self requestData];
-
-    
-    
 }
 
 // 首页点击出现菜单的方法
