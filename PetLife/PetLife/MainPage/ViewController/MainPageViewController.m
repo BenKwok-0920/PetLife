@@ -93,7 +93,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor cyanColor];
     
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_editor_align_right"] style:(UIBarButtonItemStyleDone) target:self action:@selector(CDitemAction:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"caidan_16"] style:(UIBarButtonItemStyleDone) target:self action:@selector(CDitemAction:)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
 

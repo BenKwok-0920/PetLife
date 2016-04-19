@@ -26,34 +26,36 @@
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
     mainPageVC.tabBarItem.title = @"首页";
-    mainPageVC.tabBarItem.image = [UIImage imageNamed:@"icon_editor_align_right.png"];
-
+    mainPageVC.tabBarItem.image = [UIImage imageNamed:@"shouye_16"];
+    
     //咨询
     ConsultingViewController *consultingVC = [[ConsultingViewController alloc]init];
     UINavigationController *ZXnav= [[UINavigationController alloc]initWithRootViewController:consultingVC];
     consultingVC.tabBarItem.title = @"咨询";
-    consultingVC.tabBarItem.image = [UIImage imageNamed:@"icon_editor_align_right.png"];
+    consultingVC.tabBarItem.image = [UIImage imageNamed:@"zixun_16"];
     
     //搜索
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     UINavigationController *SSnav = [[UINavigationController alloc]initWithRootViewController:searchVC];
     searchVC.tabBarItem.title = @"搜索";
-    searchVC.tabBarItem.image = [UIImage imageNamed:@"icon_editor_align_right.png"];
-
+    searchVC.tabBarItem.image = [UIImage imageNamed:@"sousuo_16"];
+    
     //我的
     MySelfViewController *mySelfVC = [[MySelfViewController alloc]init];
     UINavigationController *WDnav = [[UINavigationController alloc]initWithRootViewController:mySelfVC];
     mySelfVC.tabBarItem.title = @"我的";
-    mySelfVC.tabBarItem.image = [UIImage imageNamed:@"icon_editor_align_right.png"];
+    mySelfVC.tabBarItem.image = [UIImage imageNamed:@"wode_16"];
     
     //知识
     KnowlageViewController *knowlageVC = [[KnowlageViewController alloc] init];
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
     ZSnav.tabBarItem.title = @"知识";
-    ZSnav.tabBarItem.image = [UIImage imageNamed:@"icon_editor_align_right.png"];
-
+    ZSnav.tabBarItem.image = [UIImage imageNamed:@"zhishi_16"];
+    
     
     self.viewControllers = @[SYnav,ZSnav,SSnav,ZXnav,WDnav];
+    
+
     
     
 }

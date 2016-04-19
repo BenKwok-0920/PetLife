@@ -10,6 +10,8 @@
 
 @interface SearchViewController ()
 
+@property (nonatomic,strong)UISearchBar *searchBar;
+
 @end
 
 @implementation SearchViewController
@@ -20,7 +22,15 @@
     self.navigationItem.title = @"搜索";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor cyanColor];
-    // Do any additional setup after loading the view.
+    
+    
+    
+    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
+//    self.searchBar.backgroundColor = [UIColor colorWithWhite:0.800 alpha:0.600];
+    [self.view addSubview:self.searchBar];
+//    [[_searchBar.subviews objectAtIndex:0] setHidden:YES];
+    [self.view endEditing:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
