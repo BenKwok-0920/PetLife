@@ -16,7 +16,6 @@
 		C23004511CC52A5000C947D5 /* FootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23004501CC52A5000C947D5 /* FootView.xib */; };
 		C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662221CC5C81D00E6C156 /* ConsultingViewController.m */; };
 		C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662281CC5C81D00E6C156 /* HomePageViewController.m */; };
-		C25662461CC5C81D00E6C156 /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C256622C1CC5C81D00E6C156 /* KnowlageViewController.m */; };
 		C25662471CC5C81D00E6C156 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662331CC5C81D00E6C156 /* FeedBackViewController.m */; };
 		C25662481CC5C81D00E6C156 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25662341CC5C81D00E6C156 /* FeedBackViewController.xib */; };
 		C25662491CC5C81D00E6C156 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C25662351CC5C81D00E6C156 /* PetLife.txt */; };
@@ -36,6 +35,9 @@
 		C276E7831CC508430028C40E /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7821CC508430028C40E /* ItemModel.m */; };
 		C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7841CC50FEB0028C40E /* MyImage.xib */; };
 		C276E7881CC5264A0028C40E /* FootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7871CC5264A0028C40E /* FootView.m */; };
+		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; settings = {ASSET_TAGS = (); }; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
 		C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A61CBFDD740064377C /* AppDelegate.m */; };
 		C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A91CBFDD740064377C /* ViewController.m */; };
@@ -64,8 +66,6 @@
 		C25662221CC5C81D00E6C156 /* ConsultingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultingViewController.m; sourceTree = "<group>"; };
 		C25662271CC5C81D00E6C156 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		C25662281CC5C81D00E6C156 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
-		C256622B1CC5C81D00E6C156 /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
-		C256622C1CC5C81D00E6C156 /* KnowlageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageViewController.m; sourceTree = "<group>"; };
 		C25662321CC5C81D00E6C156 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		C25662331CC5C81D00E6C156 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		C25662341CC5C81D00E6C156 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
@@ -99,6 +99,11 @@
 		C276E7841CC50FEB0028C40E /* MyImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyImage.xib; sourceTree = "<group>"; };
 		C276E7861CC5264A0028C40E /* FootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootView.h; sourceTree = "<group>"; };
 		C276E7871CC5264A0028C40E /* FootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootView.m; sourceTree = "<group>"; };
+		C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
+		C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageViewController.m; sourceTree = "<group>"; };
+		C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleNavigation.h; sourceTree = "<group>"; };
+		C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleNavigation.m; sourceTree = "<group>"; };
+		C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleNavigation.xib; sourceTree = "<group>"; };
 		C2FE049F1CBFDD740064377C /* PetLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FE04A31CBFDD740064377C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2FE04A51CBFDD740064377C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -254,8 +259,6 @@
 		C256622A1CC5C81D00E6C156 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C256622B1CC5C81D00E6C156 /* KnowlageViewController.h */,
-				C256622C1CC5C81D00E6C156 /* KnowlageViewController.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +266,9 @@
 		C256622D1CC5C81D00E6C156 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */,
+				C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */,
+				C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 		C256622E1CC5C81D00E6C156 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */,
+				C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -540,6 +548,7 @@
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
 				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
+				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +609,6 @@
 			files = (
 				C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */,
 				C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */,
-				C25662461CC5C81D00E6C156 /* KnowlageViewController.m in Sources */,
 				C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
@@ -615,8 +623,10 @@
 				C276E7801CC508350028C40E /* CellModel.m in Sources */,
 				C20325741CC21A8900CB7934 /* BaseModel.m in Sources */,
 				C202DFDA1CC0EAA5007083CD /* UIBarButtonItem+Extension.m in Sources */,
+				C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */,
 				C276E7831CC508430028C40E /* ItemModel.m in Sources */,
 				C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */,
+				C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
 				C276E77D1CC502030028C40E /* MyImage.m in Sources */,
 				C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */,
