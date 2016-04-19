@@ -38,6 +38,7 @@
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; settings = {ASSET_TAGS = (); }; };
 		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
 		C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A61CBFDD740064377C /* AppDelegate.m */; };
 		C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A91CBFDD740064377C /* ViewController.m */; };
@@ -104,6 +105,8 @@
 		C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleNavigation.h; sourceTree = "<group>"; };
 		C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleNavigation.m; sourceTree = "<group>"; };
 		C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleNavigation.xib; sourceTree = "<group>"; };
+		C2EE7C7D1CC5DD8800F8BC7B /* KnowlageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KnowlageModel.h; path = PetLife/Knowlage/View/KnowlageModel.h; sourceTree = SOURCE_ROOT; };
+		C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KnowlageModel.m; path = PetLife/Knowlage/View/KnowlageModel.m; sourceTree = SOURCE_ROOT; };
 		C2FE049F1CBFDD740064377C /* PetLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FE04A31CBFDD740064377C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2FE04A51CBFDD740064377C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 		C256622A1CC5C81D00E6C156 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2EE7C7D1CC5DD8800F8BC7B /* KnowlageModel.h */,
+				C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
 				C256624C1CC5C81D00E6C156 /* MySelfTableViewCell.m in Sources */,
+				C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */,
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
