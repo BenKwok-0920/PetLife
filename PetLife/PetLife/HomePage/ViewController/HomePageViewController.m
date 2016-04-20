@@ -26,39 +26,39 @@
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
     mainPageVC.tabBarItem.title = @"首页";
-    mainPageVC.tabBarItem.image = [[UIImage imageNamed:@"zhuye2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-   [mainPageVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    mainPageVC.tabBarItem.image = [[UIImage imageNamed:@"zhuye_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//   [mainPageVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     
     
     //咨询
     ConsultingViewController *consultingVC = [[ConsultingViewController alloc]init];
     UINavigationController *ZXnav= [[UINavigationController alloc]initWithRootViewController:consultingVC];
     consultingVC.tabBarItem.title = @"咨询";
-    consultingVC.tabBarItem.image = [[UIImage imageNamed:@"zixun2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [consultingVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    consultingVC.tabBarItem.image = [[UIImage imageNamed:@"zixun_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+   
+    consultingVC.tabBarController.tabBar.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:0.703];
     
     
     //搜索
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     UINavigationController *SSnav = [[UINavigationController alloc]initWithRootViewController:searchVC];
     searchVC.tabBarItem.title = @"搜索";
-    searchVC.tabBarItem.image = [[UIImage imageNamed:@"sousuo2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [searchVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    searchVC.tabBarItem.image = [[UIImage imageNamed:@"sousuo_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     //我的
     MySelfViewController *mySelfVC = [[MySelfViewController alloc]init];
     UINavigationController *WDnav = [[UINavigationController alloc]initWithRootViewController:mySelfVC];
     mySelfVC.tabBarItem.title = @"我的";
-    mySelfVC.tabBarItem.image = [[UIImage imageNamed:@"wode_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [mySelfVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    mySelfVC.tabBarItem.image = [[UIImage imageNamed:@"wode_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
     
     //知识
     KnowlageViewController *knowlageVC = [[KnowlageViewController alloc] init];
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
     ZSnav.tabBarItem.title = @"知识";
-    ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi2_32"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [ZSnav.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
     
     self.viewControllers = @[SYnav,ZSnav,SSnav,ZXnav,WDnav];
     
