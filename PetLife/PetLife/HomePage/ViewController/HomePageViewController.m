@@ -39,11 +39,11 @@
     consultingVC.tabBarController.tabBar.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:0.703];
     
     
-    //搜索
-    SearchViewController *searchVC = [[SearchViewController alloc]init];
-    UINavigationController *SSnav = [[UINavigationController alloc]initWithRootViewController:searchVC];
-    searchVC.tabBarItem.title = @"搜索";
-    searchVC.tabBarItem.image = [[UIImage imageNamed:@"sousuo_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    //搜索
+//    SearchViewController *searchVC = [[SearchViewController alloc]init];
+//    UINavigationController *SSnav = [[UINavigationController alloc]initWithRootViewController:searchVC];
+//    searchVC.tabBarItem.title = @"搜索";
+//    searchVC.tabBarItem.image = [[UIImage imageNamed:@"sousuo_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     //我的
@@ -60,7 +60,7 @@
     ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
-    self.viewControllers = @[SYnav,ZSnav,SSnav,ZXnav,WDnav];
+    self.viewControllers = @[SYnav,ZSnav,ZXnav,WDnav];
     
 
     
