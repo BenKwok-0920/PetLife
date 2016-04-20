@@ -20,19 +20,19 @@
 		C2376E6A1CC7151900BAEEA4 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = C2376E661CC7151900BAEEA4 /* style.css */; };
 		C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662221CC5C81D00E6C156 /* ConsultingViewController.m */; };
 		C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662281CC5C81D00E6C156 /* HomePageViewController.m */; };
-		C256624C1CC5C81D00E6C156 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C256623B1CC5C81D00E6C156 /* MySelfTableViewCell.m */; };
-		C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C256623D1CC5C81D00E6C156 /* MySelfViewController.m */; };
-		C256624E1CC5C81D00E6C156 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662431CC5C81D00E6C156 /* SearchViewController.m */; };
 		C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C25662511CC5C8E500E6C156 /* PetLife.txt */; };
 		C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3911CC091B40045CA99 /* MainPageViewController.m */; };
 		C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3A81CC096660045CA99 /* DownMenuTableViewController.m */; };
 		C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3AB1CC0997D0045CA99 /* DownMenuView.m */; };
-		C261E7631CC78910005196B4 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E75A1CC78910005196B4 /* FeedBackViewController.m */; };
-		C261E7641CC78910005196B4 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E75B1CC78910005196B4 /* FeedBackViewController.xib */; };
-		C261E7651CC78910005196B4 /* StatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E75D1CC78910005196B4 /* StatementViewController.m */; };
-		C261E7661CC78910005196B4 /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E75E1CC78910005196B4 /* StatementViewController.xib */; };
-		C261E7671CC78910005196B4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7601CC78910005196B4 /* AboutViewController.m */; };
-		C261E7681CC78910005196B4 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7611CC78910005196B4 /* AboutViewController.xib */; };
+		C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E76C1CC78B9C005196B4 /* AboutViewController.m */; };
+		C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E76D1CC78B9C005196B4 /* AboutViewController.xib */; };
+		C261E7781CC78B9C005196B4 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */; };
+		C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */; };
+		C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C261E7711CC78B9C005196B4 /* PetLife.txt */; };
+		C261E77B1CC78B9C005196B4 /* StatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7731CC78B9C005196B4 /* StatementViewController.m */; };
+		C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7741CC78B9C005196B4 /* StatementViewController.xib */; };
+		C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */; };
+		C261E7831CC78BEA005196B4 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7811CC78BEA005196B4 /* MySelfViewController.m */; };
 		C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7771CC4FD5B0028C40E /* MyTableCell.m */; };
 		C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7781CC4FD5B0028C40E /* MyTableCell.xib */; };
 		C276E77D1CC502030028C40E /* MyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E77C1CC502030028C40E /* MyImage.m */; };
@@ -85,12 +85,6 @@
 		C25662221CC5C81D00E6C156 /* ConsultingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultingViewController.m; sourceTree = "<group>"; };
 		C25662271CC5C81D00E6C156 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		C25662281CC5C81D00E6C156 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
-		C256623A1CC5C81D00E6C156 /* MySelfTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfTableViewCell.h; sourceTree = "<group>"; };
-		C256623B1CC5C81D00E6C156 /* MySelfTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfTableViewCell.m; sourceTree = "<group>"; };
-		C256623C1CC5C81D00E6C156 /* MySelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfViewController.h; sourceTree = "<group>"; };
-		C256623D1CC5C81D00E6C156 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
-		C25662421CC5C81D00E6C156 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		C25662431CC5C81D00E6C156 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		C25662511CC5C8E500E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
 		C259D3901CC091B40045CA99 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		C259D3911CC091B40045CA99 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
@@ -99,15 +93,20 @@
 		C259D3AA1CC0997D0045CA99 /* DownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownMenuView.h; sourceTree = "<group>"; };
 		C259D3AB1CC0997D0045CA99 /* DownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownMenuView.m; sourceTree = "<group>"; };
 		C259D3BA1CC0CCF20045CA99 /* PCHHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PCHHeader.pch; path = ../PCHHeader.pch; sourceTree = "<group>"; };
-		C261E7591CC78910005196B4 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
-		C261E75A1CC78910005196B4 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
-		C261E75B1CC78910005196B4 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
-		C261E75C1CC78910005196B4 /* StatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementViewController.h; sourceTree = "<group>"; };
-		C261E75D1CC78910005196B4 /* StatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementViewController.m; sourceTree = "<group>"; };
-		C261E75E1CC78910005196B4 /* StatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatementViewController.xib; sourceTree = "<group>"; };
-		C261E75F1CC78910005196B4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		C261E7601CC78910005196B4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		C261E7611CC78910005196B4 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		C261E76B1CC78B9C005196B4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C261E76C1CC78B9C005196B4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C261E76D1CC78B9C005196B4 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		C261E76E1CC78B9C005196B4 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
+		C261E7711CC78B9C005196B4 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
+		C261E7721CC78B9C005196B4 /* StatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementViewController.h; sourceTree = "<group>"; };
+		C261E7731CC78B9C005196B4 /* StatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementViewController.m; sourceTree = "<group>"; };
+		C261E7741CC78B9C005196B4 /* StatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatementViewController.xib; sourceTree = "<group>"; };
+		C261E77E1CC78BEA005196B4 /* MySelfTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfTableViewCell.h; sourceTree = "<group>"; };
+		C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfTableViewCell.m; sourceTree = "<group>"; };
+		C261E7801CC78BEA005196B4 /* MySelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfViewController.h; sourceTree = "<group>"; };
+		C261E7811CC78BEA005196B4 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
 		C276E7761CC4FD5B0028C40E /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
 		C276E7771CC4FD5B0028C40E /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
 		C276E7781CC4FD5B0028C40E /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableCell.xib; sourceTree = "<group>"; };
@@ -340,59 +339,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		C256622F1CC5C81D00E6C156 /* MySlfe */ = {
-			isa = PBXGroup;
-			children = (
-				C25662301CC5C81D00E6C156 /* Model */,
-				C261E7621CC78910005196B4 /* View */,
-				C25662391CC5C81D00E6C156 /* ViewCotroller */,
-			);
-			path = MySlfe;
-			sourceTree = "<group>";
-		};
-		C25662301CC5C81D00E6C156 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C25662391CC5C81D00E6C156 /* ViewCotroller */ = {
-			isa = PBXGroup;
-			children = (
-				C256623A1CC5C81D00E6C156 /* MySelfTableViewCell.h */,
-				C256623B1CC5C81D00E6C156 /* MySelfTableViewCell.m */,
-				C256623C1CC5C81D00E6C156 /* MySelfViewController.h */,
-				C256623D1CC5C81D00E6C156 /* MySelfViewController.m */,
-			);
-			path = ViewCotroller;
-			sourceTree = "<group>";
-		};
-		C256623E1CC5C81D00E6C156 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				C256623F1CC5C81D00E6C156 /* Model */,
-				C25662411CC5C81D00E6C156 /* ViewController */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		C256623F1CC5C81D00E6C156 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C25662411CC5C81D00E6C156 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C25662421CC5C81D00E6C156 /* SearchViewController.h */,
-				C25662431CC5C81D00E6C156 /* SearchViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		C259D38B1CC091B40045CA99 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,21 +407,43 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		C261E7621CC78910005196B4 /* View */ = {
+		C261E7691CC78B9C005196B4 /* MySlfe */ = {
 			isa = PBXGroup;
 			children = (
-				C261E7591CC78910005196B4 /* FeedBackViewController.h */,
-				C261E75A1CC78910005196B4 /* FeedBackViewController.m */,
-				C261E75B1CC78910005196B4 /* FeedBackViewController.xib */,
-				C261E75C1CC78910005196B4 /* StatementViewController.h */,
-				C261E75D1CC78910005196B4 /* StatementViewController.m */,
-				C261E75E1CC78910005196B4 /* StatementViewController.xib */,
-				C261E75F1CC78910005196B4 /* AboutViewController.h */,
-				C261E7601CC78910005196B4 /* AboutViewController.m */,
-				C261E7611CC78910005196B4 /* AboutViewController.xib */,
+				C261E77D1CC78BEA005196B4 /* ViewCotroller */,
+				C261E76A1CC78B9C005196B4 /* View */,
 			);
-			name = View;
-			path = "../../../../面试必备/PetLife/PetLife/MySlfe/View";
+			name = MySlfe;
+			path = Search/MySlfe;
+			sourceTree = "<group>";
+		};
+		C261E76A1CC78B9C005196B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C261E76B1CC78B9C005196B4 /* AboutViewController.h */,
+				C261E76C1CC78B9C005196B4 /* AboutViewController.m */,
+				C261E76D1CC78B9C005196B4 /* AboutViewController.xib */,
+				C261E76E1CC78B9C005196B4 /* FeedBackViewController.h */,
+				C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */,
+				C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */,
+				C261E7711CC78B9C005196B4 /* PetLife.txt */,
+				C261E7721CC78B9C005196B4 /* StatementViewController.h */,
+				C261E7731CC78B9C005196B4 /* StatementViewController.m */,
+				C261E7741CC78B9C005196B4 /* StatementViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C261E77D1CC78BEA005196B4 /* ViewCotroller */ = {
+			isa = PBXGroup;
+			children = (
+				C261E77E1CC78BEA005196B4 /* MySelfTableViewCell.h */,
+				C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */,
+				C261E7801CC78BEA005196B4 /* MySelfViewController.h */,
+				C261E7811CC78BEA005196B4 /* MySelfViewController.m */,
+			);
+			name = ViewCotroller;
+			path = ViewCotroller/ViewCotroller;
 			sourceTree = "<group>";
 		};
 		C2FE04961CBFDD740064377C = {
@@ -501,12 +469,11 @@
 		C2FE04A11CBFDD740064377C /* PetLife */ = {
 			isa = PBXGroup;
 			children = (
+				C261E7691CC78B9C005196B4 /* MySlfe */,
 				C259D38B1CC091B40045CA99 /* MainPage */,
 				C256621D1CC5C81D00E6C156 /* Consulting */,
 				C25662231CC5C81D00E6C156 /* HomePage */,
 				C25662291CC5C81D00E6C156 /* Knowlage */,
-				C256622F1CC5C81D00E6C156 /* MySlfe */,
-				C256623E1CC5C81D00E6C156 /* Search */,
 				C2FE04A51CBFDD740064377C /* AppDelegate.h */,
 				C2FE04A61CBFDD740064377C /* AppDelegate.m */,
 				C2FE04A81CBFDD740064377C /* ViewController.h */,
@@ -589,17 +556,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */,
 				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
 				C23004511CC52A5000C947D5 /* FootView.xib in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
-				C261E7681CC78910005196B4 /* AboutViewController.xib in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
+				C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */,
 				C2376E6A1CC7151900BAEEA4 /* style.css in Resources */,
-				C261E7661CC78910005196B4 /* StatementViewController.xib in Resources */,
+				C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */,
 				C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
-				C261E7641CC78910005196B4 /* FeedBackViewController.xib in Resources */,
+				C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */,
 				C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
 				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
@@ -632,18 +600,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C261E7831CC78BEA005196B4 /* MySelfViewController.m in Sources */,
 				C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */,
 				C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */,
 				C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */,
+				C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */,
 				C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */,
 				C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
 				C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
-				C261E7651CC78910005196B4 /* StatementViewController.m in Sources */,
 				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
-				C256624C1CC5C81D00E6C156 /* MySelfTableViewCell.m in Sources */,
 				C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */,
+				C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */,
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
@@ -653,17 +622,15 @@
 				C202DFDA1CC0EAA5007083CD /* UIBarButtonItem+Extension.m in Sources */,
 				C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */,
 				C276E7831CC508430028C40E /* ItemModel.m in Sources */,
-				C261E7631CC78910005196B4 /* FeedBackViewController.m in Sources */,
 				C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */,
+				C261E7781CC78B9C005196B4 /* FeedBackViewController.m in Sources */,
+				C261E77B1CC78B9C005196B4 /* StatementViewController.m in Sources */,
 				C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
 				C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */,
 				C276E77D1CC502030028C40E /* MyImage.m in Sources */,
 				C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */,
-				C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */,
 				C2376E681CC7151900BAEEA4 /* NSString+Html.m in Sources */,
-				C261E7671CC78910005196B4 /* AboutViewController.m in Sources */,
-				C256624E1CC5C81D00E6C156 /* SearchViewController.m in Sources */,
 				C276E7881CC5264A0028C40E /* FootView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

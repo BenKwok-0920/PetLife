@@ -1,5 +1,5 @@
 //
-//  ThirdViewController.h
+//  FourthViewController.h
 //  PetLife
 //
 //  Created by lanou3g on 16/4/14.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UIViewController
+@interface MySelfViewController : UIViewController
+
+
+
+
 
 @end

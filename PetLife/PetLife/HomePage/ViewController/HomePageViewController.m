@@ -9,7 +9,6 @@
 #import "HomePageViewController.h"
 #import "MainPageViewController.h"
 #import "ConsultingViewController.h"
-#import "SearchViewController.h"
 #import "MySelfViewController.h"
 #import "KnowlageViewController.h"
 
