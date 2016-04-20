@@ -10,8 +10,6 @@
 #import "MySelfTableViewCell.h"
 #import "FeedBackViewController.h"
 #import "StatementViewController.h"
-#import "AboutViewController.h"
-
 
 #define KVwidth self.view.frame.size.width
 #define KVheight self.view.frame.size.height
@@ -35,20 +33,22 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
+    //  self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:0.603];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
     //view
     self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
     
-//    _titleView.backgroundColor = [UIColor colorWithRed:1.000 green:0.502 blue:0.000 alpha:0.600];
-//    
+    _titleView.backgroundColor = [UIColor colorWithRed:1.000 green:0.400 blue:1.000 alpha:0.879];
+    
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
-    self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.image = [UIImage imageNamed:@"touxiang_128"];
+    
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
+
     self.tableMySelf.delegate = self;
     self.tableMySelf.dataSource = self;
     
@@ -101,13 +101,14 @@
             [self dianji];
             break;
         case 1:
+//      FeedBackViewController *feedBack = [[FeedBackViewController alloc]init];
         [self.navigationController pushViewController:[[FeedBackViewController alloc]init] animated:YES];
             break;
         case 2:
          [self.navigationController pushViewController:[[StatementViewController alloc]init] animated:YES];
             break;
         case 3:
-            [self.navigationController pushViewController:[[AboutViewController alloc]init] animated:YES];
+            NSLog(@"点击的第4个");
             break;
         default:
             break;

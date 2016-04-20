@@ -14,7 +14,7 @@
     
     if ([key isEqualToString:@"id"]) {
         
-        
+        _number = value;
         
     }
     

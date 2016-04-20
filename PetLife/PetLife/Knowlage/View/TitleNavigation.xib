@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,33 +10,41 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Tw-7Wd">
+                <stackView opaque="NO" tag="10000" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Tw-7Wd">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <button opaque="NO" tag="20001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-Ul-7xR">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="训练">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
+                            <state key="normal" title="训练"/>
+                            <connections>
+                                <action selector="firstButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="Dlj-rO-EmZ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="20002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-Md-GUy">
                             <rect key="frame" x="200" y="0.0" width="200" height="600"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="生活">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
+                            <state key="normal" title="生活"/>
+                            <connections>
+                                <action selector="secondButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="ocp-6e-s1y"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="20003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-9f-R11">
                             <rect key="frame" x="400" y="0.0" width="200" height="600"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="健康">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
+                            <state key="normal" title="健康"/>
+                            <connections>
+                                <action selector="thirdButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="n79-A7-lXs"/>
+                            </connections>
                         </button>
                     </subviews>
+                    <animations/>
                 </stackView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="fm3-Tw-7Wd" firstAttribute="top" secondItem="O2F-5B-Vr2" secondAttribute="top" id="9Ev-yP-gc2"/>
@@ -45,6 +52,11 @@
                 <constraint firstAttribute="bottom" secondItem="fm3-Tw-7Wd" secondAttribute="bottom" id="e7T-1i-UX8"/>
                 <constraint firstAttribute="trailing" secondItem="fm3-Tw-7Wd" secondAttribute="trailing" id="mE7-K6-Abz"/>
             </constraints>
+            <connections>
+                <outlet property="firstButton" destination="cF8-Ul-7xR" id="TAC-Mt-Yuu"/>
+                <outlet property="secondButton" destination="qPi-Md-GUy" id="xbv-fc-Ewp"/>
+                <outlet property="thirdButton" destination="1k5-9f-R11" id="Wok-u9-9TR"/>
+            </connections>
             <point key="canvasLocation" x="537" y="124"/>
         </view>
     </objects>

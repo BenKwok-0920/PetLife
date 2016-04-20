@@ -12,6 +12,7 @@
 
 +(instancetype)defaultManager{
 
+    
     static TitleNavigation *manager = nil;
     
     static dispatch_once_t onceToken;
@@ -22,18 +23,54 @@
     return manager;
 }
 
+-(instancetype)init{
+    [self.firstButton addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.secondButton addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.thirdButton addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    return self;
+}
+
 -(void)changeTextColorWith:(NSInteger)index{
 
-    UIView *temp = self.subviews.lastObject;
+    UIView *temp = [self viewWithTag:10000];
     
     for (UIButton *button in temp.subviews) {
         
-        button.titleLabel.textColor = [UIColor blackColor];
+        button.titleLabel.textColor = [UIColor redColor];
+        button.tintColor = [UIColor redColor];
+//        button.backgroundColor = [UIColor   greenColor];
     }
     
     UIButton *btn = (UIButton *)[self viewWithTag:20001 + index];
+//    btn.backgroundColor = [UIColor blueColor];
     btn.titleLabel.textColor = [UIColor blueColor];
     
+}
+
+-(void)buttonAction:(UIButton *)sender{
+
+    int a = (int)(sender.tag - 20001);
+    self.btnAction(a);
+    [self changeTextColorWith:a];
+    sender.titleLabel.textColor = [UIColor blueColor];
+}
+- (IBAction)firstButton:(UIButton *)sender {
+    int a = (int)(sender.tag - 20001);
+    self.btnAction(a);
+    [self changeTextColorWith:a];
+    sender.titleLabel.textColor = [UIColor blueColor];
+}
+- (IBAction)secondButton:(UIButton *)sender {
+    int a = (int)(sender.tag - 20001);
+    self.btnAction(a);
+    [self changeTextColorWith:a];
+    sender.titleLabel.textColor = [UIColor blueColor];
+}
+- (IBAction)thirdButton:(UIButton *)sender {
+    int a = (int)(sender.tag - 20001);
+    self.btnAction(a);
+    [self changeTextColorWith:a];
+    sender.titleLabel.textColor = [UIColor blueColor];
 }
 
 @end

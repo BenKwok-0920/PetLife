@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^buttonAction)(int index);
+
 @interface TitleNavigation : UIView
+@property (weak, nonatomic) IBOutlet UIButton *firstButton;
+@property (weak, nonatomic) IBOutlet UIButton *secondButton;
+@property (weak, nonatomic) IBOutlet UIButton *thirdButton;
+
+@property (nonatomic,copy)buttonAction btnAction;
 
 +(instancetype)defaultManager;
 

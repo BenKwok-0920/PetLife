@@ -13,9 +13,11 @@
 		C20325741CC21A8900CB7934 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325731CC21A8900CB7934 /* BaseModel.m */; };
 		C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257E1CC221A000CB7934 /* NetRequestManager.m */; };
 		C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325841CC2393C00CB7934 /* ScrollModel.m */; };
-		C2040C9B1CC658550073C6BF /* InitialAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2040C9A1CC658550073C6BF /* InitialAnimationViewController.m */; };
-		C2040C9D1CC65A280073C6BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2040C9C1CC65A280073C6BF /* Images.xcassets */; };
 		C23004511CC52A5000C947D5 /* FootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23004501CC52A5000C947D5 /* FootView.xib */; };
+		C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E611CC7151900BAEEA4 /* CycleScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		C2376E681CC7151900BAEEA4 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E631CC7151900BAEEA4 /* NSString+Html.m */; settings = {ASSET_TAGS = (); }; };
+		C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E651CC7151900BAEEA4 /* NSTimer+Addition.m */; settings = {ASSET_TAGS = (); }; };
+		C2376E6A1CC7151900BAEEA4 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = C2376E661CC7151900BAEEA4 /* style.css */; settings = {ASSET_TAGS = (); }; };
 		C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662221CC5C81D00E6C156 /* ConsultingViewController.m */; };
 		C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662281CC5C81D00E6C156 /* HomePageViewController.m */; };
 		C25662471CC5C81D00E6C156 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662331CC5C81D00E6C156 /* FeedBackViewController.m */; };
@@ -26,8 +28,7 @@
 		C256624C1CC5C81D00E6C156 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C256623B1CC5C81D00E6C156 /* MySelfTableViewCell.m */; };
 		C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C256623D1CC5C81D00E6C156 /* MySelfViewController.m */; };
 		C256624E1CC5C81D00E6C156 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662431CC5C81D00E6C156 /* SearchViewController.m */; };
-		C25662561CC5DE7C00E6C156 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662541CC5DE7C00E6C156 /* AboutViewController.m */; };
-		C25662571CC5DE7C00E6C156 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25662551CC5DE7C00E6C156 /* AboutViewController.xib */; };
+		C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C25662511CC5C8E500E6C156 /* PetLife.txt */; };
 		C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3911CC091B40045CA99 /* MainPageViewController.m */; };
 		C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3A81CC096660045CA99 /* DownMenuTableViewController.m */; };
 		C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C259D3AB1CC0997D0045CA99 /* DownMenuView.m */; };
@@ -38,10 +39,16 @@
 		C276E7831CC508430028C40E /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7821CC508430028C40E /* ItemModel.m */; };
 		C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7841CC50FEB0028C40E /* MyImage.xib */; };
 		C276E7881CC5264A0028C40E /* FootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7871CC5264A0028C40E /* FootView.m */; };
-		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
-		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; };
-		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; };
-		C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */; };
+		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C811CC61F4800F8BC7B /* KnowlageTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C821CC61F4800F8BC7B /* KnowlageTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C861CC664F000F8BC7B /* KnowlageHeader.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C881CC6650A00F8BC7B /* KnowlageHeader.xib */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
 		C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A61CBFDD740064377C /* AppDelegate.m */; };
 		C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A91CBFDD740064377C /* ViewController.m */; };
@@ -65,10 +72,14 @@
 		C20325811CC2281200CB7934 /* ConstantsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
 		C20325831CC2393C00CB7934 /* ScrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollModel.h; sourceTree = "<group>"; };
 		C20325841CC2393C00CB7934 /* ScrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollModel.m; sourceTree = "<group>"; };
-		C2040C991CC658550073C6BF /* InitialAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialAnimationViewController.h; sourceTree = "<group>"; };
-		C2040C9A1CC658550073C6BF /* InitialAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialAnimationViewController.m; sourceTree = "<group>"; };
-		C2040C9C1CC65A280073C6BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C23004501CC52A5000C947D5 /* FootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootView.xib; sourceTree = "<group>"; };
+		C2376E601CC7151900BAEEA4 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		C2376E611CC7151900BAEEA4 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		C2376E621CC7151900BAEEA4 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
+		C2376E631CC7151900BAEEA4 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		C2376E641CC7151900BAEEA4 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		C2376E651CC7151900BAEEA4 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		C2376E661CC7151900BAEEA4 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		C25662211CC5C81D00E6C156 /* ConsultingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultingViewController.h; sourceTree = "<group>"; };
 		C25662221CC5C81D00E6C156 /* ConsultingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultingViewController.m; sourceTree = "<group>"; };
 		C25662271CC5C81D00E6C156 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
@@ -76,7 +87,7 @@
 		C25662321CC5C81D00E6C156 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		C25662331CC5C81D00E6C156 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		C25662341CC5C81D00E6C156 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
-		C25662351CC5C81D00E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PetLife.txt; path = MySlfe/View/PetLife.txt; sourceTree = "<group>"; };
+		C25662351CC5C81D00E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
 		C25662361CC5C81D00E6C156 /* StatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementViewController.h; sourceTree = "<group>"; };
 		C25662371CC5C81D00E6C156 /* StatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementViewController.m; sourceTree = "<group>"; };
 		C25662381CC5C81D00E6C156 /* StatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatementViewController.xib; sourceTree = "<group>"; };
@@ -86,9 +97,7 @@
 		C256623D1CC5C81D00E6C156 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
 		C25662421CC5C81D00E6C156 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		C25662431CC5C81D00E6C156 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		C25662531CC5DE7C00E6C156 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		C25662541CC5DE7C00E6C156 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		C25662551CC5DE7C00E6C156 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		C25662511CC5C8E500E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
 		C259D3901CC091B40045CA99 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		C259D3911CC091B40045CA99 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		C259D3A71CC096660045CA99 /* DownMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownMenuTableViewController.h; sourceTree = "<group>"; };
@@ -115,6 +124,15 @@
 		C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleNavigation.xib; sourceTree = "<group>"; };
 		C2EE7C7D1CC5DD8800F8BC7B /* KnowlageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KnowlageModel.h; path = PetLife/Knowlage/View/KnowlageModel.h; sourceTree = SOURCE_ROOT; };
 		C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KnowlageModel.m; path = PetLife/Knowlage/View/KnowlageModel.m; sourceTree = SOURCE_ROOT; };
+		C2EE7C801CC61F4800F8BC7B /* KnowlageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageTableViewCell.h; sourceTree = "<group>"; };
+		C2EE7C811CC61F4800F8BC7B /* KnowlageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageTableViewCell.m; sourceTree = "<group>"; };
+		C2EE7C821CC61F4800F8BC7B /* KnowlageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageTableViewCell.xib; sourceTree = "<group>"; };
+		C2EE7C851CC664F000F8BC7B /* KnowlageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageHeader.h; sourceTree = "<group>"; };
+		C2EE7C861CC664F000F8BC7B /* KnowlageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageHeader.m; sourceTree = "<group>"; };
+		C2EE7C881CC6650A00F8BC7B /* KnowlageHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageHeader.xib; sourceTree = "<group>"; };
+		C2EE7C8A1CC66B3C00F8BC7B /* KnowlageInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageInfoViewController.h; sourceTree = "<group>"; };
+		C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageInfoViewController.m; sourceTree = "<group>"; };
+		C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageInfoViewController.xib; sourceTree = "<group>"; };
 		C2FE049F1CBFDD740064377C /* PetLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FE04A31CBFDD740064377C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2FE04A51CBFDD740064377C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -181,6 +199,7 @@
 		C203257C1CC2217800CB7934 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				C2376E5F1CC7151900BAEEA4 /* HTML */,
 				C203257D1CC221A000CB7934 /* NetRequestManager.h */,
 				C203257E1CC221A000CB7934 /* NetRequestManager.m */,
 				C20325801CC227ED00CB7934 /* URLHeaderDifine.h */,
@@ -189,6 +208,20 @@
 			);
 			name = Tool;
 			path = PetLife/Tool;
+			sourceTree = "<group>";
+		};
+		C2376E5F1CC7151900BAEEA4 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				C2376E601CC7151900BAEEA4 /* CycleScrollView.h */,
+				C2376E611CC7151900BAEEA4 /* CycleScrollView.m */,
+				C2376E621CC7151900BAEEA4 /* NSString+Html.h */,
+				C2376E631CC7151900BAEEA4 /* NSString+Html.m */,
+				C2376E641CC7151900BAEEA4 /* NSTimer+Addition.h */,
+				C2376E651CC7151900BAEEA4 /* NSTimer+Addition.m */,
+				C2376E661CC7151900BAEEA4 /* style.css */,
+			);
+			path = HTML;
 			sourceTree = "<group>";
 		};
 		C256621D1CC5C81D00E6C156 /* Consulting */ = {
@@ -244,8 +277,6 @@
 		C25662251CC5C81D00E6C156 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C2040C991CC658550073C6BF /* InitialAnimationViewController.h */,
-				C2040C9A1CC658550073C6BF /* InitialAnimationViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +315,12 @@
 				C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */,
 				C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */,
 				C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */,
+				C2EE7C801CC61F4800F8BC7B /* KnowlageTableViewCell.h */,
+				C2EE7C811CC61F4800F8BC7B /* KnowlageTableViewCell.m */,
+				C2EE7C821CC61F4800F8BC7B /* KnowlageTableViewCell.xib */,
+				C2EE7C851CC664F000F8BC7B /* KnowlageHeader.h */,
+				C2EE7C861CC664F000F8BC7B /* KnowlageHeader.m */,
+				C2EE7C881CC6650A00F8BC7B /* KnowlageHeader.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +330,9 @@
 			children = (
 				C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */,
 				C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */,
+				C2EE7C8A1CC66B3C00F8BC7B /* KnowlageInfoViewController.h */,
+				C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */,
+				C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -320,12 +360,10 @@
 				C25662321CC5C81D00E6C156 /* FeedBackViewController.h */,
 				C25662331CC5C81D00E6C156 /* FeedBackViewController.m */,
 				C25662341CC5C81D00E6C156 /* FeedBackViewController.xib */,
+				C25662351CC5C81D00E6C156 /* PetLife.txt */,
 				C25662361CC5C81D00E6C156 /* StatementViewController.h */,
 				C25662371CC5C81D00E6C156 /* StatementViewController.m */,
 				C25662381CC5C81D00E6C156 /* StatementViewController.xib */,
-				C25662531CC5DE7C00E6C156 /* AboutViewController.h */,
-				C25662541CC5DE7C00E6C156 /* AboutViewController.m */,
-				C25662551CC5DE7C00E6C156 /* AboutViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,10 +516,9 @@
 				C2FE04AB1CBFDD740064377C /* Main.storyboard */,
 				C2FE04AE1CBFDD740064377C /* Assets.xcassets */,
 				C2FE04B01CBFDD740064377C /* LaunchScreen.storyboard */,
-				C25662351CC5C81D00E6C156 /* PetLife.txt */,
+				C25662511CC5C8E500E6C156 /* PetLife.txt */,
 				C2FE04B31CBFDD740064377C /* Info.plist */,
 				C259D3AF1CC0C9F30045CA99 /* Frameworks */,
-				C2040C9C1CC65A280073C6BF /* Images.xcassets */,
 				C2FE04A21CBFDD740064377C /* Supporting Files */,
 			);
 			path = PetLife;
@@ -554,16 +591,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
 				C23004511CC52A5000C947D5 /* FootView.xib in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C25662491CC5C81D00E6C156 /* PetLife.txt in Resources */,
+				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
 				C25662481CC5C81D00E6C156 /* FeedBackViewController.xib in Resources */,
+				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
+				C2376E6A1CC7151900BAEEA4 /* style.css in Resources */,
 				C256624B1CC5C81D00E6C156 /* StatementViewController.xib in Resources */,
 				C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
+				C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
-				C25662571CC5DE7C00E6C156 /* AboutViewController.xib in Resources */,
-				C2040C9D1CC65A280073C6BF /* Images.xcassets in Resources */,
 				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
 				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
 			);
@@ -594,10 +634,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */,
+				C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */,
 				C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */,
 				C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */,
 				C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
+				C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
 				C256624C1CC5C81D00E6C156 /* MySelfTableViewCell.m in Sources */,
@@ -605,8 +648,6 @@
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
-				C25662561CC5DE7C00E6C156 /* AboutViewController.m in Sources */,
-				C2040C9B1CC658550073C6BF /* InitialAnimationViewController.m in Sources */,
 				C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */,
 				C25662471CC5C81D00E6C156 /* FeedBackViewController.m in Sources */,
 				C256624A1CC5C81D00E6C156 /* StatementViewController.m in Sources */,
@@ -618,8 +659,11 @@
 				C259D3A91CC096660045CA99 /* DownMenuTableViewController.m in Sources */,
 				C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
+				C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */,
 				C276E77D1CC502030028C40E /* MyImage.m in Sources */,
+				C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */,
 				C256624D1CC5C81D00E6C156 /* MySelfViewController.m in Sources */,
+				C2376E681CC7151900BAEEA4 /* NSString+Html.m in Sources */,
 				C256624E1CC5C81D00E6C156 /* SearchViewController.m in Sources */,
 				C276E7881CC5264A0028C40E /* FootView.m in Sources */,
 			);
