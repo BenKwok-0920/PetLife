@@ -172,6 +172,34 @@
     _titleNavigation.btnAction = ^(int index){
     
         ssself.mainScrollView.contentOffset = CGPointMake(ScreenWidth * index, 0);
+        
+        
+        if (index == 0) {
+            mark = 0;
+            [ssself.titleNavigation changeTextColorWith:0];
+            if (ssself.firstArray.count <= 0) {
+                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
+            }
+            
+        }else if (index == 1){
+            mark = 1;
+            [ssself.titleNavigation changeTextColorWith:1];
+            if (self.firstArray.count <= 0) {
+                //        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+            }
+        }
+        else{
+            mark = 2;
+            [ssself.titleNavigation changeTextColorWith:2];
+            if (ssself.thirdArray.count <= 0) {
+                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
+            }
+            
+        }
+
+        
+        
+        
     };
     [_titleNavigation changeTextColorWith:0];
     [tempView addSubview:_titleNavigation];
@@ -260,6 +288,8 @@
     }
     
 }
+
+
 
 
 #pragma mark --- tableViewdelegate  -----
