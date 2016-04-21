@@ -36,6 +36,7 @@
     
     //干掉view
     [self.starVC removeFromSuperview];
+
 }
 
 - (void)viewDidLoad {

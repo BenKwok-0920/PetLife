@@ -1,5 +1,5 @@
 //
-//  StartViewController.h
+//  MainPageInfoVC.h
 //  PetLife
 //
 //  Created by lanou3g on 16/4/21.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartViewController : UIView
+@interface MainPageInfoVC : UIViewController
+
+@property (nonatomic,strong)NSString *mainID;
 
 @end

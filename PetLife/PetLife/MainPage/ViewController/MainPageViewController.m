@@ -7,287 +7,231 @@
 //
 
 #import "MainPageViewController.h"
-#import "DownMenuTableViewController.h"
-#import "DownMenuView.h"
-#import "NetRequestManager.h"
-#import "ScrollModel.h"
-#import <UIImageView+WebCache.h>
-#import <SDCycleScrollView.h>
-//#import "MyCell.h"
-#import "MyTableCell.h"
-#import "CellModel.h"
-#import "ItemModel.h"
-
-#import "FootView.h"
-
+#import "NavTitleView.h"
+#import "MainModel.h"
+#import "MainPageTVCell.h"
 #define reuseID @"cell"
+#import <UIImageView+WebCache.h>
+#import "MainPageInfoVC.h"
 
-@interface MainPageViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface MainPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
-@property (nonatomic,strong)NSMutableArray *scrollArray;
+@property (nonatomic,strong)NavTitleView *navTitleView;
 
-@property (nonatomic,strong)NSArray *arr;
+@property (nonatomic,strong)NSMutableArray *cellArray1;
+@property (nonatomic,strong)NSMutableArray *cellArray2;
 
-// tableView
-@property (nonatomic,strong)UITableView *tableV;
 
-@property (nonatomic,strong)SDCycleScrollView *cycleScroll;
+@property (nonatomic,strong)UIScrollView *mainScroll;
 
-@property (nonatomic,strong)NSMutableArray *cellArr;
+@property (nonatomic,assign)CGFloat cellHeight;
 
-@property (nonatomic,strong)NSMutableArray *itemArr;
+@property (nonatomic,assign)int markNum;
 
+@property (nonatomic,strong)UITableView *tableView1;
+
+@property (nonatomic,strong)UITableView *tableView2;
 
 @end
 
 @implementation MainPageViewController
 
-// 单例 scrollView的数组
-- (NSMutableArray *)scrollArray{
-    if (!_scrollArray) {
-        _scrollArray = [NSMutableArray array];
+
+- (NSMutableArray *)cellArray1{
+    if (!_cellArray1) {
+        _cellArray1 = [NSMutableArray array];
     }
-    return _scrollArray;
+    return _cellArray1;
 }
 
-- (NSMutableArray *)imgArr{
-    if (!_imgArr) {
-        _imgArr = [NSMutableArray array];
+- (NSMutableArray *)cellArray2{
+    if (!_cellArray2) {
+        _cellArray2 = [NSMutableArray array];
     }
-    return _imgArr;
+    return _cellArray2;
 }
 
-- (NSMutableArray *)titArr{
-    if (!_titArr) {
-        _titArr = [NSMutableArray array];
-    }
-    return _titArr;
-}
-
-- (NSArray *)arr{
-    if (!_arr) {
-        _arr = [NSMutableArray array];
-    }
-    return _arr;
-}
-
-- (NSMutableArray *)cellArr{
-    if (!_cellArr) {
-        _cellArr = [NSMutableArray array];
-    }
-    return _cellArr;
-}
-
-- (NSMutableArray *)itemArr{
-    if (!_itemArr) {
-        _itemArr = [NSMutableArray array];
-    }
-    return _itemArr;
-}
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"首页";
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
     
+    self.markNum = 1;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"caidan_16"] style:(UIBarButtonItemStyleDone) target:self action:@selector(CDitemAction:)];
+    self.navTitleView = [[[NSBundle mainBundle] loadNibNamed:@"NavTitleView" owner:nil options:nil] lastObject];
+    self.navTitleView.frame = CGRectMake(0, 0, ScreenWidth - 150, 44);
+    self.navTitleView.titleBtn1.backgroundColor = [UIColor clearColor];
+    self.navTitleView.titleBtn2.backgroundColor = [UIColor clearColor];
+    // !!!:在此处设置头标题的按钮图片
+    self.navTitleView.backgroundColor = [UIColor clearColor];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
-    [self requestData];
-
+    self.navigationItem.titleView = self.navTitleView;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
     
+    // 创建scrollView
+    self.mainScroll = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.mainScroll.contentSize = CGSizeMake(ScreenWidth * 2, 0);
+    self.mainScroll.pagingEnabled = YES;
+    self.mainScroll.delegate = self;
+    [self.view addSubview:self.mainScroll];
+    
+    self.tableView1 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 48 - 64) style:(UITableViewStylePlain)];
+    self.tableView1.delegate = self;
+    self.tableView1.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView1.dataSource = self;
+    self.tableView1.hidden = YES;
+    [self.tableView1 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
+    [self.mainScroll addSubview:self.tableView1];
+    
+    self.tableView2 = [[UITableView alloc] initWithFrame:CGRectMake(ScreenWidth, 0, ScreenWidth, ScreenHeight - 48 - 64) style:(UITableViewStylePlain)];
+    self.tableView2.delegate = self;
+    self.tableView2.dataSource = self;
+    self.tableView2.hidden = YES;
+    self.tableView2.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
+    [self.mainScroll addSubview:self.tableView2];
+    
+    [self requestDataWithURL:MAINPAGE_URL1];
+//    [self requestDataWithURL:MAINPAGE_URL2];
+//    [self requestData2];
     
 }
 
-// 首页点击出现菜单的方法
-- (void)CDitemAction:(id)sender {
-    
-    DownMenuView *downMenuView = [DownMenuView menu];
-    
-    DownMenuTableViewController *menu = [[DownMenuTableViewController alloc]init];
-    menu.view.height = 150;
-    menu.view.width = 120;
-    downMenuView.contentController = menu;
-    
-    [downMenuView showFrom:sender];
-    
-    
-}
 
-- (void)requestData{
-    // 请求数据
-    [NetRequestManager requestWithType:GET URLString:MAINPAGE_URL parDic:nil finish:^(NSData *data) {
+- (void)requestDataWithURL:(NSString *)url{
+    [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
         
-       // NSLog(@"data = %@",data);
+        NSError *dicError = nil;
         
-        NSError *error = nil;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:&dicError];
         
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:&error];
-        if (!error) {
-            // 解析数据
-            self.arr = [dic objectForKey:@"data"];
-            // arr 里面的第0个字典 就是scrollView的数据
-            NSDictionary *scrollDic = self.arr[0];
-            NSArray *scArr = [scrollDic objectForKey:@"data"];
-            for (NSDictionary *scDic in scArr) {
-                NSLog(@"创建model了");
-                ScrollModel *model = [[ScrollModel alloc] init];
-                [model setValuesForKeysWithDictionary:scDic];
-                [self.scrollArray addObject:model];
-                [self.imgArr addObject:model.img];
-                [self.titArr addObject:model.text];
+        if (self.markNum == 1) {
+            if (self.cellArray1.count > 0) {
+                [self.cellArray1 removeAllObjects];
             }
+        }else{
+            if (self.cellArray2.count > 0) {
+                [self.cellArray2 removeAllObjects];
+            }
+        }
+        
+        if (!dicError) {
             
-            // arr里面的第2到第8个字典 是collecetionView的数据
-            for (NSDictionary *tableDic in self.arr) {
-                if ([[NSString stringWithFormat:@"%@",[tableDic objectForKey:@"is_more"]] isEqualToString:@"1"] && ((NSArray *)[tableDic objectForKey:@"data"]).count > 0) {
-                    CellModel *cellModel = [[CellModel alloc] init];
-                    [cellModel setValuesForKeysWithDictionary:tableDic];
-                    [self.cellArr addObject:cellModel];
-                    
-                    // item
-                    NSArray *itemArr = [tableDic objectForKey:@"data"];
-                    for (NSDictionary *itemDic in itemArr) {
-                        ItemModel *itemModel = [[ItemModel alloc] init];
-                        [itemModel setValuesForKeysWithDictionary:itemDic];
-                        [self.itemArr addObject:itemModel];
-                    }
+            NSArray *array = [dic objectForKey:@"result"];
+            
+            for (NSDictionary *resultDic in array) {
+                MainModel *model = [[MainModel alloc] init];
+                [model setValuesForKeysWithDictionary:resultDic];
+                if (self.markNum == 1) {
+                    [self.cellArray1 addObject:model];
+                }else if(self.markNum == 2){
+                    [self.cellArray2 addObject:model];
                 }
+                
             }
             
-            // 创建scrollView
             dispatch_async(dispatch_get_main_queue(), ^{
-//                [self createScrollView];
-                [self.tableV reloadData];
-                // 创建下面的模块
-                [self createCollect];
+                if (self.markNum == 1) {
+                    self.tableView1.hidden = NO;
+                    [self.tableView1 reloadData];
+            }else{
+                    self.tableView2.hidden = NO;
+                    [self.tableView2 reloadData];
+            }
             });
             
             
-            
         }else{
-            NSLog(@"数据解析失败,error=%@",error);
+            NSLog(@"数据解析失败了");
         }
         
     } error:^(NSError *error) {
-        NSLog(@"首页请求数据失败!!!%@",error);
+        NSLog(@"数据请求失败");
     }];
 }
 
-
-- (void)createScrollView{
-    
-    self.cycleScroll = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ImgHeight) delegate:self placeholderImage:nil];
-    self.cycleScroll.imageURLStringsGroup = self.imgArr;
-    
-    self.cycleScroll.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    
-    self.cycleScroll.titlesGroup = self.titArr;
-    
-    self.cycleScroll.autoScrollTimeInterval = 3.5;
-    
-    self.cycleScroll.delegate = self;
-    
-    self.cycleScroll.pageControlDotSize = CGSizeMake(20, 20);
-    
-    
-    [self.view addSubview:self.cycleScroll];
-    
-}
-
-/** 点击图片回调 */
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    
-}
-
-- (void)createCollect{
-    
-    self.tableV = [[UITableView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 48)];
-    
-    self.tableV.allowsSelection = NO;
-    
-    self.tableV.bounces = NO;
-    
-    [self createScrollView];
-    
-    self.tableV.tableHeaderView = self.cycleScroll;
-    
-//    FootView *footView = [[FootView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 96)];
-    FootView *footView = [[[NSBundle mainBundle] loadNibNamed:@"FootView" owner:nil options:nil] lastObject];
-    footView.frame = CGRectMake(0, 0, ScreenWidth, 70);
-    footView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
-    
-    self.tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    self.tableV.tableFooterView = footView;
-    
-    [self.tableV registerClass:[MyTableCell class] forCellReuseIdentifier:reuseID];
-    
-    self.tableV.delegate = self;
-    self.tableV.dataSource = self;
-    
-    [self.view addSubview:self.tableV];
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 15+160+8+17+8+self.cellHeight+15;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"%ld",self.arr.count);
-    return self.cellArr.count;
+    if (self.markNum == 1) {
+        NSLog(@"arr1 = %ld",self.cellArray1.count);
+        return self.cellArray1.count;
+    }else{
+        NSLog(@"arr2 = %ld",self.cellArray2.count);
+        return self.cellArray2.count;
+    }
+    
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 15;
-}
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MyTableCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
-    CellModel *cellModel = self.cellArr[indexPath.row];
-    cell.titleLabel.text = cellModel.title;
+    MainPageTVCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID forIndexPath:indexPath];
     
+    MainModel *model = nil;
     
+    if (self.markNum == 1) {
+        
+        model = [self.cellArray1 objectAtIndex:indexPath.row];
+    }else{
+        model = [self.cellArray2 objectAtIndex:indexPath.row];
+        
+    }
+    [cell.titleImg sd_setImageWithURL:[NSURL URLWithString:model.titleImg] placeholderImage:nil];
+    cell.titleLabel.text = model.title;
     
-    ItemModel *itemModel1 = self.itemArr[indexPath.row * 4];
-    [cell.myImg1.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel1.img] placeholderImage:nil];
-    cell.myImg1.itemLabel.text = itemModel1.text;
+    NSString *contentStr = [model.summary stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+    NSString *conStr = [contentStr stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+    cell.contentLabel.text = conStr;
+    CGSize size = [cell.contentLabel.text sizeWithFont:cell.contentLabel.font constrainedToSize:CGSizeMake(ScreenWidth - 60, 100000) lineBreakMode:(NSLineBreakByWordWrapping)];
+    cell.contentLabel.frame = CGRectMake(30, CGRectGetMaxY(cell.titleLabel.frame) + 8, ScreenWidth - 60, size.height);
+    [cell.contentView addSubview:cell.contentLabel];
     
-    ItemModel *itemModel2 = self.itemArr[indexPath.row * 4 + 1];
-    [cell.myImg2.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel2.img] placeholderImage:nil];
-    cell.myImg2.itemLabel.text = itemModel2.text;
-    
-    ItemModel *itemModel3 = self.itemArr[indexPath.row * 4 + 2];
-    [cell.myImg3.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel3.img] placeholderImage:nil];
-    cell.myImg3.itemLabel.text = itemModel3.text;
-    
-    ItemModel *itemModel4 = self.itemArr[indexPath.row * 4 + 3];
-    [cell.myImg4.itemImg sd_setImageWithURL:[NSURL URLWithString:itemModel4.img] placeholderImage:nil];
-    cell.myImg4.itemLabel.text = itemModel4.text;
-    
-    
+    self.cellHeight = cell.contentLabel.frame.size.height;
     
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return collectHeight - 8;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    MainPageInfoVC *infoVC = [[MainPageInfoVC alloc] init];
+    MainModel *model = nil;
+    if (self.markNum == 1) {
+        model = [self.cellArray1 objectAtIndex:indexPath.row];
+    }else{
+        model = [self.cellArray2 objectAtIndex:indexPath.row];
+    }
+    infoVC.mainID = model.mainID;
+    
+    // push
+    [self.navigationController pushViewController:infoVC animated:YES];
+    
 }
 
 
-
-
-
-
-
-
-
-
-
-
+#pragma mark - scrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    int temp = self.mainScroll.contentOffset.x / ScreenWidth;
+    if (temp == 0) {
+        self.markNum = 1;
+        if (self.cellArray1.count != 0) {
+            return;
+        }
+        [self requestDataWithURL:MAINPAGE_URL1];
+    }else{
+        self.markNum = 2;
+        if (self.cellArray2.count != 0) {
+            return;
+        }
+        [self requestDataWithURL:MAINPAGE_URL2];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
