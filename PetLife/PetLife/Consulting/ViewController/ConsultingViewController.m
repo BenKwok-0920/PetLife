@@ -8,6 +8,7 @@
 
 #import "ConsultingViewController.h"
 
+
 @interface ConsultingViewController ()
 
 @end
@@ -16,10 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navigationItem.title = @"咨询";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
-    // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+
 }
 
 - (void)didReceiveMemoryWarning {

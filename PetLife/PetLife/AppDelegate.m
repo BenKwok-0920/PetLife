@@ -24,11 +24,7 @@
     self.window.rootViewController = [[HomePageViewController alloc]init];
     [self.window makeKeyWindow];
     
-    
-    
-    
-    
-    
+
     return YES;
 }
 

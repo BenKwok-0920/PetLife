@@ -33,6 +33,9 @@
 		C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7741CC78B9C005196B4 /* StatementViewController.xib */; };
 		C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */; };
 		C261E7831CC78BEA005196B4 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7811CC78BEA005196B4 /* MySelfViewController.m */; };
+		C261E78C1CC7A03E005196B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */; };
+		C261E7901CC7A31B005196B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E78F1CC7A31B005196B4 /* Reachability.m */; };
+		C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7931CC7A442005196B4 /* KnowlageModel.m */; };
 		C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7771CC4FD5B0028C40E /* MyTableCell.m */; };
 		C276E77A1CC4FD5B0028C40E /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7781CC4FD5B0028C40E /* MyTableCell.xib */; };
 		C276E77D1CC502030028C40E /* MyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E77C1CC502030028C40E /* MyImage.m */; };
@@ -43,7 +46,6 @@
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
 		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; };
 		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; };
-		C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */; };
 		C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C811CC61F4800F8BC7B /* KnowlageTableViewCell.m */; };
 		C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C821CC61F4800F8BC7B /* KnowlageTableViewCell.xib */; };
 		C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C861CC664F000F8BC7B /* KnowlageHeader.m */; };
@@ -107,6 +109,11 @@
 		C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfTableViewCell.m; sourceTree = "<group>"; };
 		C261E7801CC78BEA005196B4 /* MySelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfViewController.h; sourceTree = "<group>"; };
 		C261E7811CC78BEA005196B4 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
+		C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C261E78E1CC7A31B005196B4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C261E78F1CC7A31B005196B4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C261E7921CC7A442005196B4 /* KnowlageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageModel.h; sourceTree = "<group>"; };
+		C261E7931CC7A442005196B4 /* KnowlageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageModel.m; sourceTree = "<group>"; };
 		C276E7761CC4FD5B0028C40E /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
 		C276E7771CC4FD5B0028C40E /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
 		C276E7781CC4FD5B0028C40E /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableCell.xib; sourceTree = "<group>"; };
@@ -124,8 +131,6 @@
 		C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleNavigation.h; sourceTree = "<group>"; };
 		C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleNavigation.m; sourceTree = "<group>"; };
 		C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleNavigation.xib; sourceTree = "<group>"; };
-		C2EE7C7D1CC5DD8800F8BC7B /* KnowlageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KnowlageModel.h; path = PetLife/Knowlage/View/KnowlageModel.h; sourceTree = SOURCE_ROOT; };
-		C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KnowlageModel.m; path = PetLife/Knowlage/View/KnowlageModel.m; sourceTree = SOURCE_ROOT; };
 		C2EE7C801CC61F4800F8BC7B /* KnowlageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageTableViewCell.h; sourceTree = "<group>"; };
 		C2EE7C811CC61F4800F8BC7B /* KnowlageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageTableViewCell.m; sourceTree = "<group>"; };
 		C2EE7C821CC61F4800F8BC7B /* KnowlageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageTableViewCell.xib; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C261E78C1CC7A03E005196B4 /* SystemConfiguration.framework in Frameworks */,
 				9B3F7F8DF8A8D17ECCEB3500 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +169,7 @@
 		179AEA317A0E11D66C69F753 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */,
 				EBE1D9FB3E700A4BACC6306B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -229,25 +236,10 @@
 		C256621D1CC5C81D00E6C156 /* Consulting */ = {
 			isa = PBXGroup;
 			children = (
-				C256621E1CC5C81D00E6C156 /* Model */,
-				C256621F1CC5C81D00E6C156 /* View */,
+				C261E78D1CC7A31B005196B4 /* model */,
 				C25662201CC5C81D00E6C156 /* ViewController */,
 			);
 			path = Consulting;
-			sourceTree = "<group>";
-		};
-		C256621E1CC5C81D00E6C156 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C256621F1CC5C81D00E6C156 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C25662201CC5C81D00E6C156 /* ViewController */ = {
@@ -295,20 +287,11 @@
 		C25662291CC5C81D00E6C156 /* Knowlage */ = {
 			isa = PBXGroup;
 			children = (
-				C256622A1CC5C81D00E6C156 /* Model */,
+				C261E7911CC7A442005196B4 /* model */,
 				C256622D1CC5C81D00E6C156 /* View */,
 				C256622E1CC5C81D00E6C156 /* ViewController */,
 			);
 			path = Knowlage;
-			sourceTree = "<group>";
-		};
-		C256622A1CC5C81D00E6C156 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C2EE7C7D1CC5DD8800F8BC7B /* KnowlageModel.h */,
-				C2EE7C7E1CC5DD8800F8BC7B /* KnowlageModel.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C256622D1CC5C81D00E6C156 /* View */ = {
@@ -444,6 +427,24 @@
 			);
 			name = ViewCotroller;
 			path = ViewCotroller/ViewCotroller;
+			sourceTree = "<group>";
+		};
+		C261E78D1CC7A31B005196B4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C261E78E1CC7A31B005196B4 /* Reachability.h */,
+				C261E78F1CC7A31B005196B4 /* Reachability.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C261E7911CC7A442005196B4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C261E7921CC7A442005196B4 /* KnowlageModel.h */,
+				C261E7931CC7A442005196B4 /* KnowlageModel.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		C2FE04961CBFDD740064377C = {
@@ -611,9 +612,9 @@
 				C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
-				C2EE7C7F1CC5DD8800F8BC7B /* KnowlageModel.m in Sources */,
 				C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */,
 				C259D3A01CC091B40045CA99 /* MainPageViewController.m in Sources */,
+				C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C202DFDB1CC0EAA5007083CD /* UIView+Extension.m in Sources */,
 				C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */,
@@ -627,6 +628,7 @@
 				C261E77B1CC78B9C005196B4 /* StatementViewController.m in Sources */,
 				C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
+				C261E7901CC7A31B005196B4 /* Reachability.m in Sources */,
 				C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */,
 				C276E77D1CC502030028C40E /* MyImage.m in Sources */,
 				C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */,

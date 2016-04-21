@@ -37,8 +37,7 @@
     for (UIButton *button in temp.subviews) {
         
         button.titleLabel.textColor = [UIColor redColor];
-        button.tintColor = [UIColor redColor];
-//        button.backgroundColor = [UIColor   greenColor];
+        button.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
     }
     
     UIButton *btn = (UIButton *)[self viewWithTag:20001 + index];

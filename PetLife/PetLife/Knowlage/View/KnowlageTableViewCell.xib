@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,21 +16,18 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3F-yt-Xjh">
                         <rect key="frame" x="13" y="11" width="554" height="175"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T12-dC-2Xr">
                         <rect key="frame" x="13" y="11" width="100" height="175"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="hyO-OX-YTN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-r5-v1w">
                         <rect key="frame" x="133" y="11" width="434" height="20"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="brh-ld-1wK"/>
                         </constraints>
@@ -40,13 +37,11 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-bU-aKc">
                         <rect key="frame" x="133" y="41" width="434" height="145"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="ceJ-r5-v1w" firstAttribute="leading" secondItem="T12-dC-2Xr" secondAttribute="trailing" constant="20" id="3I4-FZ-NiR"/>
                     <constraint firstItem="T12-dC-2Xr" firstAttribute="bottom" secondItem="T3F-yt-Xjh" secondAttribute="bottom" id="8gf-oE-5NC"/>
@@ -64,7 +59,6 @@
                     <constraint firstItem="ceJ-r5-v1w" firstAttribute="top" secondItem="T3F-yt-Xjh" secondAttribute="top" id="xQw-Qz-Aln"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="contentLabel" destination="Rwx-bU-aKc" id="Qff-Ux-Ok1"/>
                 <outlet property="iconImageView" destination="T12-dC-2Xr" id="sgr-lo-zKr"/>

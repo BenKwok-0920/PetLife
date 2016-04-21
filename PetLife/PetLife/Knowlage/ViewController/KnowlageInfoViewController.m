@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     

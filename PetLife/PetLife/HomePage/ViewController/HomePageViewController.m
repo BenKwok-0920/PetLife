@@ -12,6 +12,9 @@
 #import "MySelfViewController.h"
 #import "KnowlageViewController.h"
 
+
+#import "Reachability.h"
+#import "MBProgressHUD.h"
 @interface HomePageViewController ()
 
 @end
@@ -51,7 +54,40 @@
     
     self.viewControllers = @[SYnav,ZSnav,ZXnav,WDnav];
     
+    [self isConnectionAvailable];
     
+}
+
+-(BOOL) isConnectionAvailable{
+    
+    BOOL isExistenceNetwork = YES;
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
+    switch ([reach currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = NO;
+            //NSLog(@"notReachable");
+            break;
+        case ReachableViaWiFi:
+            isExistenceNetwork = YES;
+            //NSLog(@"WIFI");
+            break;
+        case ReachableViaWWAN:
+            isExistenceNetwork = YES;
+            //NSLog(@"3G");
+            break;
+    }
+    
+    if (!isExistenceNetwork) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];//<span style="font-family: Arial, Helvetica, sans-serif;">MBProgressHUD为第三方库，不需要可以省略或使用AlertView</span>
+        hud.removeFromSuperViewOnHide =YES;
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"网络连接失败";
+        hud.minSize = CGSizeMake(132.f, 108.0f);
+        [hud hide:YES afterDelay:3];
+        return NO;
+    }
+    
+    return isExistenceNetwork;
 }
 
 - (void)didReceiveMemoryWarning {
