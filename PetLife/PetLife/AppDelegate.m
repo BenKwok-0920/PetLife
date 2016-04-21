@@ -16,15 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-   
     
-    self.window = [[UIWindow alloc]init];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[HomePageViewController alloc]init];
+    self.window.rootViewController =[[HomePageViewController alloc]init];
+
     [self.window makeKeyWindow];
     
-
+    [NSThread sleepForTimeInterval:0.1];
+    
     return YES;
 }
 

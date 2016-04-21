@@ -43,6 +43,7 @@
 		C276E7831CC508430028C40E /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7821CC508430028C40E /* ItemModel.m */; };
 		C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C276E7841CC50FEB0028C40E /* MyImage.xib */; };
 		C276E7881CC5264A0028C40E /* FootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276E7871CC5264A0028C40E /* FootView.m */; };
+		C29750D21CC903160088B3C9 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29750D11CC903160088B3C9 /* StartViewController.m */; };
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
 		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; };
 		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; };
@@ -126,6 +127,8 @@
 		C276E7841CC50FEB0028C40E /* MyImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyImage.xib; sourceTree = "<group>"; };
 		C276E7861CC5264A0028C40E /* FootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootView.h; sourceTree = "<group>"; };
 		C276E7871CC5264A0028C40E /* FootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootView.m; sourceTree = "<group>"; };
+		C29750D01CC903160088B3C9 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		C29750D11CC903160088B3C9 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
 		C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageViewController.m; sourceTree = "<group>"; };
 		C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleNavigation.h; sourceTree = "<group>"; };
@@ -255,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				C25662241CC5C81D00E6C156 /* Model */,
-				C25662251CC5C81D00E6C156 /* View */,
+				C29750CC1CC902E70088B3C9 /* View */,
 				C25662261CC5C81D00E6C156 /* ViewController */,
 			);
 			path = HomePage;
@@ -266,13 +269,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		C25662251CC5C81D00E6C156 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C25662261CC5C81D00E6C156 /* ViewController */ = {
@@ -447,6 +443,16 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		C29750CC1CC902E70088B3C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C29750D01CC903160088B3C9 /* StartViewController.h */,
+				C29750D11CC903160088B3C9 /* StartViewController.m */,
+			);
+			name = View;
+			path = "../../../../张家旗/PetLife/PetLife/HomePage/View";
+			sourceTree = "<group>";
+		};
 		C2FE04961CBFDD740064377C = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +612,7 @@
 				C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */,
 				C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */,
 				C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */,
+				C29750D21CC903160088B3C9 /* StartViewController.m in Sources */,
 				C259D3AC1CC0997D0045CA99 /* DownMenuView.m in Sources */,
 				C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
