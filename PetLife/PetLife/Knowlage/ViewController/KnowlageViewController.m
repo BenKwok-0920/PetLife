@@ -18,6 +18,8 @@
 
 #import "KnowlageInfoViewController.h"
 
+#import "LORefresh.h"
+
 
 @interface KnowlageViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -39,6 +41,11 @@
 @property (nonatomic,strong)AFHTTPSessionManager *session;
 @property (nonatomic,strong)UIActivityIndicatorView *indView;
 
+@property (nonatomic,strong)UIView *view11;
+
+@property (nonatomic,assign)NSInteger firstRequestSize;
+@property (nonatomic,assign)NSInteger secondRequestSize;
+@property (nonatomic,assign)NSInteger thirdRequestSize;
 
 @end
 
@@ -77,16 +84,25 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
     
     mark = 0;
+    _firstRequestSize = 15;
+    _secondRequestSize = 15;
+    _thirdRequestSize = 15;
     
     _session = [AFHTTPSessionManager manager];
     _session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
     //设置是否开启状态栏动画
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
-     [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self loadTitleNavigation];
+    
+     [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.secondArray];
+//        
+//        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
+//    });
+   
     
     
    
@@ -95,12 +111,22 @@
 #pragma mark --- requestData ----
 
 -(void)requestDataWithMark:(NSString *)url withArray:(NSMutableArray *)array{
+    self.view11 = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.view11.backgroundColor = [UIColor blackColor];
+    self.view11.alpha = 0.5;
+//    [self.view addSubview:self.view11];
     
     [_session GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        
+        
 //        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:(NSJSONReadingAllowFragments) error:nil];
+        
+//        [array removeAllObjects];
+        
         NSDictionary *dic = responseObject;
         NSArray *arr = [dic objectForKey:@"data"];
         for (NSDictionary *dictionary in arr) {
@@ -118,6 +144,8 @@
             [array addObject:model];
         }
         
+        [self.view11 removeFromSuperview];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
            
             if (!_mainScrollView) {
@@ -125,14 +153,18 @@
             }
             KnowlageHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"KnowlageHeader" owner:nil options:nil] lastObject];
             header.frame = CGRectMake(0,64, ScreenWidth, (433.0 / 650.0) * ScreenWidth);
-            [header setDataWithModel:array[0]];
+            if (array.count > 0) {
+                [header setDataWithModel:array[0]];
+            }
+            
             if (mark == 0) {
-
-                self.firstTableView.tableHeaderView = header;
+                
+                    self.firstTableView.tableHeaderView = header;
                 
                 [self.firstTableView reloadData];
-            }else if (mark == 1){
+//                [self.firstTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
                 
+            }else if (mark == 1){
                 self.secondTableView.tableHeaderView = header;
                 
                 [self.secondTableView reloadData];
@@ -143,18 +175,20 @@
             
         });
         
-        NSLog(@"----- %@",responseObject);
-        
-        NSLog(@"firstArray%@",self.firstArray);
+//        NSLog(@"----- %@",responseObject);
+//        
+//        NSLog(@"firstArray%@",self.firstArray);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self.view11 removeFromSuperview];
         NSLog(@"失败");
     }];
     
-    _indView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    _indView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    _indView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     //添加方法用于直接绑定任务
     [_indView setAnimatingWithStateOfTask:_session.tasks[0]];
-    _indView.center = CGPointMake(100, 150);
+    _indView.center = _indView.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
     [self.view addSubview:_indView];
     [_indView startAnimating];
     
@@ -177,20 +211,28 @@
         if (index == 0) {
             mark = 0;
             [ssself.titleNavigation changeTextColorWith:0];
+            ssself.firstTableView.scrollsToTop = YES;
+            [ssself.firstTableView reloadData];
+//            [ssself.firstTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
             if (ssself.firstArray.count <= 0) {
                 [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
             }
             
         }else if (index == 1){
             mark = 1;
+            ssself.secondTableView.scrollsToTop = YES;
             [ssself.titleNavigation changeTextColorWith:1];
-            if (self.firstArray.count <= 0) {
-                //        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+            [ssself.secondTableView reloadData];
+            if (ssself.secondArray.count <= 0) {
+                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
             }
         }
         else{
             mark = 2;
+            ssself.thirdTableView.scrollsToTop = YES;
             [ssself.titleNavigation changeTextColorWith:2];
+            [ssself.thirdTableView reloadData];
+//            ssself.thirdTableView.clearsContextBeforeDrawing = YES;
             if (ssself.thirdArray.count <= 0) {
                 [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
             }
@@ -247,45 +289,116 @@
      [self.thirdTableView registerNib:[UINib nibWithNibName:@"KnowlageTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.mainScrollView addSubview:self.thirdTableView];
     
+    
+    //上拉刷新  下拉加载
+    
+    __weak KnowlageViewController *ssself = self;
+    
+    [self.firstTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
+        [ssself.firstTableView.gifHeader endRefreshing];
+        [ssself.firstArray removeAllObjects];
+        [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
+    }];
+    [self.firstTableView.gifHeader setGifName:@"test"];
+    
+    
+    [self.secondTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
+        [ssself.secondTableView.gifHeader endRefreshing];
+        [ssself.secondArray removeAllObjects];
+        [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
+    }];
+    [self.secondTableView.gifHeader setGifName:@"test"];
+    
+    
+    [self.thirdTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
+        [ssself.thirdTableView.gifHeader endRefreshing];
+        [ssself.thirdArray removeAllObjects];
+        [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
+    }];
+    [self.thirdTableView.gifHeader setGifName:@"test"];
+    
+    //下拉加载
+    
+    [self.firstTableView addRefreshWithRefreshViewType:(LORefreshViewTypeFooterDefault) refreshingBlock:^{
+//        ssself.requestSize += 15;
+        [ssself.firstTableView.defaultFooter endRefreshing];
+        [ssself requestDataWithMark:[NSString stringWithFormat:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=%ld&size=%ld&site_id=15532&slide_num=5",ssself.firstRequestSize,(ssself.firstRequestSize += 15)] withArray:ssself.firstArray];
+    }];
+    
+    
+//    if (ssself.secondArray.count <= ssself.secondRequestSize) {
+    [self.secondTableView addRefreshWithRefreshViewType:(LORefreshViewTypeFooterDefault) refreshingBlock:^{
+        //        ssself.requestSize += 15;
+        [ssself.firstTableView.defaultFooter endRefreshing];
+        [ssself requestDataWithMark:[NSString stringWithFormat:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=%ld&size=%ld&site_id=15532&slide_num=5",ssself.secondRequestSize,(ssself.secondRequestSize += 15)] withArray:ssself.secondArray];
+    }];
+//      }
+    
+    [self.thirdTableView addRefreshWithRefreshViewType:(LORefreshViewTypeFooterDefault) refreshingBlock:^{
+        //        ssself.requestSize += 15;
+        [ssself.firstTableView.defaultFooter endRefreshing];
+        [ssself requestDataWithMark:[NSString stringWithFormat:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=%ld&size=%ld&site_id=15532&slide_num=5",ssself.thirdRequestSize,(ssself.thirdRequestSize += 15)] withArray:ssself.thirdArray];
+    }];
+    
+    
 }
 
 #pragma mark ---- scrollView  ----
 
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-
-  
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+//    
+//    NSLog(@"222");
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    NSLog(@"111");
+    
     
     
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    int tap = (int)(scrollView.contentOffset.x / ScreenWidth);
-    if (tap == 0) {
-        mark = 0;
-        [_titleNavigation changeTextColorWith:0];
-        if (self.firstArray.count <= 0) {
+    
+//    NSLog(@"333");
+    
+    if (scrollView == self.mainScrollView) {
+        
+        int tap = (int)(scrollView.contentOffset.x / ScreenWidth);
+        if (tap == 0) {
+            mark = 0;
+            [_titleNavigation changeTextColorWith:0];
+            if (self.firstArray.count != 0) {
+                return;
+            }
+            
             [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+            
+        }else if (tap == 1){
+            mark = 1;
+            [_titleNavigation changeTextColorWith:1];
+            [self.secondTableView reloadData];
+            if (self.secondArray.count != 0) {
+                return;
+            }
+            
+            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.secondArray];
         }
-        
-    }else if (tap == 1){
-        mark = 1;
-        [_titleNavigation changeTextColorWith:1];
-        if (self.firstArray.count <= 0) {
-//        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
-        }
-    }
-    else{
-        mark = 2;
-        [_titleNavigation changeTextColorWith:2];
-        if (self.thirdArray.count <= 0) {
+        else{
+            mark = 2;
+            [_titleNavigation changeTextColorWith:2];
+            if (self.thirdArray.count != 0) {
+                return;
+            }
+            [self.thirdTableView reloadData];
             [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
+            
         }
         
+        
     }
+
     
 }
 
@@ -312,13 +425,20 @@
     KnowlageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     KnowlageModel *model;
     if (mark == 0) {
-        model = self.firstArray[indexPath.row];
+        if (self.firstArray.count > 0) {
+            model = self.firstArray[indexPath.row];
+        }
     }else if(mark == 1){
-        model = self.secondArray[indexPath.row];
+        if (self.secondArray.count > 0) {
+            model = self.secondArray[indexPath.row];
+        }
+        
     }else{
-        model = self.thirdArray[indexPath.row];
+        if (self.thirdArray.count > 0) {
+            model = self.thirdArray[indexPath.row];
+        }
+        
     }
-    
     
     
     [cell setDataWithModel:model];
@@ -336,14 +456,22 @@
     KnowlageInfoViewController *knowlageInfoVC = [[KnowlageInfoViewController alloc] init];
     KnowlageModel *model;
     if (mark == 0) {
-        model = self.firstArray[indexPath.row];
-        knowlageInfoVC.number = model.number;
+        if (self.firstArray.count > 0) {
+            model = self.firstArray[indexPath.row];
+            knowlageInfoVC.number = model.number;
+        }
+        
     }else if(mark == 1){
-        model = self.secondArray[indexPath.row];
-        knowlageInfoVC.number = model.number;
+        if (self.secondArray.count > 0) {
+            model = self.secondArray[indexPath.row];
+            knowlageInfoVC.number = model.number;
+        }
     }else{
-        model = self.thirdArray[indexPath.row];
-        knowlageInfoVC.number = model.number;
+        
+        if (self.thirdArray.count > 0) {
+            model = self.thirdArray[indexPath.row];
+            knowlageInfoVC.number = model.number;
+        }
     }
     
     [self.navigationController pushViewController:knowlageInfoVC animated:YES];

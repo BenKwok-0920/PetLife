@@ -36,40 +36,40 @@
     
     for (UIButton *button in temp.subviews) {
         
-        button.titleLabel.textColor = [UIColor redColor];
-        button.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
+        button.titleLabel.textColor = [UIColor blackColor];
+        button.tintColor = [UIColor colorWithRed:0.098 green:0.098 blue:0.098 alpha:1.0];
     }
     
     UIButton *btn = (UIButton *)[self viewWithTag:20001 + index];
 //    btn.backgroundColor = [UIColor blueColor];
-    btn.titleLabel.textColor = [UIColor blueColor];
-    
+//    btn.titleLabel.textColor = [UIColor colorWithRed:0.0 green:0.3804 blue:1.0 alpha:1.0];
+    btn.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
 }
 
 -(void)buttonAction:(UIButton *)sender{
 
     int a = (int)(sender.tag - 20001);
     self.btnAction(a);
-    [self changeTextColorWith:a];
-    sender.titleLabel.textColor = [UIColor blueColor];
+//    [self changeTextColorWith:a];
+//    sender.titleLabel.textColor = [UIColor blueColor];
 }
 - (IBAction)firstButton:(UIButton *)sender {
     int a = (int)(sender.tag - 20001);
     self.btnAction(a);
-    [self changeTextColorWith:a];
-    sender.titleLabel.textColor = [UIColor blueColor];
+//    [self changeTextColorWith:a];
+//    sender.titleLabel.textColor = [UIColor blueColor];
 }
 - (IBAction)secondButton:(UIButton *)sender {
     int a = (int)(sender.tag - 20001);
     self.btnAction(a);
-    [self changeTextColorWith:a];
-    sender.titleLabel.textColor = [UIColor blueColor];
+//    [self changeTextColorWith:a];
+//    sender.titleLabel.textColor = [UIColor blueColor];
 }
 - (IBAction)thirdButton:(UIButton *)sender {
     int a = (int)(sender.tag - 20001);
     self.btnAction(a);
-    [self changeTextColorWith:a];
-    sender.titleLabel.textColor = [UIColor blueColor];
+//    [self changeTextColorWith:a];
+//    sender.titleLabel.textColor = [UIColor blueColor];
 }
 
 @end
