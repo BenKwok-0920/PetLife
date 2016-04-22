@@ -10,10 +10,5 @@
 
 @interface MainPageViewController : UIViewController
 
-// 网络图片数组
-@property (nonatomic,strong)NSMutableArray *imgArr;
-
-// 滚动图标题数组
-@property (nonatomic,strong)NSMutableArray *titArr;
 
 @end

@@ -9,8 +9,13 @@
 #ifndef URLHeaderDifine_h
 #define URLHeaderDifine_h
 
-// 首页详情
-#define MAINPAGE_URL @"http://sdxapp.com/api/geta.html?act=GetIndexData&mquan_id=774&F=android&V=1.0.0&key=1460623299629&sign=f5336e9b9632b0e4a70cd94e&user_id="
+// 首页详情1
+#define MAINPAGE_URL1 @"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=1"
+// 首页详情2
+#define MAINPAGE_URL2 @"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=1"
+
+// 首页点进去
+#define MAININFO_URL @"http://wecarepet.com/api/blog/blog/get?id="
 
 
 
