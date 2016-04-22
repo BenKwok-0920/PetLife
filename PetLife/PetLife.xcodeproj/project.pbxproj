@@ -15,7 +15,6 @@
 		C22D93BE1CC9B79C0055CEA6 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B91CC9B79C0055CEA6 /* demo.gif */; settings = {ASSET_TAGS = (); }; };
 		C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D93BB1CC9B79C0055CEA6 /* LORefresh.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C22D93C01CC9B79C0055CEA6 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93BC1CC9B79C0055CEA6 /* test.gif */; settings = {ASSET_TAGS = (); }; };
-		C23004511CC52A5000C947D5 /* FootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23004501CC52A5000C947D5 /* FootView.xib */; };
 		C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E611CC7151900BAEEA4 /* CycleScrollView.m */; };
 		C2376E681CC7151900BAEEA4 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E631CC7151900BAEEA4 /* NSString+Html.m */; };
 		C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E651CC7151900BAEEA4 /* NSTimer+Addition.m */; };
