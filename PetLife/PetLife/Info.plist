@@ -41,5 +41,64 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
+=======
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo </key>
+			<dict/>
+			<key>UIApplicationShortcutItemType</key>
+			<string>one</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>First</string>
+			<key>UIApplicationShortcutIcon </key>
+			<string>sousuo_black_16</string>
+			<key>UIApplicationShortcutItemIconFile  </key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo </key>
+			<dict/>
+			<key>UIApplicationShortcutItemType</key>
+			<string>two</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>第二个</string>
+			<key>UIApplicationShortcutIcon </key>
+			<string></string>
+			<key>UIApplicationShortcutItemIconFile  </key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo </key>
+			<dict/>
+			<key>UIApplicationShortcutItemType</key>
+			<string>there</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>第三个</string>
+			<key>UIApplicationShortcutIcon </key>
+			<string></string>
+			<key>UIApplicationShortcutItemIconFile  </key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo </key>
+			<dict/>
+			<key>UIApplicationShortcutItemType</key>
+			<string>four</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>第四个</string>
+			<key>UIApplicationShortcutIcon </key>
+			<string></string>
+			<key>UIApplicationShortcutItemIconFile  </key>
+			<string></string>
+		</dict>
+	</array>
+>>>>>>> c660bf3132937f2da25ad0327941ee77ab71cfed
 </dict>
 </plist>
