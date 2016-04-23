@@ -24,6 +24,14 @@
 
     [self.window makeKeyWindow];
     
+    UIImage *draw = [UIImage imageNamed:@"pinkcolor_background.png"];
+    
+    UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
+    
+    [drawView setFrame:CGRectMake(0, 0, ScreenWidth,ScreenHeight)];
+    
+    [self.window addSubview:drawView];
+    
     [NSThread sleepForTimeInterval:0.1];
     
     return YES;

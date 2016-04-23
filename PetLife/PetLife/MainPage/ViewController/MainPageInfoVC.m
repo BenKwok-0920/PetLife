@@ -7,9 +7,10 @@
 //
 
 #import "MainPageInfoVC.h"
-#import "NSString+Html.h"
 
-@interface MainPageInfoVC ()
+@interface MainPageInfoVC ()<UIScrollViewDelegate,UIWebViewDelegate>
+
+@property (nonatomic,strong)UIImageView *backImg;
 
 @end
 
@@ -19,6 +20,9 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.backImg = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _backImg.image = [UIImage imageNamed:@"loading.gif"];
+    [self.view addSubview:_backImg];
     
     NSString *urlStr = [MAININFO_URL stringByAppendingString:self.mainID];
     
@@ -37,23 +41,24 @@
         NSString *titleStr = [resuDic objectForKey:@"title"];
         NSLog(@"title = %@",titleStr);
         
-//        NSString *str = [NSString importStyleWithHtmlString:htmlStr];
+        
         
         NSString *newHtmlStr = [htmlStr stringByAppendingString:[NSString stringWithFormat:@"<head><style>img{width:%fpx !important;}</style></head>",ScreenWidth - 15]];
+        
         
         // 创建webView
         dispatch_async(dispatch_get_main_queue(), ^{
             
+            
+            
             UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 48)];
+            
+            webView.backgroundColor = [UIColor clearColor];
             
             webView.scalesPageToFit = NO;
             
-            UIScrollView *scroller = [webView.subviews objectAtIndex:0];
-            if (scroller){
-                scroller.bounces = NO;
-                scroller.alwaysBounceVertical = NO;
-                scroller.alwaysBounceHorizontal = NO;
-            }
+            webView.delegate = self;
+            
             
             // 去掉webView反弹效果
             [(UIScrollView *)[[webView subviews] objectAtIndex:0] setBounces:NO];
@@ -65,7 +70,7 @@
             titleLabel.backgroundColor = [UIColor whiteColor];
             titleLabel.text = titleStr;
             titleLabel.textColor = [UIColor grayColor];
-            //            titleLabel.textAlignment = NSTextAlignmentNatural;
+//          titleLabel.textAlignment = NSTextAlignmentNatural;
             titleLabel.numberOfLines = 0;
             titleLabel.font = [UIFont systemFontOfSize:20];
             
@@ -73,8 +78,15 @@
             
             [webView.scrollView addSubview:titleView];
             
+            webView.scrollView.contentOffset = CGPointMake(0, -100);
+            
+            webView.scrollView.showsHorizontalScrollIndicator = NO;
+            
+            webView.scrollView.delegate = self;
             
             webView.scrollView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+            webView.scrollView.backgroundColor = [UIColor clearColor];
+            
             
             webView.scalesPageToFit = NO;
             
@@ -83,12 +95,27 @@
             NSURL *baseURL = [NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath];
             
             [webView loadHTMLString:newHtmlStr baseURL:baseURL];
+            
+            
         });
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败了 error = %@",error);
     }];
     
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint point = scrollView.contentOffset;
+    if (point.x > 0) {
+        scrollView.contentOffset = CGPointMake(0, point.y);//这里不要设置为CGPointMake(0, point.y)，这样我们在文章下面左右滑动的时候，就跳到文章的起始位置，不科学
+    }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    [_backImg removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
