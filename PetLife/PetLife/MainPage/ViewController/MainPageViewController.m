@@ -14,8 +14,8 @@
 #import <UIImageView+WebCache.h>
 #import "MainPageInfoVC.h"
 #import <MJRefreshNormalHeader.h>
-#import <MJRefreshAutoFooter.h>
 #import <MJRefreshAutoNormalFooter.h>
+#import "LORefresh.h"
 
 @interface MainPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -118,25 +118,8 @@
     [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
     [self.mainScroll addSubview:self.tableView2];
     
-    // 下拉刷新
-    self.tableView1.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self requestDataWithURL:MAINPAGE_URL1];
-        [self.tableView1.header endRefreshing];
-    }];
-    
-    self.tableView2.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self requestDataWithURL:MAINPAGE_URL2];
-        [self.tableView2.header endRefreshing];
-    }];
-    
-    __block int i = 2;
-    
-    //上拉加载
-    self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self requestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
-        i++;
-    }];
-    
+    // 刷新
+    [self refeshData];
     
     [self requestDataWithURL:MAINPAGE_URL1];
     
@@ -144,6 +127,11 @@
 
 
 
+
+
+
+
+// 请求数据
 - (void)requestDataWithURL:(NSString *)url{
     [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
         
@@ -156,11 +144,11 @@
         
         if (self.markNum == 1) {
             
-            if (self.cellArray1.count > 0 && [smallStr isEqualToString:@"page=1"]) {
+            if (self.cellArray1.count > 0) {
                 [self.cellArray1 removeAllObjects];
             }
         }else{
-            if (self.cellArray2.count > 0 && [smallStr isEqualToString:@"page=1"]) {
+            if (self.cellArray2.count > 0) {
                 [self.cellArray2 removeAllObjects];
             }
         }
@@ -200,11 +188,78 @@
     }];
 }
 
+// 上拉加载数据的方法
+- (void)refreshRequestDataWithURL:(NSString *)url{
+    [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
+        
+        NSError *dicError = nil;
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:&dicError];
+        
+        NSString *smallStr = [url substringFromIndex:url.length - 6];
+        NSLog(@"%@",smallStr);
+        
+//        if (self.markNum == 1) {
+//            
+//            if (self.cellArray1.count > 0 && [smallStr isEqualToString:@"page=1"]) {
+//                [self.cellArray1 removeAllObjects];
+//            }
+//        }else{
+//            if (self.cellArray2.count > 0 && [smallStr isEqualToString:@"page=1"]) {
+//                [self.cellArray2 removeAllObjects];
+//            }
+//        }
+        
+        if (!dicError) {
+            
+            NSArray *array = [dic objectForKey:@"result"];
+            
+            NSMutableArray *arr1 = [NSMutableArray arrayWithArray:self.cellArray1];
+            
+            for (NSDictionary *resultDic in array) {
+                MainModel *model = [[MainModel alloc] init];
+                [model setValuesForKeysWithDictionary:resultDic];
+                if (self.markNum == 1) {
+                    [self.cellArray1 addObject:model];
+                }else if(self.markNum == 2){
+                    [self.cellArray2 addObject:model];
+                }
+                
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (self.markNum == 1) {
+                    self.tableView1.hidden = NO;
+                    [self.tableView1 reloadData];
+//                    [self.tableView1 scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:arr1.count-1 inSection:0] atScrollPosition:(UITableViewScrollPositionBottom) animated:YES];
+                }else{
+                    self.tableView2.hidden = NO;
+                    [self.tableView2 reloadData];
+                }
+            });
+            
+            
+            
+            
+        }else{
+            NSLog(@"数据解析失败了");
+        }
+        
+    } error:^(NSError *error) {
+        NSLog(@"数据请求失败");
+    }];
+}
+
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
     return 15+160+8+17+8+self.cellHeight+15;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     if (self.markNum == 1) {
         NSLog(@"arr1 = %ld",self.cellArray1.count);
         return self.cellArray1.count;
@@ -266,7 +321,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     float temp = self.mainScroll.contentOffset.x / ScreenWidth;
-    NSLog(@"%f",temp);
+//    NSLog(@"%f",temp);
 //    float ttp = CGRectGetMinX(self.selectView.frame) / (CGRectGetMinX(self.navTitleView.titleBtn2.frame) - CGRectGetMinX(self.navTitleView.titleBtn1.frame));
 //    ttp = temp;
     CGPoint point = self.selectView.frame.origin;
@@ -326,6 +381,80 @@
     [self requestDataWithURL:MAINPAGE_URL2];
     
 }
+
+
+#pragma mark - MJRefesh
+- (void)refeshData{
+    
+    // 下拉刷新
+    self.tableView1.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        NSLog(@"下拉刷新了");
+        [self requestDataWithURL:MAINPAGE_URL1];
+        [self.tableView1.header endRefreshing];
+    }];
+    
+    self.tableView2.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        NSLog(@"下拉刷新了");
+        [self requestDataWithURL:MAINPAGE_URL2];
+        [self.tableView2.header endRefreshing];
+    }];
+    
+    
+    
+    
+    //上拉加载
+    __block int i = 2;
+    self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        NSLog(@"上拉加载数据了!!! i = %d",i);
+        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
+        i++;
+        [self.tableView1.mj_footer endRefreshing];
+    }];
+    
+    __block int j = 2;
+    self.tableView2.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        NSLog(@"上拉加载数据了!!! j = %d",j);
+        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
+        NSLog(@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j);
+        j++;
+        [self.tableView2.mj_footer endRefreshing];
+    }];
+}
+
+- (void)loRefeshData{
+    [self.tableView1 addRefreshWithRefreshViewType:LORefreshViewTypeHeaderDefault refreshingBlock:^{
+        NSLog(@"下拉刷新了");
+        [self requestDataWithURL:MAINPAGE_URL1];
+        [self.tableView1.defaultHeader endRefreshing];
+    }];
+    [self.tableView2 addRefreshWithRefreshViewType:LORefreshViewTypeHeaderDefault refreshingBlock:^{
+        NSLog(@"下拉刷新了");
+        [self requestDataWithURL:MAINPAGE_URL2];
+        [self.tableView2.defaultHeader endRefreshing];
+    }];
+    
+    
+    __block int i = 2;
+    [self.tableView1 addRefreshWithRefreshViewType:LORefreshViewTypeFooterDefault refreshingBlock:^{
+        
+        NSLog(@"上拉加载数据了!!! i = %d",i);
+        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
+        i++;
+        
+        [self.tableView1.defaultFooter endRefreshing];
+        
+    }];
+    
+    __block int j = 2;
+    [self.tableView2 addRefreshWithRefreshViewType:LORefreshViewTypeFooterDefault refreshingBlock:^{
+        NSLog(@"上拉加载数据了!!! j = %d",j);
+        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
+        j++;
+        [self.tableView2.defaultFooter endRefreshing];
+    }];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

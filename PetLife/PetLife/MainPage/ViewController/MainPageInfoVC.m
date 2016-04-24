@@ -78,6 +78,7 @@
             
             [webView.scrollView addSubview:titleView];
             
+            // 去掉黑色框框
             webView.scrollView.contentOffset = CGPointMake(0, -100);
             
             webView.scrollView.showsHorizontalScrollIndicator = NO;

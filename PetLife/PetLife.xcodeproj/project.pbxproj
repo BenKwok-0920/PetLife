@@ -10,11 +10,10 @@
 		9B3F7F8DF8A8D17ECCEB3500 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE1D9FB3E700A4BACC6306B /* libPods.a */; };
 		C20325741CC21A8900CB7934 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325731CC21A8900CB7934 /* BaseModel.m */; };
 		C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257E1CC221A000CB7934 /* NetRequestManager.m */; };
-		C20325851CC2393C00CB7934 /* ScrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325841CC2393C00CB7934 /* ScrollModel.m */; };
-		C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B81CC9B79C0055CEA6 /* arrow@2x.png */; settings = {ASSET_TAGS = (); }; };
-		C22D93BE1CC9B79C0055CEA6 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B91CC9B79C0055CEA6 /* demo.gif */; settings = {ASSET_TAGS = (); }; };
+		C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B81CC9B79C0055CEA6 /* arrow@2x.png */; };
+		C22D93BE1CC9B79C0055CEA6 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B91CC9B79C0055CEA6 /* demo.gif */; };
 		C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D93BB1CC9B79C0055CEA6 /* LORefresh.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C22D93C01CC9B79C0055CEA6 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93BC1CC9B79C0055CEA6 /* test.gif */; settings = {ASSET_TAGS = (); }; };
+		C22D93C01CC9B79C0055CEA6 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = C22D93BC1CC9B79C0055CEA6 /* test.gif */; };
 		C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E611CC7151900BAEEA4 /* CycleScrollView.m */; };
 		C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E651CC7151900BAEEA4 /* NSTimer+Addition.m */; };
 		C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662221CC5C81D00E6C156 /* ConsultingViewController.m */; };
@@ -70,14 +69,11 @@
 		C203257E1CC221A000CB7934 /* NetRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestManager.m; sourceTree = "<group>"; };
 		C20325801CC227ED00CB7934 /* URLHeaderDifine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeaderDifine.h; sourceTree = "<group>"; };
 		C20325811CC2281200CB7934 /* ConstantsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
-		C20325831CC2393C00CB7934 /* ScrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollModel.h; sourceTree = "<group>"; };
-		C20325841CC2393C00CB7934 /* ScrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollModel.m; sourceTree = "<group>"; };
 		C22D93B81CC9B79C0055CEA6 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		C22D93B91CC9B79C0055CEA6 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		C22D93BA1CC9B79C0055CEA6 /* LORefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORefresh.h; sourceTree = "<group>"; };
 		C22D93BB1CC9B79C0055CEA6 /* LORefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LORefresh.m; sourceTree = "<group>"; };
 		C22D93BC1CC9B79C0055CEA6 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
-		C23004501CC52A5000C947D5 /* FootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootView.xib; sourceTree = "<group>"; };
 		C2376E601CC7151900BAEEA4 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		C2376E611CC7151900BAEEA4 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		C2376E641CC7151900BAEEA4 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -549,14 +545,12 @@
 				C2F9F9B41CC9D2AE00140EE1 /* style.css in Resources */,
 				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
 				C22D93C01CC9B79C0055CEA6 /* test.gif in Resources */,
-				C23004511CC52A5000C947D5 /* FootView.xib in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
 				C2F9F9AF1CC9CF1A00140EE1 /* pinkcolor_background.png in Resources */,
 				C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */,
 				C22D93BE1CC9B79C0055CEA6 /* demo.gif in Resources */,
-				C2376E6A1CC7151900BAEEA4 /* style.css in Resources */,
 				C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */,
@@ -564,7 +558,6 @@
 				C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */,
 				C29C2A711CC92630009B0515 /* MainPageTVCell.xib in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
-				C276E7851CC50FEB0028C40E /* MyImage.xib in Resources */,
 				C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */,
 				C29C2A731CC92630009B0515 /* NavTitleView.xib in Resources */,
 				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
@@ -607,7 +600,6 @@
 				C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */,
-				C276E7791CC4FD5B0028C40E /* MyTableCell.m in Sources */,
 				C29C2A741CC92630009B0515 /* MainPageInfoVC.m in Sources */,
 				C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */,
 				C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */,
