@@ -21,6 +21,16 @@
     self.navigationItem.title = @"咨询";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+    
+    NSURL *url = [NSURL URLWithString:CONSULT_URL];
+    
+    UIWebView *webview = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [webview loadRequest:request];
+    
+    [self.view addSubview:webview];
 
 }
 
