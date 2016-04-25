@@ -9,8 +9,7 @@
 #ifndef PCHHeader_pch
 #define PCHHeader_pch
 
-#import "UIView+Extension.h"
-#import "UIBarButtonItem+Extension.h"
+
 
 #import "NetRequestManager.h"
 #import "URLHeaderDifine.h"

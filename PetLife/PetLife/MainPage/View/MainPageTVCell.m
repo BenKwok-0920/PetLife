@@ -13,6 +13,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        self.backgroundColor = [UIColor clearColor];
+        
         self.titleImg = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, ScreenWidth - 30, 160)];
         self.titleImg.layer.masksToBounds = YES;
         self.titleImg.layer.cornerRadius = 10;

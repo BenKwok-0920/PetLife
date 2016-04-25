@@ -45,7 +45,7 @@
     self.starVC = [[StartViewController alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.starVC.backgroundColor = [UIColor colorWithRed:1.000 green:0.800 blue:0.800 alpha:1.000];
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height)];
-    _imageView.image = [UIImage imageNamed:@"start_mengchong_2"];
+    _imageView.image = [UIImage imageNamed:@"start_mengchong_4"];
     [self.starVC addSubview:_imageView];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:3.0];
@@ -95,7 +95,7 @@
     
 }
 
--(BOOL) isConnectionAvailable{
+- (BOOL)isConnectionAvailable{
     
     BOOL isExistenceNetwork = YES;
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
