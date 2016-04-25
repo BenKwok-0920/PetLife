@@ -49,9 +49,9 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>one</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>First</string>
+			<string>前女友</string>
 			<key>UIApplicationShortcutIcon </key>
-			<string>sousuo_black_16</string>
+			<string></string>
 			<key>UIApplicationShortcutItemIconFile  </key>
 			<string></string>
 		</dict>
@@ -61,7 +61,7 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>two</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>第二个</string>
+			<string>前前女友</string>
 			<key>UIApplicationShortcutIcon </key>
 			<string></string>
 			<key>UIApplicationShortcutItemIconFile  </key>
@@ -73,7 +73,7 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>there</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>第三个</string>
+			<string>前前前女友</string>
 			<key>UIApplicationShortcutIcon </key>
 			<string></string>
 			<key>UIApplicationShortcutItemIconFile  </key>
@@ -85,7 +85,7 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>four</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>第四个</string>
+			<string>现女友</string>
 			<key>UIApplicationShortcutIcon </key>
 			<string></string>
 			<key>UIApplicationShortcutItemIconFile  </key>
