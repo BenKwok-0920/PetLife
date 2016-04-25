@@ -329,14 +329,14 @@
 //    if (ssself.secondArray.count <= ssself.secondRequestSize) {
     [self.secondTableView addRefreshWithRefreshViewType:(LORefreshViewTypeFooterDefault) refreshingBlock:^{
         //        ssself.requestSize += 15;
-        [ssself.firstTableView.defaultFooter endRefreshing];
+        [ssself.secondTableView.defaultFooter endRefreshing];
         [ssself requestDataWithMark:[NSString stringWithFormat:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=%ld&size=%ld&site_id=15532&slide_num=5",ssself.secondRequestSize,(ssself.secondRequestSize += 15)] withArray:ssself.secondArray];
     }];
 //      }
     
     [self.thirdTableView addRefreshWithRefreshViewType:(LORefreshViewTypeFooterDefault) refreshingBlock:^{
         //        ssself.requestSize += 15;
-        [ssself.firstTableView.defaultFooter endRefreshing];
+        [ssself.thirdTableView.defaultFooter endRefreshing];
         [ssself requestDataWithMark:[NSString stringWithFormat:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=%ld&size=%ld&site_id=15532&slide_num=5",ssself.thirdRequestSize,(ssself.thirdRequestSize += 15)] withArray:ssself.thirdArray];
     }];
     
