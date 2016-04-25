@@ -24,6 +24,11 @@
     _backImg.image = [UIImage imageNamed:@"loading.gif"];
     [self.view addSubview:_backImg];
     
+    
+    
+
+
+    
     NSString *urlStr = [MAININFO_URL stringByAppendingString:self.mainID];
     
     
@@ -117,6 +122,10 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
     [_backImg removeFromSuperview];
+}
+
+- (void)backClick{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

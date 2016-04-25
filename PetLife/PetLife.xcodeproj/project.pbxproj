@@ -49,6 +49,14 @@
 		C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C881CC6650A00F8BC7B /* KnowlageHeader.xib */; };
 		C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */; };
 		C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */; };
+		C2F6492D1CCE5C7A006A91DA /* home_H.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F6492B1CCE5C7A006A91DA /* home_H.png */; };
+		C2F6492E1CCE5C7A006A91DA /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F6492C1CCE5C7A006A91DA /* home.png */; };
+		C2F649351CCE5D77006A91DA /* myself_H.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F6492F1CCE5D77006A91DA /* myself_H.png */; };
+		C2F649361CCE5D77006A91DA /* myself.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F649301CCE5D77006A91DA /* myself.png */; };
+		C2F649371CCE5D77006A91DA /* tiwen_H.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F649311CCE5D77006A91DA /* tiwen_H.png */; };
+		C2F649381CCE5D77006A91DA /* tiwen.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F649321CCE5D77006A91DA /* tiwen.png */; };
+		C2F649391CCE5D77006A91DA /* knowlage_H.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F649331CCE5D77006A91DA /* knowlage_H.png */; };
+		C2F6493A1CCE5D77006A91DA /* knowlage.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F649341CCE5D77006A91DA /* knowlage.png */; };
 		C2F9F9B31CC9D2AE00140EE1 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9F9B11CC9D2AE00140EE1 /* NSString+Html.m */; };
 		C2F9F9B41CC9D2AE00140EE1 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = C2F9F9B21CC9D2AE00140EE1 /* style.css */; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
@@ -131,6 +139,14 @@
 		C2EE7C8A1CC66B3C00F8BC7B /* KnowlageInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageInfoViewController.h; sourceTree = "<group>"; };
 		C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageInfoViewController.m; sourceTree = "<group>"; };
 		C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageInfoViewController.xib; sourceTree = "<group>"; };
+		C2F6492B1CCE5C7A006A91DA /* home_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_H.png; sourceTree = "<group>"; };
+		C2F6492C1CCE5C7A006A91DA /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		C2F6492F1CCE5D77006A91DA /* myself_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myself_H.png; sourceTree = "<group>"; };
+		C2F649301CCE5D77006A91DA /* myself.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myself.png; sourceTree = "<group>"; };
+		C2F649311CCE5D77006A91DA /* tiwen_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiwen_H.png; sourceTree = "<group>"; };
+		C2F649321CCE5D77006A91DA /* tiwen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiwen.png; sourceTree = "<group>"; };
+		C2F649331CCE5D77006A91DA /* knowlage_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knowlage_H.png; sourceTree = "<group>"; };
+		C2F649341CCE5D77006A91DA /* knowlage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knowlage.png; sourceTree = "<group>"; };
 		C2F9F9B01CC9D2AE00140EE1 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		C2F9F9B11CC9D2AE00140EE1 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		C2F9F9B21CC9D2AE00140EE1 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
@@ -429,6 +445,14 @@
 		C2FE04961CBFDD740064377C = {
 			isa = PBXGroup;
 			children = (
+				C2F6492F1CCE5D77006A91DA /* myself_H.png */,
+				C2F649301CCE5D77006A91DA /* myself.png */,
+				C2F649311CCE5D77006A91DA /* tiwen_H.png */,
+				C2F649321CCE5D77006A91DA /* tiwen.png */,
+				C2F649331CCE5D77006A91DA /* knowlage_H.png */,
+				C2F649341CCE5D77006A91DA /* knowlage.png */,
+				C2F6492B1CCE5C7A006A91DA /* home_H.png */,
+				C2F6492C1CCE5C7A006A91DA /* home.png */,
 				C203257C1CC2217800CB7934 /* Tool */,
 				C20325711CC21A7800CB7934 /* Base */,
 				C2FE04A11CBFDD740064377C /* PetLife */,
@@ -509,7 +533,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9U8P46C2EW;
+						DevelopmentTeam = DWN2ETY5X8;
 					};
 				};
 			};
@@ -536,15 +560,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F649361CCE5D77006A91DA /* myself.png in Resources */,
 				C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */,
 				C2D25D9E1CCDB08F00E441B8 /* asserxx.gif in Resources */,
+				C2F6492E1CCE5C7A006A91DA /* home.png in Resources */,
 				C2F9F9B41CC9D2AE00140EE1 /* style.css in Resources */,
 				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
+				C2F6492D1CCE5C7A006A91DA /* home_H.png in Resources */,
 				C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */,
+				C2F649381CCE5D77006A91DA /* tiwen.png in Resources */,
+				C2F649391CCE5D77006A91DA /* knowlage_H.png in Resources */,
 				C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */,
+				C2F649371CCE5D77006A91DA /* tiwen_H.png in Resources */,
+				C2F6493A1CCE5D77006A91DA /* knowlage.png in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */,
 				C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */,
@@ -552,6 +583,7 @@
 				C29C2A711CC92630009B0515 /* MainPageTVCell.xib in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
 				C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */,
+				C2F649351CCE5D77006A91DA /* myself_H.png in Resources */,
 				C29C2A731CC92630009B0515 /* NavTitleView.xib in Resources */,
 				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
 				C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */,

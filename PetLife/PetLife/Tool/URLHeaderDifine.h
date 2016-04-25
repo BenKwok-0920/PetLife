@@ -18,7 +18,7 @@
 #define MAININFO_URL @"http://wecarepet.com/api/blog/blog/get?id="
 
 // 咨询
-#define CONSULT_URL @"http://m.petshow.cc/webapp/dogmanager"
+#define CONSULT_URL @"http://m.petshow.cc/webapp/helper/"
 
 
 

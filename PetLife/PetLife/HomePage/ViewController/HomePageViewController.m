@@ -64,32 +64,29 @@
     //首页
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
-    mainPageVC.tabBarItem.title = @"首页";
-    mainPageVC.tabBarItem.image = [[UIImage imageNamed:@"zhuye_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mainPageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"home_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+    
     
     //咨询
     ConsultingViewController *consultingVC = [[ConsultingViewController alloc]init];
     UINavigationController *ZXnav= [[UINavigationController alloc]initWithRootViewController:consultingVC];
-    consultingVC.tabBarItem.title = @"咨询";
-    consultingVC.tabBarItem.image = [[UIImage imageNamed:@"zixun_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    consultingVC.tabBarController.tabBar.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:0.703];
+    consultingVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"助手" image:[[UIImage imageNamed:@"tiwen.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"tiwen_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     //我的
     MySelfViewController *mySelfVC = [[MySelfViewController alloc]init];
     UINavigationController *WDnav = [[UINavigationController alloc]initWithRootViewController:mySelfVC];
-    mySelfVC.tabBarItem.title = @"我的";
-    mySelfVC.tabBarItem.image = [[UIImage imageNamed:@"wode_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mySelfVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[[UIImage imageNamed:@"myself.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"myself_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     
     //知识
     KnowlageViewController *knowlageVC = [[KnowlageViewController alloc] init];
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
-    ZSnav.tabBarItem.title = @"知识";
-    ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    ZSnav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"知识" image:[[UIImage imageNamed:@"knowlage.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"knowlage_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     
     self.viewControllers = @[SYnav,ZSnav,ZXnav,WDnav];
+    
+    self.tabBar.tintColor = [UIColor colorWithRed:0.87 green:0.40 blue:0.45 alpha:1.00];
     
     [self isConnectionAvailable];
     

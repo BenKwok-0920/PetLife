@@ -16,6 +16,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="jPa-FO-h3T"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="萌宠漫画"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00w-TV-1b9">
@@ -24,6 +25,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="aAM-5L-YWe"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="萌宠文章"/>
                 </button>
             </subviews>
