@@ -95,7 +95,7 @@
     
 }
 
--(BOOL) isConnectionAvailable{
+- (BOOL)isConnectionAvailable{
     
     BOOL isExistenceNetwork = YES;
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
