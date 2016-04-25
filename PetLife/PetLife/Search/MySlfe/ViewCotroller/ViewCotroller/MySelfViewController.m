@@ -37,12 +37,12 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
     //view
     self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
-    self.titleView.backgroundColor = [UIColor colorWithRed:0.99 green:0.80 blue:0.80 alpha:1.00];
+    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];

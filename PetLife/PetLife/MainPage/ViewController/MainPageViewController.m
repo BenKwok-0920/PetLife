@@ -13,7 +13,7 @@
 #define reuseID @"cell"
 #import <UIImageView+WebCache.h>
 #import "MainPageInfoVC.h"
-#import <MJRefreshNormalHeader.h>
+#import "MJRefreshNormalHeader.h"
 #import <MJRefreshAutoNormalFooter.h>
 #import "LORefresh.h"
 
