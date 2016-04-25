@@ -40,6 +40,7 @@
 		C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C2A681CC92630009B0515 /* MainPageInfoVC.xib */; };
 		C29C2A761CC92630009B0515 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A6A1CC92630009B0515 /* MainPageViewController.m */; };
 		C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A791CC92767009B0515 /* StartViewController.m */; };
+		C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9B1CCDAD5700E441B8 /* Info.plist */; };
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
 		C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C791CC5DAC200F8BC7B /* TitleNavigation.m */; };
 		C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C7A1CC5DAC200F8BC7B /* TitleNavigation.xib */; };
@@ -49,7 +50,6 @@
 		C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C881CC6650A00F8BC7B /* KnowlageHeader.xib */; };
 		C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */; };
 		C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */; };
-		C2F9F9AF1CC9CF1A00140EE1 /* pinkcolor_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F9F9AE1CC9CF1A00140EE1 /* pinkcolor_background.png */; };
 		C2F9F9B31CC9D2AE00140EE1 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9F9B11CC9D2AE00140EE1 /* NSString+Html.m */; };
 		C2F9F9B41CC9D2AE00140EE1 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = C2F9F9B21CC9D2AE00140EE1 /* style.css */; };
 		C2FE04A41CBFDD740064377C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A31CBFDD740064377C /* main.m */; };
@@ -118,6 +118,7 @@
 		C29C2A6A1CC92630009B0515 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		C29C2A781CC92767009B0515 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		C29C2A791CC92767009B0515 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		C2D25D9B1CCDAD5700E441B8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
 		C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageViewController.m; sourceTree = "<group>"; };
 		C2EE7C781CC5DAC200F8BC7B /* TitleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleNavigation.h; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		C2EE7C8A1CC66B3C00F8BC7B /* KnowlageInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageInfoViewController.h; sourceTree = "<group>"; };
 		C2EE7C8B1CC66B3C00F8BC7B /* KnowlageInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageInfoViewController.m; sourceTree = "<group>"; };
 		C2EE7C8C1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KnowlageInfoViewController.xib; sourceTree = "<group>"; };
-		C2F9F9AE1CC9CF1A00140EE1 /* pinkcolor_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkcolor_background.png; sourceTree = "<group>"; };
 		C2F9F9B01CC9D2AE00140EE1 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		C2F9F9B11CC9D2AE00140EE1 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		C2F9F9B21CC9D2AE00140EE1 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 		C2FE04AC1CBFDD740064377C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2FE04AE1CBFDD740064377C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2FE04B11CBFDD740064377C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C2FE04B31CBFDD740064377C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBE1D9FB3E700A4BACC6306B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -433,7 +432,6 @@
 		C2FE04961CBFDD740064377C = {
 			isa = PBXGroup;
 			children = (
-				C2F9F9AE1CC9CF1A00140EE1 /* pinkcolor_background.png */,
 				C203257C1CC2217800CB7934 /* Tool */,
 				C20325711CC21A7800CB7934 /* Base */,
 				C2FE04A11CBFDD740064377C /* PetLife */,
@@ -467,7 +465,7 @@
 				C2FE04AE1CBFDD740064377C /* Assets.xcassets */,
 				C2FE04B01CBFDD740064377C /* LaunchScreen.storyboard */,
 				C25662511CC5C8E500E6C156 /* PetLife.txt */,
-				C2FE04B31CBFDD740064377C /* Info.plist */,
+				C2D25D9B1CCDAD5700E441B8 /* Info.plist */,
 				C259D3AF1CC0C9F30045CA99 /* Frameworks */,
 				C2FE04A21CBFDD740064377C /* Supporting Files */,
 			);
@@ -514,7 +512,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DWN2ETY5X8;
+						DevelopmentTeam = 9U8P46C2EW;
 					};
 				};
 			};
@@ -548,7 +546,6 @@
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
-				C2F9F9AF1CC9CF1A00140EE1 /* pinkcolor_background.png in Resources */,
 				C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */,
 				C22D93BE1CC9B79C0055CEA6 /* demo.gif in Resources */,
 				C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */,
@@ -561,6 +558,7 @@
 				C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */,
 				C29C2A731CC92630009B0515 /* NavTitleView.xib in Resources */,
 				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
+				C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -742,6 +741,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -751,6 +751,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -762,6 +763,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

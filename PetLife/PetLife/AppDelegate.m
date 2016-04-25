@@ -27,7 +27,7 @@
 
     [self.window makeKeyWindow];
     
-    UIImage *draw = [UIImage imageNamed:@"pinkcolor_background.png"];
+    UIImage *draw = [UIImage imageNamed:@"pinkcolor_background"];
     
     UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
     
