@@ -81,7 +81,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"知识";
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     mark = 0;
     _firstRequestSize = 15;
@@ -299,7 +299,7 @@
         [ssself.firstArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
     }];
-    [self.firstTableView.gifHeader setGifName:@"test"];
+    [self.firstTableView.gifHeader setGifName:@"asserxx"];
     
     
     [self.secondTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
@@ -307,7 +307,7 @@
         [ssself.secondArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
     }];
-    [self.secondTableView.gifHeader setGifName:@"test"];
+    [self.secondTableView.gifHeader setGifName:@"asserxx"];
     
     
     [self.thirdTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
@@ -315,7 +315,7 @@
         [ssself.thirdArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
     }];
-    [self.thirdTableView.gifHeader setGifName:@"test"];
+    [self.thirdTableView.gifHeader setGifName:@"asserxx"];
     
     //下拉加载
     
