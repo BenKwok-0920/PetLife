@@ -130,7 +130,6 @@
     self.tableView2.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
     [self.mainScroll addSubview:self.tableView2];
-    
     // 小菊花
     self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
     [self.view addSubview:_activity];
