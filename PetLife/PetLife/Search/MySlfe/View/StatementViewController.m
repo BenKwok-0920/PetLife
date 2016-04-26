@@ -18,20 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"免责声明";
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *txtPath = [mainBundle pathForResource:@"PetLife" ofType:@"txt"];
     
     //    将txt到string对象中，编码类型为NSUTF8StringEncoding
     NSString *string = [[NSString  alloc] initWithContentsOfFile:txtPath encoding:NSUTF8StringEncoding error:nil];
-    
+    self.statementText.frame = CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 44);
     self.statementText.text = string;
     self.statementText.editable = NO;
     self.statementText.font = [UIFont fontWithName:@"Arial" size:16];
+    self.statementText.contentOffset = CGPointMake(0, -200);
     
     self.statementText.bounces = NO;
-    
+    self.statementText.backgroundColor = [UIColor clearColor];
 
 }
 
