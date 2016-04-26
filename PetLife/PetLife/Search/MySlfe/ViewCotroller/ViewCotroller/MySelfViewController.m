@@ -22,11 +22,9 @@
 
 
 @property (nonatomic,strong)UITableView *tableMySelf;
-@property (nonatomic,strong)UIView *titleView;
 @property (nonatomic,strong)UIImageView *imageTitle;
-
 @property (nonatomic,strong)NSString *stringHC;
-
+@property (nonatomic,strong)UIImageView *backImage;
 
 @end
 
@@ -40,12 +38,13 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
-    //view
-    self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
-    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
+    
+    //背景图片
+    self.backImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, KVheight)];
+    self.backImage.image = [UIImage imageNamed:@"pinkcolor_background"];
     
     //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
+    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,120 ,128, 128)];
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
     
     //注册
@@ -54,8 +53,9 @@
     self.tableMySelf.dataSource = self;
     
     //添加
-    [self.titleView addSubview:self.imageTitle];
-    [self.view addSubview:self.titleView];
+    [self.view addSubview:self.backImage];
+    [self.backImage addSubview:self.imageTitle];
+    //[self.view addSubview:self.titleView];
     [self.view addSubview:self.tableMySelf];
     
 }

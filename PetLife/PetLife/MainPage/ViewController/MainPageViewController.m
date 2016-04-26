@@ -118,6 +118,9 @@
     [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
     [self.mainScroll addSubview:self.tableView2];
     
+   
+    
+    
     // 刷新
     [self refeshData];
     
