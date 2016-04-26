@@ -45,24 +45,18 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
-<<<<<<< HEAD
     self.tableMySelf.scrollEnabled = NO;
     self.tableMySelf.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    //view
-    self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
-    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
+    
     
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
-=======
     
     //背景图片
     self.backImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, KVheight)];
     self.backImage.image = [UIImage imageNamed:@"pinkcolor_background"];
     
-    //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,120 ,128, 128)];
->>>>>>> 8a810409350898b63cd4360335e8baa8f0873578
+    
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
     self.imageTitle.layer.masksToBounds=YES;
     self.imageTitle.layer.cornerRadius = 10;
