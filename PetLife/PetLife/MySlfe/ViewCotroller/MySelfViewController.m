@@ -86,21 +86,21 @@
     switch (indexPath.row) {
         case 0:
            cell.labelBar.text = @"清除缓存";
-            cell.imagBar.image = [UIImage imageNamed:@"huancun_16"];
+            cell.imagBar.image = [UIImage imageNamed:@"huancun-16@1x"];
             [self getCacheSize];
             cell.huancun.text = self.stringHC;
             break;
         case 1:
             cell.labelBar.text = @"意见反馈";
-            cell.imagBar.image = [UIImage imageNamed:@"yijian_16"];
+            cell.imagBar.image = [UIImage imageNamed:@"yijian-16"];
             break;
         case 2:
             cell.labelBar.text = @"免责声明";
-            cell.imagBar.image = [UIImage imageNamed:@"shengming_16"];
+            cell.imagBar.image = [UIImage imageNamed:@"mianze-16@1x"];
             break;
         case 3:
             cell.labelBar.text = @"关于我们";
-            cell.imagBar.image = [UIImage imageNamed:@"guanyu_16"];
+            cell.imagBar.image = [UIImage imageNamed:@"guanyu-16@1x"];
             break;
         default:
             break;

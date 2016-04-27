@@ -507,7 +507,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DWN2ETY5X8;
+						DevelopmentTeam = 9U8P46C2EW;
 					};
 				};
 			};
@@ -733,7 +733,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife20009;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -755,7 +755,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife20009;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
