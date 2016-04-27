@@ -19,6 +19,8 @@
 
 @interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 
+
+
 @property (nonatomic,strong)UITableView *tableMySelf;
 @property (nonatomic,strong)UIView *titleView;
 @property (nonatomic,strong)UIImageView *imageTitle;
@@ -35,15 +37,27 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
+    
+    // 设置title字体颜色
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Helvetica-Bold" size:18],[UIColor whiteColor]] forKeys:@[UITextAttributeFont,UITextAttributeTextColor]];
+    
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
+    self.tableMySelf.scrollEnabled = NO;
+    self.tableMySelf.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     //view
     self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
+    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
+    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.layer.masksToBounds=YES;
+    self.imageTitle.layer.cornerRadius = 10;
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -51,7 +65,7 @@
     self.tableMySelf.dataSource = self;
     
     //添加
-    [self.view addSubview:self.imageTitle];
+    [self.titleView addSubview:self.imageTitle];
     [self.view addSubview:self.titleView];
     [self.view addSubview:self.tableMySelf];
     
@@ -72,6 +86,7 @@
         case 0:
            cell.labelBar.text = @"清除缓存";
             cell.imagBar.image = [UIImage imageNamed:@"huancun_16"];
+            [self getCacheSize];
             cell.huancun.text = self.stringHC;
             break;
         case 1:
@@ -94,6 +109,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     switch (indexPath.row) {
         case 0:
             [self dianji];
@@ -102,7 +118,9 @@
         [self.navigationController pushViewController:[[FeedBackViewController alloc]init] animated:YES];
             break;
         case 2:
-         [self.navigationController pushViewController:[[StatementViewController alloc]init] animated:YES];
+            
+         [self.navigationController pushViewController:[[StatementViewController alloc] init] animated:YES];
+         
             break;
         case 3:
             [self.navigationController pushViewController:[[AboutViewController alloc]init] animated:YES];
@@ -112,6 +130,10 @@
     }
 
 }
+
+
+
+#pragma mark ------清除缓存
 - (void)dianji{
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"缓存清除" message:@"确定清除缓存?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
     [alertView show];

@@ -10,6 +10,15 @@
 		9B3F7F8DF8A8D17ECCEB3500 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE1D9FB3E700A4BACC6306B /* libPods.a */; };
 		C20325741CC21A8900CB7934 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325731CC21A8900CB7934 /* BaseModel.m */; };
 		C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257E1CC221A000CB7934 /* NetRequestManager.m */; };
+		C208F1B41CD04A1700328CC6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1A61CD04A1700328CC6 /* AboutViewController.m */; };
+		C208F1B51CD04A1700328CC6 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C208F1A71CD04A1700328CC6 /* AboutViewController.xib */; };
+		C208F1B61CD04A1700328CC6 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1A91CD04A1700328CC6 /* FeedBackViewController.m */; };
+		C208F1B71CD04A1700328CC6 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C208F1AA1CD04A1700328CC6 /* FeedBackViewController.xib */; };
+		C208F1B81CD04A1700328CC6 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C208F1AB1CD04A1700328CC6 /* PetLife.txt */; };
+		C208F1B91CD04A1700328CC6 /* StatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1AD1CD04A1700328CC6 /* StatementViewController.m */; };
+		C208F1BA1CD04A1700328CC6 /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C208F1AE1CD04A1700328CC6 /* StatementViewController.xib */; };
+		C208F1BB1CD04A1700328CC6 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1B11CD04A1700328CC6 /* MySelfTableViewCell.m */; };
+		C208F1BC1CD04A1700328CC6 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1B31CD04A1700328CC6 /* MySelfViewController.m */; };
 		C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22D93B81CC9B79C0055CEA6 /* arrow@2x.png */; };
 		C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D93BB1CC9B79C0055CEA6 /* LORefresh.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2376E611CC7151900BAEEA4 /* CycleScrollView.m */; };
@@ -17,15 +26,6 @@
 		C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662221CC5C81D00E6C156 /* ConsultingViewController.m */; };
 		C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25662281CC5C81D00E6C156 /* HomePageViewController.m */; };
 		C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C25662511CC5C8E500E6C156 /* PetLife.txt */; };
-		C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E76C1CC78B9C005196B4 /* AboutViewController.m */; };
-		C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E76D1CC78B9C005196B4 /* AboutViewController.xib */; };
-		C261E7781CC78B9C005196B4 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */; };
-		C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */; };
-		C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */ = {isa = PBXBuildFile; fileRef = C261E7711CC78B9C005196B4 /* PetLife.txt */; };
-		C261E77B1CC78B9C005196B4 /* StatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7731CC78B9C005196B4 /* StatementViewController.m */; };
-		C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C261E7741CC78B9C005196B4 /* StatementViewController.xib */; };
-		C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */; };
-		C261E7831CC78BEA005196B4 /* MySelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7811CC78BEA005196B4 /* MySelfViewController.m */; };
 		C261E78C1CC7A03E005196B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */; };
 		C261E7901CC7A31B005196B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E78F1CC7A31B005196B4 /* Reachability.m */; };
 		C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C261E7931CC7A442005196B4 /* KnowlageModel.m */; };
@@ -68,6 +68,20 @@
 		C203257E1CC221A000CB7934 /* NetRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestManager.m; sourceTree = "<group>"; };
 		C20325801CC227ED00CB7934 /* URLHeaderDifine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeaderDifine.h; sourceTree = "<group>"; };
 		C20325811CC2281200CB7934 /* ConstantsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
+		C208F1A51CD04A1700328CC6 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C208F1A61CD04A1700328CC6 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C208F1A71CD04A1700328CC6 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		C208F1A81CD04A1700328CC6 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		C208F1A91CD04A1700328CC6 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		C208F1AA1CD04A1700328CC6 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
+		C208F1AB1CD04A1700328CC6 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
+		C208F1AC1CD04A1700328CC6 /* StatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementViewController.h; sourceTree = "<group>"; };
+		C208F1AD1CD04A1700328CC6 /* StatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementViewController.m; sourceTree = "<group>"; };
+		C208F1AE1CD04A1700328CC6 /* StatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatementViewController.xib; sourceTree = "<group>"; };
+		C208F1B01CD04A1700328CC6 /* MySelfTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfTableViewCell.h; sourceTree = "<group>"; };
+		C208F1B11CD04A1700328CC6 /* MySelfTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfTableViewCell.m; sourceTree = "<group>"; };
+		C208F1B21CD04A1700328CC6 /* MySelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfViewController.h; sourceTree = "<group>"; };
+		C208F1B31CD04A1700328CC6 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
 		C22D93B81CC9B79C0055CEA6 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		C22D93BA1CC9B79C0055CEA6 /* LORefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORefresh.h; sourceTree = "<group>"; };
 		C22D93BB1CC9B79C0055CEA6 /* LORefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LORefresh.m; sourceTree = "<group>"; };
@@ -81,20 +95,6 @@
 		C25662281CC5C81D00E6C156 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		C25662511CC5C8E500E6C156 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
 		C259D3BA1CC0CCF20045CA99 /* PCHHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PCHHeader.pch; path = ../PCHHeader.pch; sourceTree = "<group>"; };
-		C261E76B1CC78B9C005196B4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		C261E76C1CC78B9C005196B4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		C261E76D1CC78B9C005196B4 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		C261E76E1CC78B9C005196B4 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
-		C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
-		C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
-		C261E7711CC78B9C005196B4 /* PetLife.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PetLife.txt; sourceTree = "<group>"; };
-		C261E7721CC78B9C005196B4 /* StatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementViewController.h; sourceTree = "<group>"; };
-		C261E7731CC78B9C005196B4 /* StatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementViewController.m; sourceTree = "<group>"; };
-		C261E7741CC78B9C005196B4 /* StatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatementViewController.xib; sourceTree = "<group>"; };
-		C261E77E1CC78BEA005196B4 /* MySelfTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfTableViewCell.h; sourceTree = "<group>"; };
-		C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfTableViewCell.m; sourceTree = "<group>"; };
-		C261E7801CC78BEA005196B4 /* MySelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelfViewController.h; sourceTree = "<group>"; };
-		C261E7811CC78BEA005196B4 /* MySelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySelfViewController.m; sourceTree = "<group>"; };
 		C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C261E78E1CC7A31B005196B4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C261E78F1CC7A31B005196B4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -200,6 +200,43 @@
 			);
 			name = Tool;
 			path = PetLife/Tool;
+			sourceTree = "<group>";
+		};
+		C208F1A31CD04A1700328CC6 /* MySlfe */ = {
+			isa = PBXGroup;
+			children = (
+				C208F1A41CD04A1700328CC6 /* View */,
+				C208F1AF1CD04A1700328CC6 /* ViewCotroller */,
+			);
+			path = MySlfe;
+			sourceTree = "<group>";
+		};
+		C208F1A41CD04A1700328CC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C208F1A51CD04A1700328CC6 /* AboutViewController.h */,
+				C208F1A61CD04A1700328CC6 /* AboutViewController.m */,
+				C208F1A71CD04A1700328CC6 /* AboutViewController.xib */,
+				C208F1A81CD04A1700328CC6 /* FeedBackViewController.h */,
+				C208F1A91CD04A1700328CC6 /* FeedBackViewController.m */,
+				C208F1AA1CD04A1700328CC6 /* FeedBackViewController.xib */,
+				C208F1AB1CD04A1700328CC6 /* PetLife.txt */,
+				C208F1AC1CD04A1700328CC6 /* StatementViewController.h */,
+				C208F1AD1CD04A1700328CC6 /* StatementViewController.m */,
+				C208F1AE1CD04A1700328CC6 /* StatementViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C208F1AF1CD04A1700328CC6 /* ViewCotroller */ = {
+			isa = PBXGroup;
+			children = (
+				C208F1B01CD04A1700328CC6 /* MySelfTableViewCell.h */,
+				C208F1B11CD04A1700328CC6 /* MySelfTableViewCell.m */,
+				C208F1B21CD04A1700328CC6 /* MySelfViewController.h */,
+				C208F1B31CD04A1700328CC6 /* MySelfViewController.m */,
+			);
+			path = ViewCotroller;
 			sourceTree = "<group>";
 		};
 		C22D93B71CC9B79C0055CEA6 /* newLORefresh */ = {
@@ -316,45 +353,6 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		C261E7691CC78B9C005196B4 /* MySlfe */ = {
-			isa = PBXGroup;
-			children = (
-				C261E77D1CC78BEA005196B4 /* ViewCotroller */,
-				C261E76A1CC78B9C005196B4 /* View */,
-			);
-			name = MySlfe;
-			path = Search/MySlfe;
-			sourceTree = "<group>";
-		};
-		C261E76A1CC78B9C005196B4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C261E76B1CC78B9C005196B4 /* AboutViewController.h */,
-				C261E76C1CC78B9C005196B4 /* AboutViewController.m */,
-				C261E76D1CC78B9C005196B4 /* AboutViewController.xib */,
-				C261E76E1CC78B9C005196B4 /* FeedBackViewController.h */,
-				C261E76F1CC78B9C005196B4 /* FeedBackViewController.m */,
-				C261E7701CC78B9C005196B4 /* FeedBackViewController.xib */,
-				C261E7711CC78B9C005196B4 /* PetLife.txt */,
-				C261E7721CC78B9C005196B4 /* StatementViewController.h */,
-				C261E7731CC78B9C005196B4 /* StatementViewController.m */,
-				C261E7741CC78B9C005196B4 /* StatementViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C261E77D1CC78BEA005196B4 /* ViewCotroller */ = {
-			isa = PBXGroup;
-			children = (
-				C261E77E1CC78BEA005196B4 /* MySelfTableViewCell.h */,
-				C261E77F1CC78BEA005196B4 /* MySelfTableViewCell.m */,
-				C261E7801CC78BEA005196B4 /* MySelfViewController.h */,
-				C261E7811CC78BEA005196B4 /* MySelfViewController.m */,
-			);
-			name = ViewCotroller;
-			path = ViewCotroller/ViewCotroller;
-			sourceTree = "<group>";
-		};
 		C261E78D1CC7A31B005196B4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,8 +447,8 @@
 		C2FE04A11CBFDD740064377C /* PetLife */ = {
 			isa = PBXGroup;
 			children = (
+				C208F1A31CD04A1700328CC6 /* MySlfe */,
 				C29C2A501CC92630009B0515 /* MainPage */,
-				C261E7691CC78B9C005196B4 /* MySlfe */,
 				C256621D1CC5C81D00E6C156 /* Consulting */,
 				C25662231CC5C81D00E6C156 /* HomePage */,
 				C25662291CC5C81D00E6C156 /* Knowlage */,
@@ -536,22 +534,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C261E77C1CC78B9C005196B4 /* StatementViewController.xib in Resources */,
 				C2D25D9E1CCDB08F00E441B8 /* asserxx.gif in Resources */,
 				C2F9F9B41CC9D2AE00140EE1 /* style.css in Resources */,
+				C208F1B51CD04A1700328CC6 /* AboutViewController.xib in Resources */,
+				C208F1BA1CD04A1700328CC6 /* StatementViewController.xib in Resources */,
 				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
 				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
-				C261E77A1CC78B9C005196B4 /* PetLife.txt in Resources */,
-				C261E7771CC78B9C005196B4 /* AboutViewController.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
-				C261E7791CC78B9C005196B4 /* FeedBackViewController.xib in Resources */,
 				C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */,
 				C2EE7C891CC6650A00F8BC7B /* KnowlageHeader.xib in Resources */,
 				C29C2A711CC92630009B0515 /* MainPageTVCell.xib in Resources */,
 				C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */,
 				C22D93BD1CC9B79C0055CEA6 /* arrow@2x.png in Resources */,
+				C208F1B71CD04A1700328CC6 /* FeedBackViewController.xib in Resources */,
+				C208F1B81CD04A1700328CC6 /* PetLife.txt in Resources */,
 				C29C2A731CC92630009B0515 /* NavTitleView.xib in Resources */,
 				C2EE7C7C1CC5DAC200F8BC7B /* TitleNavigation.xib in Resources */,
 				C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */,
@@ -583,26 +581,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C261E7831CC78BEA005196B4 /* MySelfViewController.m in Sources */,
 				C2376E671CC7151900BAEEA4 /* CycleScrollView.m in Sources */,
 				C2EE7C871CC664F000F8BC7B /* KnowlageHeader.m in Sources */,
 				C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */,
-				C261E7821CC78BEA005196B4 /* MySelfTableViewCell.m in Sources */,
 				C29C2A721CC92630009B0515 /* NavTitleView.m in Sources */,
 				C25662451CC5C81D00E6C156 /* HomePageViewController.m in Sources */,
 				C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */,
 				C2376E691CC7151900BAEEA4 /* NSTimer+Addition.m in Sources */,
+				C208F1B61CD04A1700328CC6 /* FeedBackViewController.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */,
 				C29C2A741CC92630009B0515 /* MainPageInfoVC.m in Sources */,
-				C261E7761CC78B9C005196B4 /* AboutViewController.m in Sources */,
+				C208F1BB1CD04A1700328CC6 /* MySelfTableViewCell.m in Sources */,
 				C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */,
+				C208F1B41CD04A1700328CC6 /* AboutViewController.m in Sources */,
 				C2FE04A71CBFDD740064377C /* AppDelegate.m in Sources */,
 				C20325741CC21A8900CB7934 /* BaseModel.m in Sources */,
 				C2EE7C7B1CC5DAC200F8BC7B /* TitleNavigation.m in Sources */,
-				C261E7781CC78B9C005196B4 /* FeedBackViewController.m in Sources */,
 				C29C2A761CC92630009B0515 /* MainPageViewController.m in Sources */,
-				C261E77B1CC78B9C005196B4 /* StatementViewController.m in Sources */,
 				C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */,
 				C29C2A6F1CC92630009B0515 /* MainModel.m in Sources */,
 				C2FE04A41CBFDD740064377C /* main.m in Sources */,
@@ -610,6 +606,8 @@
 				C29C2A701CC92630009B0515 /* MainPageTVCell.m in Sources */,
 				C261E7901CC7A31B005196B4 /* Reachability.m in Sources */,
 				C2EE7C831CC61F4800F8BC7B /* KnowlageTableViewCell.m in Sources */,
+				C208F1BC1CD04A1700328CC6 /* MySelfViewController.m in Sources */,
+				C208F1B91CD04A1700328CC6 /* StatementViewController.m in Sources */,
 				C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */,
 				C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */,
 			);

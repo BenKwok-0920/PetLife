@@ -46,6 +46,14 @@
 
 @implementation MainPageViewController
 
+- (UIActivityIndicatorView *)activity{
+    if (!_activity) {
+        _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
+    }
+    return _activity;
+}
+
+
 - (NSMutableArray *)cellArray1{
     if (!_cellArray1) {
         _cellArray1 = [NSMutableArray array];
@@ -122,8 +130,7 @@
     [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
     [self.mainScroll addSubview:self.tableView2];
     // 小菊花
-    self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-    _activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+    self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
     [self.view addSubview:_activity];
     [_activity startAnimating];
     
@@ -187,9 +194,7 @@ static NSString *aaaaa = nil;
             }
         }else if(self.markNum == 2){
             if (self.cellArray2.count > 0) {
-                if (self.mainScroll.contentOffset.x ==0) {
-                    return;
-                }
+                
                 [self.cellArray2 removeAllObjects];
             }
         }
@@ -216,22 +221,27 @@ static NSString *aaaaa = nil;
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
                     [_activity removeFromSuperview];
+                    self.mainScroll.scrollEnabled = YES;
             }else{
                 
                 
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
                     [_activity removeFromSuperview];
+                
+                    self.mainScroll.scrollEnabled = YES;
             }
             });
             
             
         }else{
             NSLog(@"数据解析失败了");
+            [self alertViewAction];
         }
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败");
+        [self alertViewAction];
     }];
 }
 
@@ -268,19 +278,23 @@ static NSString *aaaaa = nil;
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
                     [self.tableView1.mj_footer endRefreshing];
+                    self.mainScroll.scrollEnabled = YES;
                 }else{
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
                     [self.tableView2.mj_footer endRefreshing];
+                    self.mainScroll.scrollEnabled = YES;
                 }
             });
             
         }else{
             NSLog(@"数据解析失败了");
+            [self alertViewAction];
         }
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败");
+        [self alertViewAction];
     }];
 }
 
@@ -368,10 +382,11 @@ static NSString *aaaaa = nil;
             return;
         }
         // 小菊花
-        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-        _activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+        self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
         [self.view addSubview:_activity];
         [_activity startAnimating];
+        
+        self.mainScroll.scrollEnabled = NO;
         
         // 加载
         [self requestDataWithURL:MAINPAGE_URL1];
@@ -384,10 +399,11 @@ static NSString *aaaaa = nil;
             return;
         }
         // 小菊花
-        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-        _activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+        self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
         [self.view addSubview:_activity];
         [_activity startAnimating];
+        
+        self.mainScroll.scrollEnabled = NO;
         
         // 加载
         [self requestDataWithURL:MAINPAGE_URL2];
@@ -398,15 +414,16 @@ static NSString *aaaaa = nil;
 - (void)btn1Click{
     NSLog(@"按了1");
     
-    if (self.mainScroll.contentOffset.x != 0) {
+    if (self.mainScroll.contentOffset.x != 0 && self.mainScroll.scrollEnabled == YES) {
         [self.mainScroll setContentOffset:CGPointMake(0, 0) animated:YES];
         
     }
-    
+
     if (self.cellArray1.count != 0) {
         return;
         
     }
+    self.mainScroll.scrollEnabled = NO;
     self.markNum = 1;
     [self requestDataWithURL:MAINPAGE_URL1];
    
@@ -415,13 +432,15 @@ static NSString *aaaaa = nil;
 - (void)btn2Click{
     NSLog(@"按了2");
     
-    if (self.mainScroll.contentOffset.x != ScreenWidth) {
+    if (self.mainScroll.contentOffset.x != ScreenWidth && self.mainScroll.scrollEnabled == YES) {
         [self.mainScroll setContentOffset:CGPointMake(ScreenWidth, 0) animated:YES];
+        
     }
 
     if (self.cellArray2.count != 0) {
         return;
     }
+    self.mainScroll.scrollEnabled = NO;
     self.markNum = 2;
     [self requestDataWithURL:MAINPAGE_URL2];
     
@@ -432,24 +451,26 @@ static NSString *aaaaa = nil;
 - (void)refeshData{
     
     // 下拉刷新
-    self.tableView1.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView1.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         NSLog(@"下拉刷新了");
+        self.mainScroll.scrollEnabled = NO;
         [self requestDataWithURL:MAINPAGE_URL1];
-        [self.tableView1.header endRefreshing];
+        [self.tableView1.mj_header endRefreshing];
     }];
     
-    self.tableView2.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView2.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         NSLog(@"下拉刷新了");
+        self.mainScroll.scrollEnabled = NO;
         [self requestDataWithURL:MAINPAGE_URL2];
-        [self.tableView2.header endRefreshing];
+        [self.tableView2.mj_header endRefreshing];
     }];
-    
     
     
     
     //上拉加载
     __block int i = 2;
     self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        self.mainScroll.scrollEnabled = NO;
         NSLog(@"上拉加载数据了!!! i = %d",i);
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
         i++;
@@ -459,6 +480,7 @@ static NSString *aaaaa = nil;
     __block int j = 2;
     self.tableView2.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         NSLog(@"上拉加载数据了!!! j = %d",j);
+        self.mainScroll.scrollEnabled = NO;
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
         NSLog(@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j);
         j++;
@@ -466,7 +488,15 @@ static NSString *aaaaa = nil;
     }];
 }
 
-
+// 网络连接错误或者解析数据失败弹出的alertview
+- (void)alertViewAction{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"网络连接错误" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        self.mainScroll.scrollEnabled = YES;
+    }];
+    [alert addAction:alertAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

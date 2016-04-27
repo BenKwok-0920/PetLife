@@ -23,6 +23,7 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
+    
     if (type == POST) {
         request.HTTPMethod = @"POST";
         

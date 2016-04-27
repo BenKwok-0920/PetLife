@@ -169,16 +169,17 @@
             if (mark == 0) {
                 
                     self.firstTableView.tableHeaderView = header;
-                
+                self.firstTableView.hidden = NO;
                 [self.firstTableView reloadData];
 //                [self.firstTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
                 
             }else if (mark == 1){
                 self.secondTableView.tableHeaderView = header;
-                
+                self.secondTableView.hidden = NO;
                 [self.secondTableView reloadData];
             }else{
                 self.thirdTableView.tableHeaderView = header;
+                self.thirdTableView.hidden = NO;
                 [self.thirdTableView reloadData];
             }
             
@@ -256,7 +257,7 @@
 -(void)createMainScrollView{
     
     self.mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 104, ScreenWidth, ScreenHeight - 104 - 49)];
-    self.mainScrollView.backgroundColor = [UIColor redColor];
+    self.mainScrollView.backgroundColor = [UIColor whiteColor];
     self.mainScrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - 104 - 49);
     self.mainScrollView.delegate = self;
     self.mainScrollView.pagingEnabled = YES;
@@ -292,7 +293,9 @@
 //    [self.thirdTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
      [self.thirdTableView registerNib:[UINib nibWithNibName:@"KnowlageTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.mainScrollView addSubview:self.thirdTableView];
-    
+    self.firstTableView.hidden = YES;
+    self.secondTableView.hidden = YES;
+    self.thirdTableView.hidden = YES;
     
     //上拉刷新  下拉加载
     
@@ -456,7 +459,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     KnowlageInfoViewController *knowlageInfoVC = [[KnowlageInfoViewController alloc] init];
     KnowlageModel *model;
     if (mark == 0) {
