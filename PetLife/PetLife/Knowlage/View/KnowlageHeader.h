@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^TapActionSkip)(NSNumber *number);
+
 @class KnowlageModel;
 @interface KnowlageHeader : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *imgImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, copy)TapActionSkip tapActionSkip;
 
 
 -(void)setDataWithModel:(KnowlageModel *)model;

@@ -153,8 +153,18 @@
             }
             KnowlageHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"KnowlageHeader" owner:nil options:nil] lastObject];
             header.frame = CGRectMake(0,64, ScreenWidth, (433.0 / 650.0) * ScreenWidth);
+            
+            header.tapActionSkip = ^void(NSNumber *number){
+                
+                KnowlageInfoViewController *knowlageInfoVC = [[KnowlageInfoViewController alloc] init];
+                knowlageInfoVC.number =  number;
+                [self.navigationController pushViewController:knowlageInfoVC animated:YES];
+                
+            };
+            
             if (array.count > 0) {
                 [header setDataWithModel:array[0]];
+                [array removeObjectAtIndex:0];
             }
             
             if (mark == 0) {
@@ -172,6 +182,7 @@
                 self.thirdTableView.tableHeaderView = header;
                 [self.thirdTableView reloadData];
             }
+            
             
         });
         
