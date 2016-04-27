@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "knowlage_H.png",
+      "filename" : "knowlage_H-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "knowlage_H.png",
       "scale" : "2x"
     },
     {

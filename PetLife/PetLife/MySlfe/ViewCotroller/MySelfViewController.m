@@ -151,7 +151,7 @@
     NSFileManager *filemanager = [NSFileManager defaultManager];
     if ([filemanager fileExistsAtPath:cacheFilePath]) {
         long long huancun = [[filemanager attributesOfItemAtPath:cacheFilePath error:nil] fileSize];
-        self.stringHC = [NSString stringWithFormat:@"%2lldM",huancun - 68];
+        self.stringHC = [NSString stringWithFormat:@"%2lldM",huancun - 102];
         NSLog(@"caches == %@",self.stringHC);
         return self.stringHC;
     }else{

@@ -79,6 +79,8 @@
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
     ZSnav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"知识" image:[[UIImage imageNamed:@"knowlage.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"knowlage_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:30],UITextAttributeFont, nil]];
+    
     
     self.viewControllers = @[SYnav,ZSnav,ZXnav,WDnav];
     
