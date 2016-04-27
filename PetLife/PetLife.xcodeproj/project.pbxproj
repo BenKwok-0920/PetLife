@@ -40,6 +40,7 @@
 		C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A791CC92767009B0515 /* StartViewController.m */; };
 		C2BE8D151CD0D69800C08EA4 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
 		C2BE8D181CD0D6C700C08EA4 /* KnowlageModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */; settings = {ASSET_TAGS = (); }; };
+		C2D0240D1CD103EE00C2DEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D0240C1CD103EE00C2DEA7 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9B1CCDAD5700E441B8 /* Info.plist */; };
 		C2D25D9E1CCDB08F00E441B8 /* asserxx.gif in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9D1CCDB08F00E441B8 /* asserxx.gif */; };
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
@@ -58,7 +59,6 @@
 		C2FE04AA1CBFDD740064377C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE04A91CBFDD740064377C /* ViewController.m */; };
 		C2FE04AD1CBFDD740064377C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE04AB1CBFDD740064377C /* Main.storyboard */; };
 		C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2FE04AE1CBFDD740064377C /* Assets.xcassets */; };
-		C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE04B01CBFDD740064377C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +121,7 @@
 		C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = HTML/DatabaseManager.m; sourceTree = "<group>"; };
 		C2BE8D161CD0D6C700C08EA4 /* KnowlageModelDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageModelDB.h; sourceTree = "<group>"; };
 		C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageModelDB.m; sourceTree = "<group>"; };
+		C2D0240C1CD103EE00C2DEA7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2D25D9B1CCDAD5700E441B8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D25D9D1CCDB08F00E441B8 /* asserxx.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = asserxx.gif; sourceTree = "<group>"; };
 		C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		C2FE04A91CBFDD740064377C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C2FE04AC1CBFDD740064377C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2FE04AE1CBFDD740064377C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C2FE04B11CBFDD740064377C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBE1D9FB3E700A4BACC6306B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -468,9 +468,9 @@
 				C2FE04A91CBFDD740064377C /* ViewController.m */,
 				C2FE04AB1CBFDD740064377C /* Main.storyboard */,
 				C2FE04AE1CBFDD740064377C /* Assets.xcassets */,
-				C2FE04B01CBFDD740064377C /* LaunchScreen.storyboard */,
 				C25662511CC5C8E500E6C156 /* PetLife.txt */,
 				C2D25D9B1CCDAD5700E441B8 /* Info.plist */,
+				C2D0240C1CD103EE00C2DEA7 /* LaunchScreen.storyboard */,
 				C259D3AF1CC0C9F30045CA99 /* Frameworks */,
 				C2FE04A21CBFDD740064377C /* Supporting Files */,
 			);
@@ -517,7 +517,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DWN2ETY5X8;
+						DevelopmentTeam = 9U8P46C2EW;
 					};
 				};
 			};
@@ -549,8 +549,8 @@
 				C208F1B51CD04A1700328CC6 /* AboutViewController.xib in Resources */,
 				C208F1BA1CD04A1700328CC6 /* StatementViewController.xib in Resources */,
 				C25662521CC5C8E500E6C156 /* PetLife.txt in Resources */,
-				C2FE04B21CBFDD740064377C /* LaunchScreen.storyboard in Resources */,
 				C2EE7C8E1CC66B3C00F8BC7B /* KnowlageInfoViewController.xib in Resources */,
+				C2D0240D1CD103EE00C2DEA7 /* LaunchScreen.storyboard in Resources */,
 				C2EE7C841CC61F4800F8BC7B /* KnowlageTableViewCell.xib in Resources */,
 				C2FE04AF1CBFDD740064377C /* Assets.xcassets in Resources */,
 				C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */,
@@ -634,14 +634,6 @@
 				C2FE04AC1CBFDD740064377C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C2FE04B01CBFDD740064377C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2FE04B11CBFDD740064377C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -745,7 +737,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife20009;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -767,7 +759,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife20009;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

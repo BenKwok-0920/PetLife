@@ -39,15 +39,6 @@
     
     return YES;
 }
-//- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-//    
-//    NSString *itemType = shortcutItem.type;
-//    if ([itemType isEqualToString:@"one"]) {
-//        
-//        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[StatementViewController alloc]init]];
-//    }
-//   
-//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
