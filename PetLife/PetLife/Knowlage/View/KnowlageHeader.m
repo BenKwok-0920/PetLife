@@ -12,7 +12,7 @@
 
 @interface KnowlageHeader ()
 
-@property (nonatomic,assign)NSNumber* number;
+@property (nonatomic,retain)NSNumber* number;
 
 @end
 
@@ -40,7 +40,10 @@
 -(void)tapAction:(UITapGestureRecognizer *)sender{
 
     if (self.tapActionSkip) {
-        self.tapActionSkip(self.number);
+        if (self.number) {
+            self.tapActionSkip(self.number);
+        }
+        
     }
     
 }

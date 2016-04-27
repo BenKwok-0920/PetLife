@@ -38,9 +38,9 @@
 		C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C2A681CC92630009B0515 /* MainPageInfoVC.xib */; };
 		C29C2A761CC92630009B0515 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A6A1CC92630009B0515 /* MainPageViewController.m */; };
 		C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A791CC92767009B0515 /* StartViewController.m */; };
-		C2BE8D151CD0D69800C08EA4 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
-		C2BE8D181CD0D6C700C08EA4 /* KnowlageModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */; settings = {ASSET_TAGS = (); }; };
-		C2D0240D1CD103EE00C2DEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D0240C1CD103EE00C2DEA7 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		C2BE8D151CD0D69800C08EA4 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */; };
+		C2BE8D181CD0D6C700C08EA4 /* KnowlageModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */; };
+		C2D0240D1CD103EE00C2DEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D0240C1CD103EE00C2DEA7 /* LaunchScreen.storyboard */; };
 		C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9B1CCDAD5700E441B8 /* Info.plist */; };
 		C2D25D9E1CCDB08F00E441B8 /* asserxx.gif in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9D1CCDB08F00E441B8 /* asserxx.gif */; };
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
@@ -517,7 +517,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9U8P46C2EW;
+						DevelopmentTeam = DWN2ETY5X8;
 					};
 				};
 			};
@@ -737,7 +737,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife123456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -759,7 +759,7 @@
 				INFOPLIST_FILE = PetLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife123456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
