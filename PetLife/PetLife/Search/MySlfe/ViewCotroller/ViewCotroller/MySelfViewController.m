@@ -17,7 +17,7 @@
 #define KVheight self.view.frame.size.height
 
 
-@interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
+@interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,UIViewControllerPreviewingDelegate>
 
 
 
@@ -51,8 +51,10 @@
     self.backImage.image = [UIImage imageNamed:@"pinkcolor_background"];
     
     //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,120 ,128, 128)];
+    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.layer.masksToBounds=YES;
+    self.imageTitle.layer.cornerRadius = 10;
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -74,7 +76,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MySelfTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //    cell.textLabel.text = @"1234";
@@ -122,7 +123,6 @@
     }
 
 }
-
 
 
 #pragma mark ------清除缓存

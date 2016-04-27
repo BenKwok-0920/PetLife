@@ -11,10 +11,6 @@
 
 @interface StartViewController ()
 
-//@property (nonatomic,strong)UIImageView *imageView;
-//
-//@property (nonatomic,strong)NSTimer *timer;
-
 @end
 
 @implementation StartViewController
