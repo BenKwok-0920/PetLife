@@ -216,6 +216,7 @@ static NSString *aaaaa = nil;
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败");
+        
         [self alertViewAction];
     }];
 }

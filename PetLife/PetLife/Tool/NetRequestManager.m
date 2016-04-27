@@ -19,9 +19,13 @@
 
 - (void)requestWithType:(RequestType)type URLString:(NSString *)URL parDic:(NSDictionary *)parDic finish:(RequestFinish)finish error:(RequestError)errorReq{
     
+    NSURLCache *urlCaches = [NSURLCache sharedURLCache];
+    
+    [urlCaches setMemoryCapacity:500*1024*1024];
+    
     NSURL *url = [NSURL URLWithString:URL];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     
     
     if (type == POST) {
@@ -33,6 +37,17 @@
         }
         
     }
+    
+    // 从请求中获取缓存输出
+    NSCachedURLResponse *response = [urlCaches cachedResponseForRequest:request];
+    
+    // 判断是否有缓存
+    if (response != nil) {
+        NSLog(@"有缓存,取缓存");
+        [request setCachePolicy:NSURLRequestReturnCacheDataDontLoad];
+    }
+    
+    
     
         NSURLSession *session = [NSURLSession sharedSession];
         

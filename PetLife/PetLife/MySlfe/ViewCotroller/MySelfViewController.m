@@ -11,6 +11,7 @@
 #import "FeedBackViewController.h"
 #import "StatementViewController.h"
 #import "AboutViewController.h"
+#import <SDImageCache.h>
 
 
 #define KVwidth self.view.frame.size.width
@@ -144,24 +145,20 @@
     //定义变量存储总的缓存大小
     long long sumSize = 0;
     //01.获取当前图片缓存路径
-    NSString *cacheFilePath = [NSHomeDirectory()stringByAppendingPathComponent:@"Library/Caches"];
+    NSString *cacheFilePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 
     //02.创建文件管理对象
     NSFileManager *filemanager = [NSFileManager defaultManager];
-    //获取当前缓存路径下的所有子路径
-    NSArray *subPaths = [filemanager subpathsOfDirectoryAtPath:cacheFilePath error:nil];
-    //遍历所有子文件
-    for (NSString *subPath in subPaths) {
-    //1）.拼接完整路径
-        NSString *filePath = [cacheFilePath stringByAppendingFormat:@"/%@ M",subPath];
-    //2）.计算文件的大小
-        long long fileSize = [[filemanager attributesOfItemAtPath:filePath error:nil]fileSize];
-    //3）.加载到文件的大小
-        sumSize += fileSize;
-            }
-    float size_m = sumSize/(1000*1000);
-    self.stringHC = [NSString stringWithFormat:@"%.2fM",size_m];
-    return self.stringHC;
+    if ([filemanager fileExistsAtPath:cacheFilePath]) {
+        long long huancun = [[filemanager attributesOfItemAtPath:cacheFilePath error:nil] fileSize];
+        self.stringHC = [NSString stringWithFormat:@"%2lldM",huancun - 68];
+        NSLog(@"caches == %@",self.stringHC);
+        return self.stringHC;
+    }else{
+        return 0;
+    }
+    
+    
 }
 #pragma mark - UIAlertViewDelegate方法实现
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -170,9 +167,18 @@
     //01......
         NSFileManager *fileManager = [NSFileManager defaultManager];
     //02.....
-        NSString *cacheFilePath = [NSHomeDirectory()stringByAppendingPathComponent:@"Library/Caches"];
+        NSString *cacheFilePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     //03......
-        [fileManager removeItemAtPath:cacheFilePath error:nil];
+//        [fileManager removeItemAtPath:cacheFilePath error:nil];
+        
+        if ([fileManager fileExistsAtPath:cacheFilePath]) {
+            NSArray *childerFiles = [fileManager subpathsAtPath:cacheFilePath];
+            for (NSString *fileName in childerFiles) {
+                NSString *absolutePath = [cacheFilePath stringByAppendingPathComponent:fileName];
+                [fileManager removeItemAtPath:absolutePath error:nil];
+            }
+        }
+        [[SDImageCache sharedImageCache] cleanDisk];
     
     //04刷新第一行单元格
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
