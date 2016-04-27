@@ -60,7 +60,7 @@
     //首页
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
-    mainPageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"home_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+    mainPageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"shouye-32"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"shouye_H-32"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     
     //咨询

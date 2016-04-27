@@ -23,7 +23,8 @@
 
 
 @property (nonatomic,strong)UITableView *tableMySelf;
-@property (nonatomic,strong)UIView *titleView;
+@property (nonatomic,strong)UIImageView *backImage;
+//@property (nonatomic,strong)UIView *titleView;
 @property (nonatomic,strong)UIImageView *imageTitle;
 
 @property (nonatomic,strong)NSString *stringHC;
@@ -51,8 +52,12 @@
     self.tableMySelf.scrollEnabled = NO;
     self.tableMySelf.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     //view
-    self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
-    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
+//    self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
+//    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
+    self.backImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.backImage.image = [UIImage imageNamed:@"pinkcolor_background"];
+    
+    
     
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
@@ -66,8 +71,8 @@
     self.tableMySelf.dataSource = self;
     
     //添加
-    [self.titleView addSubview:self.imageTitle];
-    [self.view addSubview:self.titleView];
+    [self.view addSubview:_backImage];
+    [self.backImage addSubview:self.imageTitle];
     [self.view addSubview:self.tableMySelf];
     
 }
