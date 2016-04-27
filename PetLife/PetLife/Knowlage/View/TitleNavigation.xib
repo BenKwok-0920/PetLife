@@ -10,12 +10,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" tag="10000" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Tw-7Wd">
+                <stackView opaque="NO" alpha="0.90000000000000002" tag="10000" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Tw-7Wd">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <button opaque="NO" tag="20001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-Ul-7xR">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
                             <state key="normal" title="训练">
                                 <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -25,7 +25,7 @@
                         </button>
                         <button opaque="NO" tag="20002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-Md-GUy">
                             <rect key="frame" x="200" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
                             <state key="normal" title="生活">
                                 <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -35,7 +35,7 @@
                         </button>
                         <button opaque="NO" tag="20003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-9f-R11">
                             <rect key="frame" x="400" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
                             <state key="normal" title="健康">
                                 <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -58,7 +58,7 @@
                 <outlet property="secondButton" destination="qPi-Md-GUy" id="xbv-fc-Ewp"/>
                 <outlet property="thirdButton" destination="1k5-9f-R11" id="Wok-u9-9TR"/>
             </connections>
-            <point key="canvasLocation" x="537" y="124"/>
+            <point key="canvasLocation" x="378" y="109"/>
         </view>
     </objects>
 </document>

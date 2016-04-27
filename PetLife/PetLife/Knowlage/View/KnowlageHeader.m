@@ -10,6 +10,12 @@
 #import "KnowlageModel.h"
 #import <UIImageView+WebCache.h>
 
+@interface KnowlageHeader ()
+
+@property (nonatomic,assign)NSNumber* number;
+
+@end
+
 @implementation KnowlageHeader
 
 /*
@@ -24,7 +30,19 @@
 
     [_imgImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil];
     _titleLabel.text = model.title;
+    
+    _imgImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [_imgImageView addGestureRecognizer:tap];
+    self.number = model.number;
 }
 
+-(void)tapAction:(UITapGestureRecognizer *)sender{
+
+    if (self.tapActionSkip) {
+        self.tapActionSkip(self.number);
+    }
+    
+}
 
 @end
