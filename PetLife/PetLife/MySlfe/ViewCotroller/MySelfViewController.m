@@ -11,6 +11,7 @@
 #import "FeedBackViewController.h"
 #import "StatementViewController.h"
 #import "AboutViewController.h"
+#import <SDImageCache.h>
 
 
 #define KVwidth self.view.frame.size.width
@@ -18,6 +19,8 @@
 
 
 @interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
+
+
 
 @property (nonatomic,strong)UITableView *tableMySelf;
 @property (nonatomic,strong)UIView *titleView;
@@ -35,15 +38,27 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:1.000];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
+    
+    // 设置title字体颜色
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Helvetica-Bold" size:18],[UIColor whiteColor]] forKeys:@[UITextAttributeFont,UITextAttributeTextColor]];
+    
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
+    self.tableMySelf.scrollEnabled = NO;
+    self.tableMySelf.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     //view
     self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
+    self.titleView.backgroundColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
     
     //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
+    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.layer.masksToBounds=YES;
+    self.imageTitle.layer.cornerRadius = 10;
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -51,7 +66,7 @@
     self.tableMySelf.dataSource = self;
     
     //添加
-    [self.view addSubview:self.imageTitle];
+    [self.titleView addSubview:self.imageTitle];
     [self.view addSubview:self.titleView];
     [self.view addSubview:self.tableMySelf];
     
@@ -72,6 +87,7 @@
         case 0:
            cell.labelBar.text = @"清除缓存";
             cell.imagBar.image = [UIImage imageNamed:@"huancun_16"];
+            [self getCacheSize];
             cell.huancun.text = self.stringHC;
             break;
         case 1:
@@ -94,6 +110,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     switch (indexPath.row) {
         case 0:
             [self dianji];
@@ -102,7 +119,9 @@
         [self.navigationController pushViewController:[[FeedBackViewController alloc]init] animated:YES];
             break;
         case 2:
-         [self.navigationController pushViewController:[[StatementViewController alloc]init] animated:YES];
+            
+         [self.navigationController pushViewController:[[StatementViewController alloc] init] animated:YES];
+         
             break;
         case 3:
             [self.navigationController pushViewController:[[AboutViewController alloc]init] animated:YES];
@@ -112,6 +131,10 @@
     }
 
 }
+
+
+
+#pragma mark ------清除缓存
 - (void)dianji{
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"缓存清除" message:@"确定清除缓存?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
     [alertView show];
@@ -122,24 +145,20 @@
     //定义变量存储总的缓存大小
     long long sumSize = 0;
     //01.获取当前图片缓存路径
-    NSString *cacheFilePath = [NSHomeDirectory()stringByAppendingPathComponent:@"Library/Caches"];
+    NSString *cacheFilePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 
     //02.创建文件管理对象
     NSFileManager *filemanager = [NSFileManager defaultManager];
-    //获取当前缓存路径下的所有子路径
-    NSArray *subPaths = [filemanager subpathsOfDirectoryAtPath:cacheFilePath error:nil];
-    //遍历所有子文件
-    for (NSString *subPath in subPaths) {
-    //1）.拼接完整路径
-        NSString *filePath = [cacheFilePath stringByAppendingFormat:@"/%@ M",subPath];
-    //2）.计算文件的大小
-        long long fileSize = [[filemanager attributesOfItemAtPath:filePath error:nil]fileSize];
-    //3）.加载到文件的大小
-        sumSize += fileSize;
-            }
-    float size_m = sumSize/(1000*1000);
-    self.stringHC = [NSString stringWithFormat:@"%.2fM",size_m];
-    return self.stringHC;
+    if ([filemanager fileExistsAtPath:cacheFilePath]) {
+        long long huancun = [[filemanager attributesOfItemAtPath:cacheFilePath error:nil] fileSize];
+        self.stringHC = [NSString stringWithFormat:@"%2lldM",huancun - 102];
+        NSLog(@"caches == %@",self.stringHC);
+        return self.stringHC;
+    }else{
+        return 0;
+    }
+    
+    
 }
 #pragma mark - UIAlertViewDelegate方法实现
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -148,9 +167,18 @@
     //01......
         NSFileManager *fileManager = [NSFileManager defaultManager];
     //02.....
-        NSString *cacheFilePath = [NSHomeDirectory()stringByAppendingPathComponent:@"Library/Caches"];
+        NSString *cacheFilePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     //03......
-        [fileManager removeItemAtPath:cacheFilePath error:nil];
+//        [fileManager removeItemAtPath:cacheFilePath error:nil];
+        
+        if ([fileManager fileExistsAtPath:cacheFilePath]) {
+            NSArray *childerFiles = [fileManager subpathsAtPath:cacheFilePath];
+            for (NSString *fileName in childerFiles) {
+                NSString *absolutePath = [cacheFilePath stringByAppendingPathComponent:fileName];
+                [fileManager removeItemAtPath:absolutePath error:nil];
+            }
+        }
+        [[SDImageCache sharedImageCache] cleanDisk];
     
     //04刷新第一行单元格
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];

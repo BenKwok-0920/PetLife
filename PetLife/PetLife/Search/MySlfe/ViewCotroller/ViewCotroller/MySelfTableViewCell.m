@@ -10,9 +10,6 @@
 
 @implementation MySelfTableViewCell
 
-
-
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     if (self == [super initWithStyle:style reuseIdentifier:reuseIdentifier])  {
@@ -22,7 +19,6 @@
         
         self.labelBar = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.imagBar.frame) + 10, 5, self.frame.size.width - (CGRectGetMaxX(self.imagBar.frame) + 10)  , self.frame.size.height - 10)];
         [self.contentView addSubview:_labelBar];
-        
         
     }
     

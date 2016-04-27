@@ -27,6 +27,8 @@
     NSInteger mark;
 }
 
+
+
 @property (nonatomic,strong)TitleNavigation *titleNavigation;
 @property (nonatomic,strong)UIScrollView *mainScrollView;
 @property (nonatomic,strong)UITableView *firstTableView;
@@ -81,7 +83,16 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"知识";
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+    
+    // 设置title字体颜色
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Helvetica-Bold" size:18],[UIColor whiteColor]] forKeys:@[UITextAttributeFont,UITextAttributeTextColor]];
+    
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
     
     mark = 0;
     _firstRequestSize = 15;
@@ -102,8 +113,6 @@
 //        
 //        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
 //    });
-   
-    
     
    
 }
@@ -114,7 +123,7 @@
     self.view11 = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.view11.backgroundColor = [UIColor blackColor];
-    self.view11.alpha = 0.5;
+    self.view11.alpha = 0.6;
 //    [self.view addSubview:self.view11];
     
     [_session GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -170,16 +179,17 @@
             if (mark == 0) {
                 
                     self.firstTableView.tableHeaderView = header;
-                
+                self.firstTableView.hidden = NO;
                 [self.firstTableView reloadData];
 //                [self.firstTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
                 
             }else if (mark == 1){
                 self.secondTableView.tableHeaderView = header;
-                
+                self.secondTableView.hidden = NO;
                 [self.secondTableView reloadData];
             }else{
                 self.thirdTableView.tableHeaderView = header;
+                self.thirdTableView.hidden = NO;
                 [self.thirdTableView reloadData];
             }
             
@@ -247,12 +257,7 @@
             if (ssself.thirdArray.count <= 0) {
                 [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
             }
-            
         }
-
-        
-        
-        
     };
     [_titleNavigation changeTextColorWith:0];
     [tempView addSubview:_titleNavigation];
@@ -263,7 +268,7 @@
 -(void)createMainScrollView{
     
     self.mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 104, ScreenWidth, ScreenHeight - 104 - 49)];
-    self.mainScrollView.backgroundColor = [UIColor redColor];
+    self.mainScrollView.backgroundColor = [UIColor whiteColor];
     self.mainScrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - 104 - 49);
     self.mainScrollView.delegate = self;
     self.mainScrollView.pagingEnabled = YES;
@@ -299,7 +304,9 @@
 //    [self.thirdTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
      [self.thirdTableView registerNib:[UINib nibWithNibName:@"KnowlageTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.mainScrollView addSubview:self.thirdTableView];
-    
+    self.firstTableView.hidden = YES;
+    self.secondTableView.hidden = YES;
+    self.thirdTableView.hidden = YES;
     
     //上拉刷新  下拉加载
     
@@ -310,7 +317,7 @@
         [ssself.firstArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
     }];
-    [self.firstTableView.gifHeader setGifName:@"test"];
+    [self.firstTableView.gifHeader setGifName:@"asserxx"];
     
     
     [self.secondTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
@@ -318,7 +325,7 @@
         [ssself.secondArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
     }];
-    [self.secondTableView.gifHeader setGifName:@"test"];
+    [self.secondTableView.gifHeader setGifName:@"asserxx"];
     
     
     [self.thirdTableView addRefreshWithRefreshViewType:(LORefreshViewTypeHeaderGif) refreshingBlock:^{
@@ -326,7 +333,7 @@
         [ssself.thirdArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
     }];
-    [self.thirdTableView.gifHeader setGifName:@"test"];
+    [self.thirdTableView.gifHeader setGifName:@"asserxx"];
     
     //下拉加载
     
@@ -463,7 +470,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     KnowlageInfoViewController *knowlageInfoVC = [[KnowlageInfoViewController alloc] init];
     KnowlageModel *model;
     if (mark == 0) {

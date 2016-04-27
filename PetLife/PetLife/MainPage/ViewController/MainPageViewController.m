@@ -13,9 +13,12 @@
 #define reuseID @"cell"
 #import <UIImageView+WebCache.h>
 #import "MainPageInfoVC.h"
-#import <MJRefreshNormalHeader.h>
+#import "MJRefreshNormalHeader.h"
 #import <MJRefreshAutoNormalFooter.h>
-#import "LORefresh.h"
+
+//网络检查
+#import "Reachability.h"
+#import "MBProgressHUD.h"
 
 @interface MainPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -23,7 +26,6 @@
 
 @property (nonatomic,strong)NSMutableArray *cellArray1;
 @property (nonatomic,strong)NSMutableArray *cellArray2;
-
 
 @property (nonatomic,strong)UIScrollView *mainScroll;
 
@@ -37,9 +39,19 @@
 
 @property (nonatomic,strong)UIView *selectView;
 
+// 菊花
+@property (nonatomic,strong)UIActivityIndicatorView *activity;
+
 @end
 
 @implementation MainPageViewController
+
+- (UIActivityIndicatorView *)activity{
+    if (!_activity) {
+        _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
+    }
+    return _activity;
+}
 
 
 - (NSMutableArray *)cellArray1{
@@ -56,7 +68,6 @@
     return _cellArray2;
 }
 
-
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -65,9 +76,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.96 green:0.82 blue:0.83 alpha:1.00];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.markNum = 1;
+    
+    self.navigationItem.title = @"萌宠";
     
     self.navTitleView = [[[NSBundle mainBundle] loadNibNamed:@"NavTitleView" owner:nil options:nil] lastObject];
     self.navTitleView.frame = CGRectMake(0, 0, ScreenWidth - 150, 44);
@@ -80,7 +93,7 @@
     // !!!:在此处设置头标题的按钮图片
     
     self.selectView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.navTitleView.titleBtn1.frame), 8, 75, 28)];
-    self.selectView.backgroundColor = [UIColor colorWithRed:0.92 green:0.44 blue:0.55 alpha:1.00];
+    self.selectView.backgroundColor = [UIColor colorWithRed:0.83 green:0.22 blue:0.36 alpha:1.00];
     self.selectView.layer.cornerRadius = 14;
     [self.navTitleView insertSubview:self.selectView belowSubview:self.navTitleView.titleBtn1];
     
@@ -88,7 +101,6 @@
     self.navTitleView.backgroundColor = [UIColor clearColor];
     
     self.navigationItem.titleView = self.navTitleView;
-    
     
     // 创建scrollView
     self.mainScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 28)];
@@ -117,20 +129,54 @@
     self.tableView2.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView2 registerClass:[MainPageTVCell class] forCellReuseIdentifier:reuseID];
     [self.mainScroll addSubview:self.tableView2];
+    // 小菊花
+    self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+    [self.view addSubview:_activity];
+    [_activity startAnimating];
     
-    // 刷新
+    // 下拉刷新 上拉加载
     [self refeshData];
-    
     [self requestDataWithURL:MAINPAGE_URL1];
     
+    
+    //检测是否有网络
+    [self isConnectionAvailable];
+}
+
+- (BOOL)isConnectionAvailable{
+    
+    BOOL isExistenceNetwork = YES;
+    Reachability *reach = [Reachability reachabilityWithHostName:MAINPAGE_URL1];
+    switch ([reach currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = NO;
+            //NSLog(@"notReachable");
+            break;
+        case ReachableViaWiFi:
+            isExistenceNetwork = YES;
+            //NSLog(@"WIFI");
+            break;
+        case ReachableViaWWAN:
+            isExistenceNetwork = YES;
+            //NSLog(@"3G");
+            break;
+    }
+    
+    if (!isExistenceNetwork) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];//<span style="font-family: Arial, Helvetica, sans-serif;">MBProgressHUD为第三方库，不需要可以省略或使用AlertView</span>
+        hud.removeFromSuperViewOnHide =YES;
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"网络连接失败,请检查您的网络设置";
+        hud.minSize = CGSizeMake(132.f, 108.0f);
+        [hud hide:YES afterDelay:5];
+        return NO;
+    }
+    
+    return isExistenceNetwork;
 }
 
 
-
-
-
-
-
+static NSString *aaaaa = nil;
 // 请求数据
 - (void)requestDataWithURL:(NSString *)url{
     [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
@@ -143,12 +189,12 @@
         NSLog(@"%@",smallStr);
         
         if (self.markNum == 1) {
-            
             if (self.cellArray1.count > 0) {
                 [self.cellArray1 removeAllObjects];
             }
-        }else{
+        }else if(self.markNum == 2){
             if (self.cellArray2.count > 0) {
+                
                 [self.cellArray2 removeAllObjects];
             }
         }
@@ -163,6 +209,7 @@
                 if (self.markNum == 1) {
                     [self.cellArray1 addObject:model];
                 }else if(self.markNum == 2){
+                    
                     [self.cellArray2 addObject:model];
                 }
                 
@@ -170,21 +217,32 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (self.markNum == 1) {
+                    
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
+                    [_activity removeFromSuperview];
+                    self.mainScroll.scrollEnabled = YES;
             }else{
+                
+                
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
+                    [_activity removeFromSuperview];
+                
+                    self.mainScroll.scrollEnabled = YES;
             }
             });
             
             
         }else{
             NSLog(@"数据解析失败了");
+            [self alertViewAction];
         }
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败");
+        
+        [self alertViewAction];
     }];
 }
 
@@ -199,22 +257,11 @@
         NSString *smallStr = [url substringFromIndex:url.length - 6];
         NSLog(@"%@",smallStr);
         
-//        if (self.markNum == 1) {
-//            
-//            if (self.cellArray1.count > 0 && [smallStr isEqualToString:@"page=1"]) {
-//                [self.cellArray1 removeAllObjects];
-//            }
-//        }else{
-//            if (self.cellArray2.count > 0 && [smallStr isEqualToString:@"page=1"]) {
-//                [self.cellArray2 removeAllObjects];
-//            }
-//        }
         
         if (!dicError) {
             
             NSArray *array = [dic objectForKey:@"result"];
             
-            NSMutableArray *arr1 = [NSMutableArray arrayWithArray:self.cellArray1];
             
             for (NSDictionary *resultDic in array) {
                 MainModel *model = [[MainModel alloc] init];
@@ -231,22 +278,24 @@
                 if (self.markNum == 1) {
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
-//                    [self.tableView1 scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:arr1.count-1 inSection:0] atScrollPosition:(UITableViewScrollPositionBottom) animated:YES];
+                    [self.tableView1.mj_footer endRefreshing];
+                    self.mainScroll.scrollEnabled = YES;
                 }else{
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
+                    [self.tableView2.mj_footer endRefreshing];
+                    self.mainScroll.scrollEnabled = YES;
                 }
             });
             
-            
-            
-            
         }else{
             NSLog(@"数据解析失败了");
+            [self alertViewAction];
         }
         
     } error:^(NSError *error) {
         NSLog(@"数据请求失败");
+        [self alertViewAction];
     }];
 }
 
@@ -261,10 +310,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (self.markNum == 1) {
-        NSLog(@"arr1 = %ld",self.cellArray1.count);
+        NSLog(@"arr1 = %lu",(unsigned long)self.cellArray1.count);
         return self.cellArray1.count;
     }else{
-        NSLog(@"arr2 = %ld",self.cellArray2.count);
+        NSLog(@"arr2 = %lu",(unsigned long)self.cellArray2.count);
         return self.cellArray2.count;
     }
     
@@ -321,25 +370,43 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     float temp = self.mainScroll.contentOffset.x / ScreenWidth;
-//    NSLog(@"%f",temp);
-//    float ttp = CGRectGetMinX(self.selectView.frame) / (CGRectGetMinX(self.navTitleView.titleBtn2.frame) - CGRectGetMinX(self.navTitleView.titleBtn1.frame));
-//    ttp = temp;
     CGPoint point = self.selectView.frame.origin;
     point.x = temp * (CGRectGetMinX(self.navTitleView.titleBtn2.frame) - CGRectGetMinX(self.navTitleView.titleBtn1.frame));
-//    NSLog(@"%f",point.x);
     self.selectView.frame = CGRectMake(point.x, 8, 75, 28);
     
     if (temp == 0) {
         self.markNum = 1;
+        
+        
+        
         if (self.cellArray1.count != 0) {
             return;
         }
+        // 小菊花
+        self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+        [self.view addSubview:_activity];
+        [_activity startAnimating];
+        
+        self.mainScroll.scrollEnabled = NO;
+        
+        // 加载
         [self requestDataWithURL:MAINPAGE_URL1];
     }else if(temp == 1){
         self.markNum = 2;
+        
+        
+        
         if (self.cellArray2.count != 0) {
             return;
         }
+        // 小菊花
+        self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
+        [self.view addSubview:_activity];
+        [_activity startAnimating];
+        
+        self.mainScroll.scrollEnabled = NO;
+        
+        // 加载
         [self requestDataWithURL:MAINPAGE_URL2];
     }
 }
@@ -347,37 +414,35 @@
 #pragma mark - navigation按钮的方法
 - (void)btn1Click{
     NSLog(@"按了1");
-    self.markNum = 1;
-    if (self.mainScroll.contentOffset.x != 0) {
+    
+    if (self.mainScroll.contentOffset.x != 0 && self.mainScroll.scrollEnabled == YES) {
         [self.mainScroll setContentOffset:CGPointMake(0, 0) animated:YES];
-//        [UIView animateWithDuration:0.2 animations:^{
-//            self.selectView.frame = CGRectMake(CGRectGetMinX(self.navTitleView.titleBtn1.frame), 0, 75, 44);
-//        }];
         
     }
-    
+
     if (self.cellArray1.count != 0) {
         return;
+        
     }
+    self.mainScroll.scrollEnabled = NO;
+    self.markNum = 1;
     [self requestDataWithURL:MAINPAGE_URL1];
-    
+   
 }
 
 - (void)btn2Click{
     NSLog(@"按了2");
-    self.markNum = 2;
-    if (self.mainScroll.contentOffset.x != ScreenWidth) {
+    
+    if (self.mainScroll.contentOffset.x != ScreenWidth && self.mainScroll.scrollEnabled == YES) {
         [self.mainScroll setContentOffset:CGPointMake(ScreenWidth, 0) animated:YES];
-//        [UIView animateWithDuration:0.2 animations:^{
-//            self.selectView.frame = CGRectMake(CGRectGetMinX(self.navTitleView.titleBtn2.frame), 0, 75, 44);
-//        }];
         
     }
-    
-    
+
     if (self.cellArray2.count != 0) {
         return;
     }
+    self.mainScroll.scrollEnabled = NO;
+    self.markNum = 2;
     [self requestDataWithURL:MAINPAGE_URL2];
     
 }
@@ -387,74 +452,52 @@
 - (void)refeshData{
     
     // 下拉刷新
-    self.tableView1.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView1.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         NSLog(@"下拉刷新了");
+        self.mainScroll.scrollEnabled = NO;
         [self requestDataWithURL:MAINPAGE_URL1];
-        [self.tableView1.header endRefreshing];
+        [self.tableView1.mj_header endRefreshing];
     }];
     
-    self.tableView2.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView2.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         NSLog(@"下拉刷新了");
+        self.mainScroll.scrollEnabled = NO;
         [self requestDataWithURL:MAINPAGE_URL2];
-        [self.tableView2.header endRefreshing];
+        [self.tableView2.mj_header endRefreshing];
     }];
-    
     
     
     
     //上拉加载
     __block int i = 2;
     self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        self.mainScroll.scrollEnabled = NO;
         NSLog(@"上拉加载数据了!!! i = %d",i);
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
         i++;
-        [self.tableView1.mj_footer endRefreshing];
+        
     }];
     
     __block int j = 2;
     self.tableView2.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         NSLog(@"上拉加载数据了!!! j = %d",j);
+        self.mainScroll.scrollEnabled = NO;
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
         NSLog(@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j);
         j++;
-        [self.tableView2.mj_footer endRefreshing];
+        
     }];
 }
 
-- (void)loRefeshData{
-    [self.tableView1 addRefreshWithRefreshViewType:LORefreshViewTypeHeaderDefault refreshingBlock:^{
-        NSLog(@"下拉刷新了");
-        [self requestDataWithURL:MAINPAGE_URL1];
-        [self.tableView1.defaultHeader endRefreshing];
+// 网络连接错误或者解析数据失败弹出的alertview
+- (void)alertViewAction{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"网络连接错误" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        self.mainScroll.scrollEnabled = YES;
     }];
-    [self.tableView2 addRefreshWithRefreshViewType:LORefreshViewTypeHeaderDefault refreshingBlock:^{
-        NSLog(@"下拉刷新了");
-        [self requestDataWithURL:MAINPAGE_URL2];
-        [self.tableView2.defaultHeader endRefreshing];
-    }];
-    
-    
-    __block int i = 2;
-    [self.tableView1 addRefreshWithRefreshViewType:LORefreshViewTypeFooterDefault refreshingBlock:^{
-        
-        NSLog(@"上拉加载数据了!!! i = %d",i);
-        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
-        i++;
-        
-        [self.tableView1.defaultFooter endRefreshing];
-        
-    }];
-    
-    __block int j = 2;
-    [self.tableView2 addRefreshWithRefreshViewType:LORefreshViewTypeFooterDefault refreshingBlock:^{
-        NSLog(@"上拉加载数据了!!! j = %d",j);
-        [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
-        j++;
-        [self.tableView2.defaultFooter endRefreshing];
-    }];
-    
+    [alert addAction:alertAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

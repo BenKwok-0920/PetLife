@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
+#import "KnowlageViewController.h"
+#import "StatementViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -24,7 +27,7 @@
 
     [self.window makeKeyWindow];
     
-    UIImage *draw = [UIImage imageNamed:@"pinkcolor_background.png"];
+    UIImage *draw = [UIImage imageNamed:@"pinkcolor_background"];
     
     UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
     
@@ -36,6 +39,16 @@
     
     return YES;
 }
+//- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+//    
+//    NSString *itemType = shortcutItem.type;
+//    if ([itemType isEqualToString:@"one"]) {
+//        
+//        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[StatementViewController alloc]init]];
+//    }
+//   
+//}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -39,9 +39,28 @@
 
 - (IBAction)submitAction:(id)sender {
     
+    if ([self isValidateEmail:self.emailText.text] == NO) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写正确的邮箱地址" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alert show];
+        [self.view endEditing:YES];
+    }else if ([self.questionText.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写您的问题" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alert show];
+        [self.view endEditing:YES];
+    }else{
+    
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"意见反馈" message:@"感谢您的反馈！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
     [alertView show];
     [self.view endEditing:YES];
+    }
+}
+
+
+//邮箱地址的正则表达式
+- (BOOL)isValidateEmail:(NSString *)email{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
 }
 
 

@@ -17,16 +17,14 @@
 #define KVheight self.view.frame.size.height
 
 
-@interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
+@interface MySelfViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,UIViewControllerPreviewingDelegate>
 
 
 
 @property (nonatomic,strong)UITableView *tableMySelf;
-@property (nonatomic,strong)UIView *titleView;
 @property (nonatomic,strong)UIImageView *imageTitle;
-
 @property (nonatomic,strong)NSString *stringHC;
-
+@property (nonatomic,strong)UIImageView *backImage;
 
 @end
 
@@ -37,16 +35,26 @@
     
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.73 blue:0.74 alpha:1.00];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
+    
+    // 设置title字体颜色
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Helvetica-Bold" size:18],[UIColor whiteColor]] forKeys:@[UITextAttributeFont,UITextAttributeTextColor]];
+    
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tableMySelf = [[UITableView alloc]initWithFrame:CGRectMake(0, 260, KVwidth, KVheight - 304 ) style:(UITableViewStylePlain)];
-    //view
-    self.titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, 260)];
-    self.titleView.backgroundColor = [UIColor colorWithRed:0.99 green:0.80 blue:0.80 alpha:1.00];
+    
+    //背景图片
+    self.backImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KVwidth, KVheight)];
+    self.backImage.image = [UIImage imageNamed:@"pinkcolor_background"];
     
     //头像
-    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 128)/2,(CGRectGetMaxY(self.titleView.frame) - 128)/2 +44 ,128, 128)];
+    self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
     self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.layer.masksToBounds=YES;
+    self.imageTitle.layer.cornerRadius = 10;
     
     //注册
     [self.tableMySelf registerClass:[MySelfTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -54,8 +62,9 @@
     self.tableMySelf.dataSource = self;
     
     //添加
-    [self.titleView addSubview:self.imageTitle];
-    [self.view addSubview:self.titleView];
+    [self.view addSubview:self.backImage];
+    [self.backImage addSubview:self.imageTitle];
+    //[self.view addSubview:self.titleView];
     [self.view addSubview:self.tableMySelf];
     
 }
@@ -67,7 +76,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MySelfTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //    cell.textLabel.text = @"1234";
@@ -115,7 +123,6 @@
     }
 
 }
-
 
 
 #pragma mark ------清除缓存

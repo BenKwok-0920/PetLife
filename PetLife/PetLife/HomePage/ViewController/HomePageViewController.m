@@ -12,13 +12,11 @@
 #import "MySelfViewController.h"
 #import "KnowlageViewController.h"
 
-
-#import "Reachability.h"
-#import "MBProgressHUD.h"
 #import "StartViewController.h"
 
 @interface HomePageViewController ()
 @property (nonatomic,strong)NSTimer *timer;
+
 @property (nonatomic,strong)StartViewController *starVC;
 
 @property (nonatomic,strong)UIImageView *imageView;
@@ -33,7 +31,6 @@
     
     //干掉定时器
     [self.timer invalidate];
-    
     //干掉view
     [self.starVC removeFromSuperview];
 
@@ -50,7 +47,6 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:3.0];
     
-    
     [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
     [UIView setAnimationDelegate:self];
 //    _imageView.alpha = 0.9;
@@ -64,74 +60,38 @@
     //首页
     MainPageViewController *mainPageVC = [[MainPageViewController alloc]init];
     UINavigationController *SYnav = [[UINavigationController alloc]initWithRootViewController:mainPageVC];
-    mainPageVC.tabBarItem.title = @"首页";
-    mainPageVC.tabBarItem.image = [[UIImage imageNamed:@"zhuye_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mainPageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"home_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+    
     
     //咨询
     ConsultingViewController *consultingVC = [[ConsultingViewController alloc]init];
     UINavigationController *ZXnav= [[UINavigationController alloc]initWithRootViewController:consultingVC];
-    consultingVC.tabBarItem.title = @"咨询";
-    consultingVC.tabBarItem.image = [[UIImage imageNamed:@"zixun_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    consultingVC.tabBarController.tabBar.tintColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.600 alpha:0.703];
+    consultingVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"助手" image:[[UIImage imageNamed:@"tiwen.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"tiwen_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     //我的
     MySelfViewController *mySelfVC = [[MySelfViewController alloc]init];
     UINavigationController *WDnav = [[UINavigationController alloc]initWithRootViewController:mySelfVC];
-    mySelfVC.tabBarItem.title = @"我的";
-    mySelfVC.tabBarItem.image = [[UIImage imageNamed:@"wode_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mySelfVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[[UIImage imageNamed:@"myself.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"myself_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
     
     
     //知识
     KnowlageViewController *knowlageVC = [[KnowlageViewController alloc] init];
     UINavigationController *ZSnav = [[UINavigationController alloc] initWithRootViewController:knowlageVC];
-    ZSnav.tabBarItem.title = @"知识";
-    ZSnav.tabBarItem.image = [[UIImage imageNamed:@"zhishi_black_16"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    ZSnav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"知识" image:[[UIImage imageNamed:@"knowlage.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] selectedImage:[[UIImage imageNamed:@"knowlage_H.png"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:30],UITextAttributeFont, nil]];
     
     
     self.viewControllers = @[SYnav,ZSnav,ZXnav,WDnav];
     
-    [self isConnectionAvailable];
+    self.tabBar.tintColor = [UIColor colorWithRed:0.87 green:0.40 blue:0.45 alpha:1.00];
     
 }
 
-- (BOOL)isConnectionAvailable{
-    
-    BOOL isExistenceNetwork = YES;
-    Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
-    switch ([reach currentReachabilityStatus]) {
-        case NotReachable:
-            isExistenceNetwork = NO;
-            //NSLog(@"notReachable");
-            break;
-        case ReachableViaWiFi:
-            isExistenceNetwork = YES;
-            //NSLog(@"WIFI");
-            break;
-        case ReachableViaWWAN:
-            isExistenceNetwork = YES;
-            //NSLog(@"3G");
-            break;
-    }
-    
-    if (!isExistenceNetwork) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];//<span style="font-family: Arial, Helvetica, sans-serif;">MBProgressHUD为第三方库，不需要可以省略或使用AlertView</span>
-        hud.removeFromSuperViewOnHide =YES;
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"网络连接失败";
-        hud.minSize = CGSizeMake(132.f, 108.0f);
-        [hud hide:YES afterDelay:3];
-        return NO;
-    }
-    
-    return isExistenceNetwork;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

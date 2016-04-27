@@ -23,6 +23,11 @@
         self.labelBar = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.imagBar.frame) + 10, 5, self.frame.size.width - (CGRectGetMaxX(self.imagBar.frame) + 10)  , self.frame.size.height - 10)];
         [self.contentView addSubview:_labelBar];
         
+        self.huancun = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 70, 10, 50, 21)];
+        self.huancun.textColor = [UIColor grayColor];
+        self.huancun.font = [UIFont systemFontOfSize:14];
+        [self.contentView addSubview:self.huancun];
+        
         
     }
     
