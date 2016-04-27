@@ -27,6 +27,8 @@
     NSInteger mark;
 }
 
+
+
 @property (nonatomic,strong)TitleNavigation *titleNavigation;
 @property (nonatomic,strong)UIScrollView *mainScrollView;
 @property (nonatomic,strong)UITableView *firstTableView;
@@ -111,8 +113,6 @@
 //        
 //        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
 //    });
-   
-    
     
    
 }
@@ -123,7 +123,7 @@
     self.view11 = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.view11.backgroundColor = [UIColor blackColor];
-    self.view11.alpha = 0.5;
+    self.view11.alpha = 0.6;
 //    [self.view addSubview:self.view11];
     
     [_session GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -246,12 +246,7 @@
             if (ssself.thirdArray.count <= 0) {
                 [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
             }
-            
         }
-
-        
-        
-        
     };
     [_titleNavigation changeTextColorWith:0];
     [tempView addSubview:_titleNavigation];

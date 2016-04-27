@@ -16,13 +16,16 @@
 #import "MJRefreshNormalHeader.h"
 #import <MJRefreshAutoNormalFooter.h>
 
+//网络检查
+#import "Reachability.h"
+#import "MBProgressHUD.h"
+
 @interface MainPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,strong)NavTitleView *navTitleView;
 
 @property (nonatomic,strong)NSMutableArray *cellArray1;
 @property (nonatomic,strong)NSMutableArray *cellArray2;
-
 
 @property (nonatomic,strong)UIScrollView *mainScroll;
 
@@ -51,8 +54,6 @@
 }
 
 
-
-
 - (NSMutableArray *)cellArray1{
     if (!_cellArray1) {
         _cellArray1 = [NSMutableArray array];
@@ -66,7 +67,6 @@
     }
     return _cellArray2;
 }
-
 
 - (void)viewDidLoad {
 
@@ -102,7 +102,6 @@
     
     self.navigationItem.titleView = self.navTitleView;
     
-    
     // 创建scrollView
     self.mainScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NavigationBarHeight, ScreenWidth, ScreenHeight - NavigationBarHeight - 28)];
     self.mainScroll.contentSize = CGSizeMake(ScreenWidth * 2, 0);
@@ -137,18 +136,44 @@
     
     // 下拉刷新 上拉加载
     [self refeshData];
-    
-    
-    
     [self requestDataWithURL:MAINPAGE_URL1];
     
-
-
+    
+    //检测是否有网络
+    [self isConnectionAvailable];
 }
 
-
-
-
+- (BOOL)isConnectionAvailable{
+    
+    BOOL isExistenceNetwork = YES;
+    Reachability *reach = [Reachability reachabilityWithHostName:MAINPAGE_URL1];
+    switch ([reach currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = NO;
+            //NSLog(@"notReachable");
+            break;
+        case ReachableViaWiFi:
+            isExistenceNetwork = YES;
+            //NSLog(@"WIFI");
+            break;
+        case ReachableViaWWAN:
+            isExistenceNetwork = YES;
+            //NSLog(@"3G");
+            break;
+    }
+    
+    if (!isExistenceNetwork) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];//<span style="font-family: Arial, Helvetica, sans-serif;">MBProgressHUD为第三方库，不需要可以省略或使用AlertView</span>
+        hud.removeFromSuperViewOnHide =YES;
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"网络连接失败,请检查您的网络设置";
+        hud.minSize = CGSizeMake(132.f, 108.0f);
+        [hud hide:YES afterDelay:5];
+        return NO;
+    }
+    
+    return isExistenceNetwork;
+}
 
 
 static NSString *aaaaa = nil;
@@ -262,9 +287,6 @@ static NSString *aaaaa = nil;
                     self.mainScroll.scrollEnabled = YES;
                 }
             });
-            
-            
-            
             
         }else{
             NSLog(@"数据解析失败了");
@@ -397,8 +419,7 @@ static NSString *aaaaa = nil;
         [self.mainScroll setContentOffset:CGPointMake(0, 0) animated:YES];
         
     }
-    
-    
+
     if (self.cellArray1.count != 0) {
         return;
         
@@ -414,8 +435,9 @@ static NSString *aaaaa = nil;
     
     if (self.mainScroll.contentOffset.x != ScreenWidth && self.mainScroll.scrollEnabled == YES) {
         [self.mainScroll setContentOffset:CGPointMake(ScreenWidth, 0) animated:YES];
+        
     }
-    
+
     if (self.cellArray2.count != 0) {
         return;
     }
