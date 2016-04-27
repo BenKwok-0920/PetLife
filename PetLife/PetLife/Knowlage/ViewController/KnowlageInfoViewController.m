@@ -73,7 +73,10 @@
     
     _indView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     _indView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    [_indView setAnimatingWithStateOfTask:_session.tasks[0]];
+    if (_session.tasks.count > 0) {
+        [_indView setAnimatingWithStateOfTask:_session.tasks[0]];
+    }
+    
     
     _indView.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
     [self.view addSubview:_indView];

@@ -20,6 +20,8 @@
 
 #import "LORefresh.h"
 
+#import "KnowlageModelDB.h"
+
 
 @interface KnowlageViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -48,6 +50,8 @@
 @property (nonatomic,assign)NSInteger firstRequestSize;
 @property (nonatomic,assign)NSInteger secondRequestSize;
 @property (nonatomic,assign)NSInteger thirdRequestSize;
+
+@property (nonatomic,strong)KnowlageModelDB *knowlageModelDB;
 
 @end
 
@@ -107,15 +111,69 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self loadTitleNavigation];
     
-     [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.secondArray];
-//        
-//        [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
-//    });
+//     [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
     
+    self.knowlageModelDB = [[KnowlageModelDB alloc] init];
+    [self.knowlageModelDB createTable];
+
+
+    [self getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:0 andArray:self.firstArray];
    
 }
+
+
+-(void)getDataWithUrl:(NSString *)url withMark:(int)tableID andArray:(NSMutableArray *)array{
+
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch  (status)  {
+                //            case   AFNetworkReachabilityStatusReachableViaWWAN:
+                //
+                //                NSLog(@"网络已连接");
+                //
+                //                break;
+                //
+                //            case   AFNetworkReachabilityStatusReachableViaWiFi:
+                //
+                //                NSLog(@"网络已连接");
+                //
+                //                break;
+                
+            case   AFNetworkReachabilityStatusNotReachable:
+                
+                NSLog(@"当前网络不可用,请联系管理员");
+                
+                [self.firstArray setArray:[self.knowlageModelDB selectAlldataWithTableID:0]];
+                [self.secondArray setArray:[self.knowlageModelDB selectAlldataWithTableID:1]];
+                [self.thirdArray setArray:[self.knowlageModelDB selectAlldataWithTableID:2]];
+//                NSLog(@"%@",self.firstArray);
+                
+                if (!_mainScrollView) {
+                    [self createMainScrollView];
+                }
+                self.firstTableView.hidden = NO;
+                self.secondTableView.hidden = NO;
+                self.thirdTableView.hidden = NO;
+                
+//                [self.firstTableView reloadData];
+                
+                
+                break;
+                
+            default:
+                
+                [self requestDataWithMark:url withArray:array];
+                
+                break;
+        };
+        
+        
+    }];
+
+}
+
 
 #pragma mark --- requestData ----
 
@@ -136,6 +194,8 @@
         
 //        [array removeAllObjects];
         
+        [self.knowlageModelDB deleteAllDataWithTableID:(int)mark];
+        
         NSDictionary *dic = responseObject;
         NSArray *arr = [dic objectForKey:@"data"];
         for (NSDictionary *dictionary in arr) {
@@ -151,6 +211,9 @@
             model.img = [[[str1 stringByAppendingString:dir] stringByAppendingString:filepath] stringByAppendingString:filename];
             
             [array addObject:model];
+            
+            [self.knowlageModelDB insertDataWithModel:model andTableID:(int)mark];
+            
         }
         
         [self.view11 removeFromSuperview];
@@ -208,7 +271,10 @@
     _indView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     _indView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     //添加方法用于直接绑定任务
-    [_indView setAnimatingWithStateOfTask:_session.tasks[0]];
+    if (_session.tasks.count > 0) {
+        [_indView setAnimatingWithStateOfTask:_session.tasks[0]];
+    }
+    
     _indView.center = _indView.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
     [self.view addSubview:_indView];
     [_indView startAnimating];
@@ -234,9 +300,10 @@
             [ssself.titleNavigation changeTextColorWith:0];
             ssself.firstTableView.scrollsToTop = YES;
             [ssself.firstTableView reloadData];
-//            [ssself.firstTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
+
             if (ssself.firstArray.count <= 0) {
-                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
+//                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
+                [ssself getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:0 andArray:ssself.firstArray];
             }
             
         }else if (index == 1){
@@ -245,7 +312,8 @@
             [ssself.titleNavigation changeTextColorWith:1];
             [ssself.secondTableView reloadData];
             if (ssself.secondArray.count <= 0) {
-                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
+//                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.secondArray];
+                [ssself getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:1 andArray:ssself.secondArray];
             }
         }
         else{
@@ -253,9 +321,9 @@
             ssself.thirdTableView.scrollsToTop = YES;
             [ssself.titleNavigation changeTextColorWith:2];
             [ssself.thirdTableView reloadData];
-//            ssself.thirdTableView.clearsContextBeforeDrawing = YES;
             if (ssself.thirdArray.count <= 0) {
-                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
+//                [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.thirdArray];
+                 [ssself getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:2 andArray:ssself.thirdArray];
             }
         }
     };
@@ -307,7 +375,7 @@
     self.firstTableView.hidden = YES;
     self.secondTableView.hidden = YES;
     self.thirdTableView.hidden = YES;
-    
+//
     //上拉刷新  下拉加载
     
     __weak KnowlageViewController *ssself = self;
@@ -316,6 +384,7 @@
         [ssself.firstTableView.gifHeader endRefreshing];
         [ssself.firstArray removeAllObjects];
         [ssself requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:ssself.firstArray];
+        
     }];
     [self.firstTableView.gifHeader setGifName:@"asserxx"];
     
@@ -391,7 +460,8 @@
                 return;
             }
             
-            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+//            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.firstArray];
+            [self getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=119781&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:0 andArray:self.firstArray];
             
         }else if (tap == 1){
             mark = 1;
@@ -401,17 +471,19 @@
                 return;
             }
             
-            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.secondArray];
+//            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.secondArray];
+            [self getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=120032&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:1 andArray:self.secondArray];
         }
         else{
             mark = 2;
             [_titleNavigation changeTextColorWith:2];
+            [self.thirdTableView reloadData];
             if (self.thirdArray.count != 0) {
                 return;
             }
-            [self.thirdTableView reloadData];
-            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
+//            [self requestDataWithMark:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withArray:self.thirdArray];
             
+            [self getDataWithUrl:@"http://client-api.dingdone.com/contents?&column_id=129147&module_id=94345&from=0&size=15&site_id=15532&slide_num=5" withMark:2 andArray:self.thirdArray];
         }
         
         

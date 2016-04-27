@@ -38,6 +38,8 @@
 		C29C2A751CC92630009B0515 /* MainPageInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29C2A681CC92630009B0515 /* MainPageInfoVC.xib */; };
 		C29C2A761CC92630009B0515 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A6A1CC92630009B0515 /* MainPageViewController.m */; };
 		C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C2A791CC92767009B0515 /* StartViewController.m */; };
+		C2BE8D151CD0D69800C08EA4 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
+		C2BE8D181CD0D6C700C08EA4 /* KnowlageModelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */; settings = {ASSET_TAGS = (); }; };
 		C2D25D9C1CCDAD5700E441B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9B1CCDAD5700E441B8 /* Info.plist */; };
 		C2D25D9E1CCDB08F00E441B8 /* asserxx.gif in Resources */ = {isa = PBXBuildFile; fileRef = C2D25D9D1CCDB08F00E441B8 /* asserxx.gif */; };
 		C2EE7C771CC5DAB700F8BC7B /* KnowlageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE7C761CC5DAB700F8BC7B /* KnowlageViewController.m */; };
@@ -115,6 +117,10 @@
 		C29C2A6A1CC92630009B0515 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		C29C2A781CC92767009B0515 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		C29C2A791CC92767009B0515 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		C2BE8D131CD0D69800C08EA4 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = HTML/DatabaseManager.h; sourceTree = "<group>"; };
+		C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = HTML/DatabaseManager.m; sourceTree = "<group>"; };
+		C2BE8D161CD0D6C700C08EA4 /* KnowlageModelDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageModelDB.h; sourceTree = "<group>"; };
+		C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowlageModelDB.m; sourceTree = "<group>"; };
 		C2D25D9B1CCDAD5700E441B8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D25D9D1CCDB08F00E441B8 /* asserxx.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = asserxx.gif; sourceTree = "<group>"; };
 		C2EE7C751CC5DAB700F8BC7B /* KnowlageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowlageViewController.h; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 				C20325801CC227ED00CB7934 /* URLHeaderDifine.h */,
 				C20325811CC2281200CB7934 /* ConstantsDefine.h */,
 				C259D3BA1CC0CCF20045CA99 /* PCHHeader.pch */,
+				C2BE8D131CD0D69800C08EA4 /* DatabaseManager.h */,
+				C2BE8D141CD0D69800C08EA4 /* DatabaseManager.m */,
 			);
 			name = Tool;
 			path = PetLife/Tool;
@@ -367,6 +375,8 @@
 			children = (
 				C261E7921CC7A442005196B4 /* KnowlageModel.h */,
 				C261E7931CC7A442005196B4 /* KnowlageModel.m */,
+				C2BE8D161CD0D6C700C08EA4 /* KnowlageModelDB.h */,
+				C2BE8D171CD0D6C700C08EA4 /* KnowlageModelDB.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -591,6 +601,7 @@
 				C208F1B61CD04A1700328CC6 /* FeedBackViewController.m in Sources */,
 				C25662441CC5C81D00E6C156 /* ConsultingViewController.m in Sources */,
 				C22D93BF1CC9B79C0055CEA6 /* LORefresh.m in Sources */,
+				C2BE8D181CD0D6C700C08EA4 /* KnowlageModelDB.m in Sources */,
 				C29C2A741CC92630009B0515 /* MainPageInfoVC.m in Sources */,
 				C208F1BB1CD04A1700328CC6 /* MySelfTableViewCell.m in Sources */,
 				C261E7941CC7A442005196B4 /* KnowlageModel.m in Sources */,
@@ -609,6 +620,7 @@
 				C208F1BC1CD04A1700328CC6 /* MySelfViewController.m in Sources */,
 				C208F1B91CD04A1700328CC6 /* StatementViewController.m in Sources */,
 				C29C2A7A1CC92767009B0515 /* StartViewController.m in Sources */,
+				C2BE8D151CD0D69800C08EA4 /* DatabaseManager.m in Sources */,
 				C2EE7C8D1CC66B3C00F8BC7B /* KnowlageInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
