@@ -61,7 +61,7 @@
     
     //头像
     self.imageTitle = [[UIImageView alloc]initWithFrame:CGRectMake((KVwidth - 120)/2,120 ,120, 120)];
-    self.imageTitle.image = [UIImage imageNamed:@"petlif"];
+    self.imageTitle.image = [UIImage imageNamed:@"petLife-1024"];
     self.imageTitle.layer.masksToBounds=YES;
     self.imageTitle.layer.cornerRadius = 10;
     
@@ -157,7 +157,7 @@
     if ([filemanager fileExistsAtPath:cacheFilePath]) {
         long long huancun = [[filemanager attributesOfItemAtPath:cacheFilePath error:nil] fileSize];
         self.stringHC = [NSString stringWithFormat:@"%2lldM",huancun - 102];
-        NSLog(@"caches == %@",self.stringHC);
+        NSLog(@"caches == % vXZ@",self.stringHC);
         return self.stringHC;
     }else{
         return 0;

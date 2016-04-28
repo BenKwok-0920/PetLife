@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
-#import "KnowlageViewController.h"
-#import "StatementViewController.h"
 
 @interface AppDelegate ()
 
