@@ -33,6 +33,10 @@
     
     [self.window addSubview:drawView];
     
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:0.17 green:0.17 blue:0.17 alpha:1.00], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:0.87 green:0.40 blue:0.45 alpha:1.00], UITextAttributeTextColor, nil] forState:UIControlStateSelected];
+    
     [NSThread sleepForTimeInterval:0.1];
     
     return YES;
