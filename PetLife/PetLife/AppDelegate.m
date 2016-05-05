@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -32,6 +33,8 @@
     [drawView setFrame:CGRectMake(0, 0, ScreenWidth,ScreenHeight)];
     
     [self.window addSubview:drawView];
+    
+    
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:0.17 green:0.17 blue:0.17 alpha:1.00], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     

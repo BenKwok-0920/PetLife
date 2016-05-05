@@ -134,6 +134,8 @@
     [self.view addSubview:_activity];
     [_activity startAnimating];
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     // 下拉刷新 上拉加载
     [self refeshData];
     [self requestDataWithURL:MAINPAGE_URL1];
@@ -181,6 +183,8 @@ static NSString *aaaaa = nil;
 - (void)requestDataWithURL:(NSString *)url{
     [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
         
+        
+        
         NSError *dicError = nil;
         
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:&dicError];
@@ -221,6 +225,7 @@ static NSString *aaaaa = nil;
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
                     [_activity removeFromSuperview];
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     self.mainScroll.scrollEnabled = YES;
             }else{
                 
@@ -228,7 +233,7 @@ static NSString *aaaaa = nil;
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
                     [_activity removeFromSuperview];
-                
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     self.mainScroll.scrollEnabled = YES;
             }
             });
@@ -249,6 +254,8 @@ static NSString *aaaaa = nil;
 // 上拉加载数据的方法
 - (void)refreshRequestDataWithURL:(NSString *)url{
     [NetRequestManager requestWithType:GET URLString:url parDic:nil finish:^(NSData *data) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         NSError *dicError = nil;
         
@@ -279,11 +286,15 @@ static NSString *aaaaa = nil;
                     self.tableView1.hidden = NO;
                     [self.tableView1 reloadData];
                     [self.tableView1.mj_footer endRefreshing];
+                    [_activity removeFromSuperview];
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     self.mainScroll.scrollEnabled = YES;
                 }else{
                     self.tableView2.hidden = NO;
                     [self.tableView2 reloadData];
                     [self.tableView2.mj_footer endRefreshing];
+                    [_activity removeFromSuperview];
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     self.mainScroll.scrollEnabled = YES;
                 }
             });
@@ -387,6 +398,8 @@ static NSString *aaaaa = nil;
         [self.view addSubview:_activity];
         [_activity startAnimating];
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
         self.mainScroll.scrollEnabled = NO;
         
         // 加载
@@ -403,6 +416,8 @@ static NSString *aaaaa = nil;
         self.activity.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
         [self.view addSubview:_activity];
         [_activity startAnimating];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         self.mainScroll.scrollEnabled = NO;
         
@@ -473,6 +488,7 @@ static NSString *aaaaa = nil;
     self.tableView1.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         self.mainScroll.scrollEnabled = NO;
         NSLog(@"上拉加载数据了!!! i = %d",i);
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=2&filter=&page=%d",i]];
         i++;
         
@@ -481,6 +497,7 @@ static NSString *aaaaa = nil;
     __block int j = 2;
     self.tableView2.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         NSLog(@"上拉加载数据了!!! j = %d",j);
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         self.mainScroll.scrollEnabled = NO;
         [self refreshRequestDataWithURL:[NSString stringWithFormat:@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j]];
         NSLog(@"http://wecarepet.com/api/blog/blog/listCategory?category=3&filter=&page=%d",j);
