@@ -1,65 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="O2F-5B-Vr2" customClass="TitleNavigation">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="360" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" alpha="0.90000000000000002" tag="10000" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Tw-7Wd">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <subviews>
-                        <button opaque="NO" tag="20001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-Ul-7xR">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="训练">
-                                <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="firstButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="Dlj-rO-EmZ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="20002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-Md-GUy">
-                            <rect key="frame" x="200" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="生活">
-                                <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="secondButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="ocp-6e-s1y"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="20003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-9f-R11">
-                            <rect key="frame" x="400" y="0.0" width="200" height="600"/>
-                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="健康">
-                                <color key="titleShadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="thirdButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="n79-A7-lXs"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
+                <button opaque="NO" tag="20001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-Ul-7xR">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
+                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cF8-Ul-7xR" secondAttribute="height" multiplier="8:3" id="iP4-c6-sH1"/>
+                    </constraints>
+                    <state key="normal" title="训练">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="firstButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="Dlj-rO-EmZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="20003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-9f-R11">
+                    <rect key="frame" x="240" y="0.0" width="120" height="45"/>
+                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1k5-9f-R11" secondAttribute="height" multiplier="8:3" id="la8-tZ-FPZ"/>
+                    </constraints>
+                    <state key="normal" title="健康">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="thirdButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="n79-A7-lXs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="20002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-Md-GUy">
+                    <rect key="frame" x="120" y="0.0" width="120" height="45"/>
+                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.10315193965517241" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qPi-Md-GUy" secondAttribute="height" multiplier="8:3" id="pye-fP-VVc"/>
+                    </constraints>
+                    <state key="normal" title="生活">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="secondButton:" destination="O2F-5B-Vr2" eventType="touchUpInside" id="ocp-6e-s1y"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fm3-Tw-7Wd" firstAttribute="top" secondItem="O2F-5B-Vr2" secondAttribute="top" id="9Ev-yP-gc2"/>
-                <constraint firstItem="fm3-Tw-7Wd" firstAttribute="leading" secondItem="O2F-5B-Vr2" secondAttribute="leading" id="Tqw-wn-YC9"/>
-                <constraint firstAttribute="bottom" secondItem="fm3-Tw-7Wd" secondAttribute="bottom" id="e7T-1i-UX8"/>
-                <constraint firstAttribute="trailing" secondItem="fm3-Tw-7Wd" secondAttribute="trailing" id="mE7-K6-Abz"/>
+                <constraint firstItem="qPi-Md-GUy" firstAttribute="centerX" secondItem="O2F-5B-Vr2" secondAttribute="centerX" id="0th-zW-pzt"/>
+                <constraint firstAttribute="bottom" secondItem="qPi-Md-GUy" secondAttribute="bottom" id="7VT-nT-1yc"/>
+                <constraint firstItem="qPi-Md-GUy" firstAttribute="top" secondItem="O2F-5B-Vr2" secondAttribute="top" id="9M3-hC-Sh3"/>
+                <constraint firstItem="1k5-9f-R11" firstAttribute="leading" secondItem="qPi-Md-GUy" secondAttribute="trailing" id="QUt-FX-2mu"/>
+                <constraint firstAttribute="bottom" secondItem="cF8-Ul-7xR" secondAttribute="bottom" id="SET-q6-nKp"/>
+                <constraint firstItem="qPi-Md-GUy" firstAttribute="leading" secondItem="cF8-Ul-7xR" secondAttribute="trailing" id="ZVu-Hj-7cu"/>
+                <constraint firstAttribute="trailing" secondItem="1k5-9f-R11" secondAttribute="trailing" id="ZY6-0k-VSR"/>
+                <constraint firstItem="cF8-Ul-7xR" firstAttribute="leading" secondItem="O2F-5B-Vr2" secondAttribute="leading" id="cHQ-Wz-KFD"/>
+                <constraint firstItem="cF8-Ul-7xR" firstAttribute="top" secondItem="O2F-5B-Vr2" secondAttribute="top" id="gzc-DA-kFs"/>
+                <constraint firstItem="1k5-9f-R11" firstAttribute="top" secondItem="O2F-5B-Vr2" secondAttribute="top" id="jVy-wy-YUV"/>
+                <constraint firstAttribute="bottom" secondItem="1k5-9f-R11" secondAttribute="bottom" id="uvB-Lo-23x"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="firstButton" destination="cF8-Ul-7xR" id="TAC-Mt-Yuu"/>
                 <outlet property="secondButton" destination="qPi-Md-GUy" id="xbv-fc-Ewp"/>
                 <outlet property="thirdButton" destination="1k5-9f-R11" id="Wok-u9-9TR"/>
             </connections>
-            <point key="canvasLocation" x="378" y="109"/>
+            <point key="canvasLocation" x="389" y="-152.5"/>
         </view>
     </objects>
 </document>

@@ -11,10 +11,10 @@
 #import "MainModel.h"
 #import "MainPageTVCell.h"
 #define reuseID @"cell"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "MainPageInfoVC.h"
 #import "MJRefreshNormalHeader.h"
-#import <MJRefreshAutoNormalFooter.h>
+#import "MJRefreshAutoNormalFooter.h"
 
 //网络检查
 #import "Reachability.h"

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B3F7F8DF8A8D17ECCEB3500 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE1D9FB3E700A4BACC6306B /* libPods.a */; };
+		74CBE1755BBF9CA9D28121F0 /* Pods_PetLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951183111C1EA9B8DC56399A /* Pods_PetLife.framework */; };
+		B6DA0EDA1DDC275600DA5633 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DA0ED91DDC275600DA5633 /* SystemConfiguration.framework */; };
+		B6DA0EDC1DDC28B200DA5633 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DA0EDB1DDC28B200DA5633 /* SystemConfiguration.framework */; };
 		C20325741CC21A8900CB7934 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C20325731CC21A8900CB7934 /* BaseModel.m */; };
 		C203257F1CC221A000CB7934 /* NetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C203257E1CC221A000CB7934 /* NetRequestManager.m */; };
 		C208F1B41CD04A1700328CC6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C208F1A61CD04A1700328CC6 /* AboutViewController.m */; };
@@ -62,8 +64,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F2C11286B64CD5A14AA260F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		69E7D027977211C438FEFF33 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		195EC3EF128DF2A75FCFE8CF /* Pods-PetLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetLife/Pods-PetLife.release.xcconfig"; sourceTree = "<group>"; };
+		30B7C754BE3AF29A6A32EE2E /* Pods-PetLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetLife/Pods-PetLife.debug.xcconfig"; sourceTree = "<group>"; };
+		951183111C1EA9B8DC56399A /* Pods_PetLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6DA0ED91DDC275600DA5633 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B6DA0EDB1DDC28B200DA5633 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		C20325721CC21A8900CB7934 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		C20325731CC21A8900CB7934 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		C203257D1CC221A000CB7934 /* NetRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestManager.h; sourceTree = "<group>"; };
@@ -149,7 +154,6 @@
 		C2FE04A91CBFDD740064377C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C2FE04AC1CBFDD740064377C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2FE04AE1CBFDD740064377C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EBE1D9FB3E700A4BACC6306B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C261E78C1CC7A03E005196B4 /* SystemConfiguration.framework in Frameworks */,
-				9B3F7F8DF8A8D17ECCEB3500 /* libPods.a in Frameworks */,
+				B6DA0EDC1DDC28B200DA5633 /* SystemConfiguration.framework in Frameworks */,
+				B6DA0EDA1DDC275600DA5633 /* SystemConfiguration.framework in Frameworks */,
+				74CBE1755BBF9CA9D28121F0 /* Pods_PetLife.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				C261E78B1CC7A03E005196B4 /* SystemConfiguration.framework */,
-				EBE1D9FB3E700A4BACC6306B /* libPods.a */,
+				951183111C1EA9B8DC56399A /* Pods_PetLife.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,8 +183,8 @@
 		AD3CFC20E7684E36C72A639F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F2C11286B64CD5A14AA260F /* Pods.debug.xcconfig */,
-				69E7D027977211C438FEFF33 /* Pods.release.xcconfig */,
+				30B7C754BE3AF29A6A32EE2E /* Pods-PetLife.debug.xcconfig */,
+				195EC3EF128DF2A75FCFE8CF /* Pods-PetLife.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -357,6 +363,8 @@
 		C259D3AF1CC0C9F30045CA99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6DA0EDB1DDC28B200DA5633 /* SystemConfiguration.framework */,
+				B6DA0ED91DDC275600DA5633 /* SystemConfiguration.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -492,10 +500,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2FE04B61CBFDD740064377C /* Build configuration list for PBXNativeTarget "PetLife" */;
 			buildPhases = (
+				66B75E3597A488A9B26610EA /* [CP] Check Pods Manifest.lock */,
 				C2FE049B1CBFDD740064377C /* Sources */,
 				C2FE049C1CBFDD740064377C /* Frameworks */,
 				C2FE049D1CBFDD740064377C /* Resources */,
-				43E2C0FDCEDDE106DB479244 /* Embed Pods Frameworks */,
+				43E2C0FDCEDDE106DB479244 /* [CP] Embed Pods Frameworks */,
+				2DC68307CBE5F359092E9EF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -517,6 +527,7 @@
 				TargetAttributes = {
 					C2FE049E1CBFDD740064377C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4UK2RY5J7H;
 					};
 				};
 			};
@@ -568,19 +579,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		43E2C0FDCEDDE106DB479244 /* Embed Pods Frameworks */ = {
+		2DC68307CBE5F359092E9EF4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetLife/Pods-PetLife-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43E2C0FDCEDDE106DB479244 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetLife/Pods-PetLife-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66B75E3597A488A9B26610EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -722,11 +763,12 @@
 		};
 		C2FE04B71CBFDD740064377C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F2C11286B64CD5A14AA260F /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 30B7C754BE3AF29A6A32EE2E /* Pods-PetLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4UK2RY5J7H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -734,9 +776,9 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PetLife/PCHHeader.pch";
 				INFOPLIST_FILE = PetLife/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petLife.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -744,11 +786,12 @@
 		};
 		C2FE04B81CBFDD740064377C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69E7D027977211C438FEFF33 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 195EC3EF128DF2A75FCFE8CF /* Pods-PetLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4UK2RY5J7H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -756,9 +799,9 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PetLife/PCHHeader.pch";
 				INFOPLIST_FILE = PetLife/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.PetLife201111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petLife.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

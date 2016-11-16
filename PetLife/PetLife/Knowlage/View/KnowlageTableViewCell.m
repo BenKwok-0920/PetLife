@@ -8,7 +8,7 @@
 
 #import "KnowlageTableViewCell.h"
 #import "KnowlageModel.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @implementation KnowlageTableViewCell
 
