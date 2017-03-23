@@ -138,7 +138,6 @@
 }
 
 
-
 #pragma mark ------清除缓存
 - (void)dianji{
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"缓存清除" message:@"确定清除缓存?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
@@ -162,8 +161,7 @@
     }else{
         return 0;
     }
-    
-    
+
 }
 #pragma mark - UIAlertViewDelegate方法实现
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

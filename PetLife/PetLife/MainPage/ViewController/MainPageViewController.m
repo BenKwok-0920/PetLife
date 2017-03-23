@@ -68,6 +68,17 @@
     return _cellArray2;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.markNum = 1;
+    
+    self.navigationItem.title = @"萌宠";
+}
+
+
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -75,12 +86,7 @@
     //防止scrollView乱动
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.00 green:0.51 blue:0.51 alpha:1.00];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.markNum = 1;
-    
-    self.navigationItem.title = @"萌宠";
+
     
     self.navTitleView = [[[NSBundle mainBundle] loadNibNamed:@"NavTitleView" owner:nil options:nil] lastObject];
     self.navTitleView.frame = CGRectMake(0, 0, ScreenWidth - 150, 44);
@@ -521,14 +527,6 @@ static NSString *aaaaa = nil;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

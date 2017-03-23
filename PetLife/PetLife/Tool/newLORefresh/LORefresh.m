@@ -749,7 +749,6 @@ typedef NS_ENUM(NSUInteger, LORefreshFooterState){
     [_textLabel release];
     [_gifImageView release];
     Block_release(_refreshingBlock);
-    [super dealloc];
 }
 
 #pragma mark - init methods

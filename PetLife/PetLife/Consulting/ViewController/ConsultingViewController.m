@@ -23,6 +23,7 @@
 @implementation ConsultingViewController
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     [_webview loadRequest:_request];
 }
 
